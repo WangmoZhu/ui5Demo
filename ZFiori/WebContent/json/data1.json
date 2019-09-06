@@ -1,0 +1,319 @@
+{
+	"nodes": [{
+			"id": "1",
+			"lane": "3",
+			"title": "蒙牛纯牛奶利乐包1000ml×6盒",
+			"children": null,
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：AB17H30E04"],
+			"stateText": "总量：1 PC"
+		}, {
+			"id": "2",
+			"lane": "3",
+			"title": "蒙牛纯牛奶利乐包1000ml×6盒",
+			"children": ["1"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：AB17H30E04","订单：64000790472"],
+			"stateText": "总量：4320 PC"
+		}, {
+			"id": "3",
+			"lane": "2",
+			"title": "蒙牛纯牛奶（利乐包、康美包）半成品",
+			"children": ["2"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：170830A701","订单：64000790472"],
+			"stateText": "总量：32 TON"
+		}, {
+			"id": "4",
+			"lane": "2",
+			"title": "蒙牛纯牛奶（利乐包、康美包）半成品",
+			"children": ["3"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：170830A701","订单：62001016115"],
+			"stateText": "总量：36 TON"
+		}, {
+			"id": "5",
+			"lane": "1",
+			"title": "牧场原奶半成品",
+			"children": ["4"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：1708291301","订单：62001016115"],
+			"stateText": "总量：31.22 TON"
+		}, {
+			"id": "6",
+			"lane": "1",
+			"title": "牧场原奶半成品",
+			"children": ["5"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：1708291301","订单：61000272375"],
+			"stateText": "总量：100.02 TON"
+		}, {
+			"id": "7",
+			"lane": "0",
+			"title": "原奶-牧场",
+			"children": ["6"],
+			"state": "Positive",
+			"texts": "多批次汇总",
+			"stateText": "总量：100020 KG",
+			"type":"Aggregated"
+		}, {
+			"id": "8",
+			"lane": "1",
+			"title": "牧场原奶半成品",
+			"children": ["5"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：1708291301","采购凭证：4800497321"],
+			"stateText": "总量：10 TON"
+		}, {
+			"id": "9",
+			"lane": "1",
+			"title": "牧场原奶半成品",
+			"children": ["8"],
+			"state": "Positive",
+			"texts": ["工厂：3005","批次：1708291301","采购凭证：4800497321"],
+			"stateText": "总量：10 TON"
+		}, {
+			"id": "10",
+			"lane": "1",
+			"title": "牧场原奶半成品",
+			"children": ["9"],
+			"state": "Positive",
+			"texts": ["工厂：3005","批次：1708291301","订单：61000272261"],
+			"stateText": "总量：64.75 TON"
+		}, {
+			"id": "11",
+			"lane": "0",
+			"title": "原奶-牧场",
+			"children": ["10"],
+			"state": "Positive",
+			"texts": "多批次汇总",
+			"stateText": "总量：64750 KG",
+			"type":"Aggregated"
+		}, {
+			"id": "12",
+			"lane": "2",
+			"title": "蒙牛纯牛奶（利乐包、康美包）半成品",
+			"children": ["2"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：170830A101","订单：64000790472"],
+			"stateText": "总量：15 TON"
+		}, {
+			"id": "13",
+			"lane": "2",
+			"title": "蒙牛纯牛奶（利乐包、康美包）半成品",
+			"children": ["12"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：170830A101","订单：62001016341"],
+			"stateText": "总量：15 TON"
+		}, {
+			"id": "14",
+			"lane": "1",
+			"title": "牧场原奶半成品",
+			"children": ["13"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：1708301701","订单：62001016341"],
+			"stateText": "总量：10 TON"
+		}, {
+			"id": "15",
+			"lane": "1",
+			"title": "牧场原奶半成品",
+			"children": ["14"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：1708301701","订单：61000272481"],
+			"stateText": "总量：66 TON"
+		}, {
+			"id": "16",
+			"lane": "0",
+			"title": "原奶-牧场",
+			"children": ["15"],
+			"state": "Positive",
+			"texts": "多批次汇总",
+			"stateText": "总量：66000 KG",
+			"type":"Aggregated"
+		}, {
+			"id": "17",
+			"lane": "1",
+			"title": "牧场原奶半成品",
+			"children": ["13"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：1708291301","订单：62001016341"],
+			"stateText": "总量：8 TON"
+		}, {
+			"id": "18",
+			"lane": "0",
+			"title": "纸箱利乐包纯牛奶1L*6胶印过油手工箱（带提手）",
+			"children": ["2"],
+			"state": "Positive",
+			"texts": ["工厂：5004","批次：1708290044","订单：64000790472"],
+			"stateText": "总量：4805 EA"
+		}, {
+			"id": "19",
+			"lane": "0",
+			"title": "纸箱利乐包纯牛奶1L*6胶印过油手工箱（带提手）",
+			"children": ["18"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：16800 EA"
+		}, {
+			"id": "20",
+			"lane": "0",
+			"title": "纸箱利乐包纯牛奶1L*6胶印过油手工箱（带提手）",
+			"children": ["2"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：669 EA"
+		}, {
+			"id": "21",
+			"lane": "0",
+			"title": "纸箱利乐包纯牛奶1L*6胶印过油手工箱（带提手）",
+			"children": ["20"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：16800 EA"
+		}, {
+			"id": "22",
+			"lane": "0",
+			"title": "利乐包包材纯牛奶更改技术文字1000ml",
+			"children": ["2"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：34.34 KB"
+		}, {
+			"id": "23",
+			"lane": "0",
+			"title": "利乐包包材纯牛奶更改技术文字1000ml",
+			"children": ["22"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：96 KB"
+		}, {
+			"id": "24",
+			"lane": "0",
+			"title": "易拉贴TBA1L",
+			"children": ["2"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：0.53 KM"
+		}, {
+			"id": "25",
+			"lane": "0",
+			"title": "易拉贴TBA1L",
+			"children": ["24"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：2.19 KM"
+		}, {
+			"id": "26",
+			"lane": "0",
+			"title": "易拉盖TBA1L",
+			"children": ["2"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：33.194 KEA"
+		}, {
+			"id": "27",
+			"lane": "0",
+			"title": "易拉盖TBA1L",
+			"children": ["26"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：189.696 KEA"
+		}, {
+			"id": "28",
+			"lane": "0",
+			"title": "内封膜TBA1L",
+			"children": ["2"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：1 KG"
+		}, {
+			"id": "29",
+			"lane": "0",
+			"title": "内封膜TBA1L",
+			"children": ["28"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：13.27 KG"
+		}, {
+			"id": "30",
+			"lane": "0",
+			"title": "热熔胶盖胶",
+			"children": ["2"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：3.96 KG"
+		}, {
+			"id": "31",
+			"lane": "0",
+			"title": "热熔胶盖胶",
+			"children": ["30"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：300 KG"
+		}, {
+			"id": "32",
+			"lane": "0",
+			"title": "塑料提手（黄色+黑色底片）（2.7g+1.95g）",
+			"children": ["2"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：5474 TAO"
+		}, {
+			"id": "33",
+			"lane": "0",
+			"title": "塑料提手（黄色+黑色底片）（2.7g+1.95g）",
+			"children": ["32"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：1000000 TAO"
+		}, {
+			"id": "34",
+			"lane": "0",
+			"title": "BOPP封箱胶带38mm*1000m",
+			"children": ["2"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：4.35 JUA"
+		}, {
+			"id": "35",
+			"lane": "0",
+			"title": "BOPP封箱胶带38mm*1000m",
+			"children": ["34"],
+			"state": "Positive",
+			"texts": "批次：1",
+			"stateText": "总量：1200 JUA"
+		}
+
+	],
+	"lanes": [{
+		"id": "0",
+		"icon": "sap-icon://basket",
+		"label": "原奶",
+		"position": 0
+	},  {
+		"id": "1",
+		"icon": "sap-icon://machine",
+		"label": "原奶",
+		"position": 1
+	},{
+		"id": "2",
+		"icon": "sap-icon://machine",
+		"label": "原奶半成品",
+		"position": 2
+	}, {
+		"id": "3",
+		"icon": "sap-icon://cart",
+		"label": "产品半成品",
+		"position": 3
+	},  {
+		"id": "4",
+		"icon": "sap-icon://cart",
+		"label": "产品半成品",
+		"position": 4
+	}, {
+		"id": "5",
+		"icon": "sap-icon://crm-sales",
+		"label": "销售终端为",
+		"position": 5
+	}]
+}

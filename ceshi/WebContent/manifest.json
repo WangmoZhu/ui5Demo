@@ -1,0 +1,110 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"id": "ZCT_MATQISET",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "ZCT_MATQISET.view.App",
+			"type": "XML"
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"controlId": "appNavContainer",
+				"viewType": "XML",
+				"controlAggregation": "pages",
+				"viewPath": "ZCT_MATQISET.view",
+				"async": true
+			},
+			"targets": {
+				"View2": {
+					"viewId": "View2",
+					"viewName": "View2"
+				},
+				"View1": {
+					"viewId": "View1",
+					"viewName": "View1"
+				}
+			},
+			"routes": [
+				{
+					"name": "View2",
+					"pattern": "View2",
+					"target": "View2"
+				},
+				{
+					"name": "View1",
+					"pattern": "View1",
+					"target": "View1"
+				}
+			]
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ZCT_MATQISET.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zct_matqiset/webapp",
+		"_version": "1.1.0"
+	}
+}

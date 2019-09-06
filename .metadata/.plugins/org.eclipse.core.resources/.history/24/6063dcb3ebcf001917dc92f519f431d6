@@ -1,0 +1,57 @@
+<mvc:View controllerName="echart.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns:uxap="sap.uxap"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<App>
+		<pages>
+			<Page id="page" title="{i18n>title}">
+				<content>
+					<Button id="btn" text="Hello"></Button>
+					<Input value="{/person/name}"></Input>
+					<Input value="{work}"></Input>
+					<Input value="{base}"></Input>
+					<Input value="{
+						path: 'vaild',
+						type: 'sap.ui.model.type.String',
+						constraints: {
+							maxLength: '5',
+							startsWith: 'z'
+						}
+					}" validationError=".onVaild"></Input>
+					<Input value="{
+						path: 'vaild',
+						type: 'sap.ui.model.type.String',
+						constraints: {
+							maxLength: '5',
+							startsWith: 'z'
+						}
+					}"></Input>
+					
+					<Button
+					id="messagePopoverButton"
+					icon="sap-icon://message-popup"
+					type="Emphasized"
+					text="{= ${message>/}.length }"
+					visible="{= !!${message>/}.length }"
+					press=".onOpenMessages"/>
+					
+					<HBox>
+						<dependents>
+							<MessagePopover
+								id="messages"
+								items="{message>/}">
+								<MessageItem
+									type="{message>type}"
+									title="{message>message}"
+									subtitle="{message>additionalText}"
+									description="{message>description}"/>
+							</MessagePopover>
+						</dependents>
+					</HBox>
+					
+					<Button text="Hello World" press=".onPress($event,${$source>/text})"></Button>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

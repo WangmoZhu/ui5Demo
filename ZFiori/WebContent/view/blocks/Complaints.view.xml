@@ -1,0 +1,56 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="sap.vo.mengniu.controller.blocks.Complaints" xmlns:viz="sap.viz.ui5.controls"
+  xmlns:feeds="sap.viz.ui5.controls.common.feeds" xmlns:data="sap.viz.ui5.data" xmlns:l="sap.ui.layout"
+  xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" height="100%" xmlns:t="sap.ui.table" xmlns:s="sap.suite.ui.commons">
+  <!-- <core:HTML content='&lt;div style="height:650px; background-color: #fff;" id="map" &lt;/div&gt;'/> -->
+  <Page id="idPage2" enableScrolling="false" showHeader='false' showSubHeader='false' showFooter='false' visible='true' class="Complaints">
+    <s:ChartContainer id="ChartContainer" showFullScreen="false" autoAdjustHeight="true" showZoom='false' contentChange="onChartTypeChange"
+      showPersonalization="false" showLegendButton="true" showLegend="true" height="100%">
+      <s:content>
+        <s:ChartContainerContent id="ColumnChart" icon="sap-icon://business-objects-experience" title="Column" height="100%">
+          <s:content>
+            <l:Splitter height="100%" width="100%" orientation="Horizontal" class='MySplitter'>
+              <l:VerticalLayout width="100%"  visible='true'>
+                <l:layoutData><l:SplitterLayoutData size="auto" resizable="false"/></l:layoutData>
+                <html:div id="ComplaintsMapHeat" class="ComplaintsMapHeat" style="height:350px;width=350px;background-color: #fff;"></html:div>
+                <!--<Text  id="ComplaintsText" visible="true" height="1px"  text=" "></Text>-->
+                 <!--<core:HTML content='&lt;div style="height:350px;width=350px  background-color: #fff;" id="ComplaintsMapHeat" &lt;/div&gt;'/>-->
+              </l:VerticalLayout>
+              <l:VerticalLayout id="MyLayout" width="100%" class="MyLayout">
+                <l:layoutData><l:SplitterLayoutData size="35%" resizable="false"/></l:layoutData>
+                <viz:VizFrame id="VizFrame1" uiConfig="{applicationSet:'fiori'}" showLegend="false"  showLegendButton="false" height='18rem' width="95%" vizType="bar"
+                   visible='true' >
+                  <viz:dataset>
+                    <data:FlattenedDataset data="{ChartData>/results1}">
+                      <data:dimensions>
+                        <data:DimensionDefinition name="market" value="{ChartData>market}"/>
+                      </data:dimensions>
+                      <data:measures>
+                        <data:MeasureDefinition name="投诉数量" value="{ChartData>value}"/>
+                      </data:measures>
+                    </data:FlattenedDataset>
+                  </viz:dataset>
+                  <viz:feeds>
+                    <feeds:FeedItem uid="valueAxis" type="Measure" values="投诉数量"/>
+                    <feeds:FeedItem uid="categoryAxis" type="Dimension" values="market"/>
+                  </viz:feeds>
+                </viz:VizFrame>
+
+              </l:VerticalLayout>
+            </l:Splitter>
+          </s:content>
+        </s:ChartContainerContent>
+
+      </s:content>
+      <s:toolbar>
+        <OverflowToolbar >
+          <ToolbarSpacer/>
+          <Button id="NavToMapButton" icon="sap-icon://nav-back"  type="Transparent" visible='false' press="onNavToMap"></Button>
+          <!--<Button id="Inof" icon="sap-icon://sys-help" type="Transparent" press="onHelp"></Button>-->
+          <s:ChartContainerToolbarPlaceholder></s:ChartContainerToolbarPlaceholder>
+        </OverflowToolbar>
+      </s:toolbar>
+
+    </s:ChartContainer>
+  </Page>
+</mvc:View>

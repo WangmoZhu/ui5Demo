@@ -1,0 +1,62 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.vo.mengniu.controller.blocks.Setting"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:c="sap.suite.ui.commons" xmlns:l="sap.ui.layout" displayBlock="true" height="100%"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:t="sap.ui.table" xmlns:data="sap.viz.ui5.data" xmlns:feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:s="sap.suite.ui.commons" xmlns:mc="sap.suite.ui.microchart">
+	<SplitApp id="App" initialDetail="empty" initialMaster="master" class="Setting">
+		<masterPages>
+			<Page showHeader="false">
+				<content>
+					<Toolbar>
+						<SearchField liveChange="onSearch" width="100%"/>
+					</Toolbar>
+					<List id="idList" items="{/List}" headerText="角色列表">
+						<items>
+							<ObjectListItem id="listItem" title="{Des}" type="Active" press="onListItemPress">
+								<firstStatus>
+									<ObjectStatus text="{Changedtime}"/>
+								</firstStatus>
+								<attributes>
+									<ObjectAttribute text="{ID}"/>
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</masterPages>
+		<detailPages>
+			<Page showHeader="true" title="角色配置详情" class="sapUiStdPage">
+				<headerContent>
+					<Button icon="sap-icon://save" tooltip="保存" press="onSave" />
+				</headerContent>
+				<content>
+					<t:Table id="idTable1" rowSelectionChange="onColumnListItemPress" inset="false" visible='true'
+						rows="{ path: '/List/0/TableItems', sorter: { path: 'Name' } }" selectionMode="None" selectionBehavior='RowOnly'>
+						<t:columns>
+							<t:Column visible='true'>
+								<Text text="页面"/>
+								<t:template>
+									<Text text="{Name}"/>
+								</t:template>
+							</t:Column>
+							<t:Column visible='true'>
+								<Text text="页面"/>
+								<t:template> 
+									<CheckBox 
+									  editable="{
+										path: 'Editable',
+										type: 'sap.ui.model.type.String'
+									}"
+									  selected="{
+										path: 'Flag',
+										type: 'sap.ui.model.type.String'
+									}"/>
+								</t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+				</content>
+			</Page>
+		</detailPages>
+	</SplitApp>
+</mvc:View>

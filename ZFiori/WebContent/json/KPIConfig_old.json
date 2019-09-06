@@ -1,0 +1,267 @@
+{
+  "RoleKPI": [{
+    "Role": "集团",
+    "KPI": [{
+      "name": "市场质量投诉率"
+    }, {
+      "name": "国家抽检合格率"
+    }, {
+      "name": "采购物资合格率"
+    }, {
+      "name": "原奶综合合格率"
+    }, {
+      "name": "原奶微生物合格率"
+    }, {
+      "name": "合规设计通过率"
+    }, {
+      "name": "检验验证符合率"
+    }, {
+      "name": "审核问题整改率"
+    }, {
+      "name": "投诉处理有效率"
+    }]
+
+  }, {
+    "Role": "常温",
+    "KPI": [{
+      "name": "市场质量投诉率"
+    }, {
+      "name": "国家抽检合格率"
+    }, {
+      "name": "采购物资合格率"
+    }, {
+      "name": "原奶综合合格率"
+    }, {
+      "name": "原奶微生物合格率"
+    }, {
+      "name": "合规设计通过率"
+    }, {
+      "name": "检验验证符合率"
+    }, {
+      "name": "审核问题整改率"
+    }, {
+      "name": "投诉处理有效率"
+    }]
+  }, {
+    "Role": "冰品",
+    "KPI": [{
+      "name": "市场质量投诉率"
+    }, {
+      "name": "国家抽检合格率"
+    }, {
+      "name": "采购物资合格率"
+    }, {
+      "name": "原奶综合合格率"
+    }, {
+      "name": "原奶微生物合格率"
+    }, {
+      "name": "合规设计通过率"
+    }, {
+      "name": "检验验证符合率"
+    }, {
+      "name": "审核问题整改率"
+    }, {
+      "name": "投诉处理有效率"
+    }]
+  }, {
+    "Role": "奶源",
+    "KPI": [{
+      "name": "市场质量投诉率"
+    }, {
+      "name": "国家抽检合格率"
+    }, {
+      "name": "采购物资合格率"
+    }, {
+      "name": "原奶综合合格率"
+    }, {
+      "name": "原奶微生物合格率"
+    }, {
+      "name": "合规设计通过率"
+    }, {
+      "name": "检验验证符合率"
+    }, {
+      "name": "审核问题整改率"
+    }, {
+      "name": "投诉处理有效率"
+    }]
+  }, {
+    "Role": "低温",
+    "KPI": [{
+      "name": "市场质量投诉率"
+    }, {
+      "name": "国家抽检合格率"
+    }, {
+      "name": "采购物资合格率"
+    }, {
+      "name": "原奶综合合格率"
+    }, {
+      "name": "原奶微生物合格率"
+    }, {
+      "name": "合规设计通过率"
+    }, {
+      "name": "检验验证符合率"
+    }, {
+      "name": "审核问题整改率"
+    }, {
+      "name": "投诉处理有效率"
+    }, {
+      "name": "产品指标精准率"
+    }, {
+      "name": "成品微生物合格率"
+    }, {
+      "name": "产品指标合格率"
+    }, {
+      "name": "原料、辅料使用合格率"
+    }]
+  }],
+  "KPI": [{
+    "name": "原料辅料合格率",
+    "id":"YFLHGL",
+    "query": ["TEMP_ZQM_MA02_Q001"],
+    "key": [{
+      "name": "ZVUCADAY",
+      "value":"$1"
+    }, {
+      "name": "ZVUCADAYTo",
+      "value":"$2"
+    }, {
+      "name": "ZVAPLANT",
+      "value":""
+    }, {
+      "name": "ZVAR_YWFL",
+      "value":""
+    }, {
+      "name": "ZVZR_QMWLLX",
+      "value":""
+    }, {
+      "name": "ZVAR_WLZFL",
+      "value":""
+    }, {
+      "name": "ZVUMATL",
+      "value":""
+    }, {
+      "name": "ZVARVSCZX",
+      "value":""
+    }],
+    "category": [
+      {"id": "ZPLANT_T",
+       "name": "分类——工厂"
+      },
+      {"id": "ZMATERIAL_T",
+       "name": "分类——产品"
+      },
+      {"id": "ZQM_WLZFL_T",
+       "name": "分类——物料组分类"
+      },
+      {"id": "ZQM_WLLX_T",
+       "name": "分类——物料类型"
+      },
+      {"id": "ZMATERIAL__ZMATL_GRP_T",
+       "name": "分类——物料组"
+      },
+      {"id": "ZQM_DBGF_T",
+       "name": "分类——原始供应商"
+      }],
+    "Value": [
+      {"id": "A00O2TGTLVNX7CBNEGZRX9G0RY_F",
+       "name": "值——原料到货合格率"
+      },
+      {"id": "A00O2TGTLVNX7CBNEGZRX9HRZI_F",
+       "name": "值——包材到货合格率"
+      },
+      {"id": "A00O2TGTLVNX7CBNEGZRX9GWDQ_F",
+       "name": "值——辅料到货合格率"
+      },
+      {"id": "A00O2TGTLVNX7CBNEGZRX9IAY6_F",
+       "name": "值——辅料到货合格率"
+      }]
+  },{
+    "name": "产品质量分数",
+    "id":"CPZLFS",
+    "query": ["ZEQMOA99_Q001"],
+    "key": [],
+    "time": [{"name":"A0CALMONTH",
+      "format":"MM.YYYY"
+    }],
+    "category": [
+      {"id": "A0CALMONTH",
+       "name": "分类——日历年/月",
+          "categorySmal":"X",
+          "value":"06.2017",
+          "categoryBig":"X",
+          "categoryDefault2":"X"
+      },
+      {"id": "ZQM_Q012",
+       "name": "分类——产品名称"
+      },
+      {"id": "ZSC2",
+       "name": "分类——样品号"
+      },
+      {"id": "ZCHARG",
+       "name": "分类——批次"
+      },
+      {"id": "ZQM_Q004",
+       "name": "分类——销售区域",
+        "categoryDefault1":"X"
+      },
+      {"id": "ZQM_Q005",
+       "name": "分类——生产单位"
+      },
+      {"id": "ZQM_Q006",
+       "name": "分类——所属大区",
+       "GroupySelector":"X",
+       "PlantSelector":"X",
+       "GeoSelector":"X"
+      }],
+    "Value": [
+      {"id": "A00O2TGSVB59E1T9W56UZSE0PF_F",
+       "name": "值——工厂得分"
+      },
+      {"id": "A00O2TGSVB59CBKCRKVYOMSSB6_F",
+       "maxValue":"100.5",
+       "minValue":"99",
+	    "valuedefault1":"X",
+	    "valuedefault2":"X",
+	    "valueSmal":"X",
+	    "valueyBig":"X",
+	    "reference":{"referenceText1":"目标线线99.7",
+	                 "referenceValue1":"99.7",
+	                 "referenceText2":"目标线线99.2",
+	                 "referenceValue2":"99.2"},
+       "name": "值——工厂平均得分"
+      }]
+  }, {
+    "name": "国家抽检合格率",
+    "id":"GJCJHGL",
+    "query": ["ZCO_CA34_Q001"],
+    "key": [{
+      "name": "ZVUCADAY",
+      "value":"$1"
+    }, {
+      "name": "ZVUCADAYTo",
+      "value":"$2"
+    }, {
+      "name": "ZVAPLANT",
+      "value":""
+    }],
+    "category": [ "ZPLANT_T","ZMonth"],
+    "Value": ["ZValue1", "ZValue2"]
+  }, {
+    "name": "采购物资合格率",
+    "id":"CGWZHGL",
+    "query": ["ZCO_CA34_Q001"],
+    "key": [{
+      "name": "ZVUCADAY",
+      "value":"$1"
+    }, {
+      "name": "ZVUCADAYTo",
+      "value":"$2"
+    }, {
+      "name": "ZVAPLANT",
+      "value":""
+    }],
+    "category": [ "ZPLANT_T","ZMonth"],
+    "Value": ["ZValue1", "ZValue2"]
+  }]
+
+}

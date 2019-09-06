@@ -1,0 +1,132 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.vo.mengniu.controller.blocks.Complaints"
+  xmlns:viz="sap.viz.ui5.controls" xmlns:feeds="sap.viz.ui5.controls.common.feeds" xmlns:data="sap.viz.ui5.data" xmlns:l="sap.ui.layout"
+  xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" height="100%" xmlns:t="sap.ui.table" xmlns:s="sap.suite.ui.commons">
+  <!-- <core:HTML content='&lt;div style="height:650px; background-color: #fff;" id="map" &lt;/div&gt;'/> -->
+  <Page id="idPage2" showHeader='false' showSubHeader='false' showFooter='false' visible='true' class="ComplaintsFull">
+    <s:ChartContainer id="ChartContainer" showFullScreen="false" autoAdjustHeight="true" showZoom='false' contentChange="onChartTypeChange"
+      showPersonalization="false" showLegendButton="true" showLegend="true" height="100%">
+      <s:content>
+        <s:ChartContainerContent id="ColumnChart" icon="sap-icon://business-objects-experience" title="Column" height="100%">
+          <s:content>
+            <l:Splitter height="100%" width="100%" orientation="Horizontal" class='MySplitter'>
+              <l:VerticalLayout width="100%"  visible='true'>
+                <l:layoutData><l:SplitterLayoutData size="60%" resizable="false"/></l:layoutData>
+                <html:div id="ComplaintsMapHeat" class="ComplaintsMapHeat" style="height:350px;width=350px;background-color: #fff;"></html:div>
+                <Text id="ComplaintsText" visible='true' text="© 2017 Baidu - GS(2016)2089号 - 甲测资字1100930 - 京ICP证030173号 - Data © 长地万方"></Text>
+                <!--<core:HTML content='&lt;div style="height:350px;width=350px  background-color: #fff;" id="ComplaintsMapHeat" &lt;/div&gt;'/>-->
+              </l:VerticalLayout>
+              <l:VerticalLayout width="100%" class="sapUiSmallMarginTopBottom">
+                <l:layoutData><l:SplitterLayoutData size="20%" resizable="false"/></l:layoutData>
+                <viz:VizFrame id="VizFrame1" uiConfig="{applicationSet:'fiori'}" showLegend="false" height='22rem' width="95%" vizType="bar"
+                  selectData="selectData" deselectData='deselectData' visible='true'>
+                  <viz:dataset>
+                    <data:FlattenedDataset data="{ChartData>/results1}">
+                      <data:dimensions>
+                        <data:DimensionDefinition name="market" value="{ChartData>market}"/>
+                      </data:dimensions>
+                      <data:measures>
+                        <data:MeasureDefinition name="投诉数量" value="{ChartData>value}"/>
+                      </data:measures>
+                    </data:FlattenedDataset>
+                  </viz:dataset>
+                  <viz:feeds>
+                    <feeds:FeedItem uid="valueAxis" type="Measure" values="投诉数量"/>
+                    <feeds:FeedItem uid="categoryAxis" type="Dimension" values="market"/>
+                  </viz:feeds>
+                </viz:VizFrame>
+                <viz:VizFrame id="VizFrame2" uiConfig="{applicationSet:'fiori'}" showLegend="false" height='22rem' width="95%" vizType="bar"
+                  selectData="selectData" deselectData='deselectData' visible='true'>
+                  <viz:dataset>
+                    <data:FlattenedDataset data="{ChartData>/results2}">
+                      <data:dimensions>
+                        <data:DimensionDefinition name="plant" value="{ChartData>market}"/>
+                      </data:dimensions>
+                      <data:measures>
+                        <data:MeasureDefinition name="投诉数量" value="{ChartData>value}"/>
+                      </data:measures>
+                    </data:FlattenedDataset>
+                  </viz:dataset>
+                  <viz:feeds>
+                    <feeds:FeedItem uid="valueAxis" type="Measure" values="投诉数量"/>
+                    <feeds:FeedItem uid="categoryAxis" type="Dimension" values="plant"/>
+                  </viz:feeds>
+                </viz:VizFrame>
+              </l:VerticalLayout>
+
+              <l:VerticalLayout width="100%" class="sapUiSmallMarginTopBottom">
+                <l:layoutData><l:SplitterLayoutData size="20%" resizable="false"/></l:layoutData>
+                <viz:VizFrame id="VizFrame3" uiConfig="{applicationSet:'fiori'}" showLegend="false" height='22rem' width="95%"  vizType="bar"
+                  selectData="selectData" deselectData='deselectData' visible='true'>
+                  <viz:dataset>
+                    <data:FlattenedDataset data="{ChartData>/results3}">
+                      <data:dimensions>
+                        <data:DimensionDefinition name="product" value="{ChartData>market}"/>
+                      </data:dimensions>
+                      <data:measures>
+                        <data:MeasureDefinition name="投诉数量" value="{ChartData>value}"/>
+                      </data:measures>
+                    </data:FlattenedDataset>
+                  </viz:dataset>
+                  <viz:feeds>
+                    <feeds:FeedItem uid="valueAxis" type="Measure" values="投诉数量"/>
+                    <feeds:FeedItem uid="categoryAxis" type="Dimension" values="product"/>
+                  </viz:feeds>
+                </viz:VizFrame>
+                <viz:VizFrame id="VizFrame4" uiConfig="{applicationSet:'fiori'}" showLegend="false" height='22rem' width="95%"  vizType="bar"
+                  selectData="selectData" deselectData='deselectData' visible='true'>
+                  <viz:dataset>
+                    <data:FlattenedDataset data="{ChartData>/results4}">
+                      <data:dimensions>
+                        <data:DimensionDefinition name="category" value="{ChartData>market}"/>
+                      </data:dimensions>
+                      <data:measures>
+                        <data:MeasureDefinition name="投诉数量" value="{ChartData>value}"/>
+                      </data:measures>
+                    </data:FlattenedDataset>
+                  </viz:dataset>
+                  <viz:feeds>
+                    <feeds:FeedItem uid="valueAxis" type="Measure" values="投诉数量"/>
+                    <feeds:FeedItem uid="categoryAxis" type="Dimension" values="category"/>
+                  </viz:feeds>
+                </viz:VizFrame>
+              </l:VerticalLayout>
+            </l:Splitter>
+          </s:content>
+        </s:ChartContainerContent>
+      </s:content>
+      <s:toolbar>
+        <OverflowToolbar>
+          <Button id="NavToMapButton" icon="sap-icon://nav-back" type="Transparent" visible='false' press="onNavToMap"></Button>
+          <Select id="BU" autoAdjustWidth="true" selectedKey='group' visible="true">
+            <core:Item key="group" text="集团"/>
+            <core:Item key="11" text="常温事业部"/>
+            <core:Item key="12" text="低温事业部"/>
+            <core:Item key="13" text="冰品事业部"/>
+            <core:Item key="14" text="奶酪事业部"/>
+          </Select>
+          <MultiComboBox id="GeoSelector" width="8rem"    placeholder="所有生产大区" class="myMultiComboBox"/>
+          <MultiComboBox id="PlantSelector" width="8rem"  placeholder="所有工厂" class="myMultiComboBox"/>
+          <DatePicker id="StartDate" width="10rem" valueFormat="yyyyMMdd"/>
+          <DatePicker id="EndDate" width="10rem" valueFormat="yyyyMMdd"/>
+          <MultiComboBox id="ComplaintId1" width="10rem" selectionChange="onComplaint1"  placeholder="所有一级投诉" class="myMultiComboBox"/>
+       <MultiComboBox id="ComplaintId2" width="10rem" selectionChange="onComplaint2"  placeholder="所有二级投诉" class="myMultiComboBox"/>
+       <MultiComboBox id="ComplaintId3" width="10rem"  placeholder="所有三级投诉" class="myMultiComboBox"/>
+          <MultiComboBox id="ProductId" width="8rem"  placeholder="全部产品" class="myMultiComboBox"/>
+          <Select id="mapTypeId" autoAdjustWidth="true" selectedKey="1" visible="true" change="refreshPage">
+            <core:Item key="1" text="市场热力图"/>
+            <core:Item key="2" text="工厂预警图"/>
+          </Select><Select id="CalTypeId" autoAdjustWidth="true" selectedKey="2" visible="true" change="loadPercentData">
+            <core:Item key="1" text="投诉量"/>
+            <core:Item key="2" text=" 投诉率"/>
+          </Select>
+           <Button id="Apply" type="Transparent" text="分析" press="onUpdatePage"/>
+          <ToolbarSpacer/>
+          <Button  icon="sap-icon://download" type="Transparent" press="onDownLoad"/>
+          <!-- <Button id="Inof" icon="sap-icon://sys-help" type="Transparent" press="onHelp"></Button> -->
+          <s:ChartContainerToolbarPlaceholder></s:ChartContainerToolbarPlaceholder>
+        </OverflowToolbar>
+      </s:toolbar>
+      <s:dimensionSelectors></s:dimensionSelectors>
+    </s:ChartContainer>
+  </Page>
+</mvc:View>

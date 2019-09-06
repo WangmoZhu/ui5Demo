@@ -1,0 +1,148 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.vo.mengniu.controller.blocks.KPI"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:c="sap.suite.ui.commons" xmlns:l="sap.ui.layout" displayBlock="true" height="100%"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:t="sap.ui.table" xmlns:data="sap.viz.ui5.data" xmlns:feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:s="sap.suite.ui.commons" xmlns:mc="sap.suite.ui.microchart">
+	<Page showHeader='false' showSubHeader='false' showFooter='false' class="KPI">
+		<VBox width="100%" height="98%" justifyContent="SpaceAround">
+			<HBox width="100%" height="100%">
+				<layoutData>
+					<FlexItemData growFactor="1"/> 
+				</layoutData>
+				<VBox width="100%" justifyContent="Center" alignContent="Center"   alignItems="Center" class="KPICardBR">
+					<mc:RadialMicroChart id="SCZLTSL" size="M" percentage="1.2" class="sapUiTinyMarginTopBottom"/>
+					<Link width="100%" text="市场质量投诉率" tooltip="SCZLTSL" press="onPress" subtle="true" class="mysapMLnk1 sapUiTinyMarginBottom"/>
+				</VBox>
+				<VBox width="100%" justifyContent="Center" alignContent="Center"  alignItems="Center" class="KPICardBR">
+					<mc:RadialMicroChart id="CPZLFS" size="M" percentage="99.5" class="sapUiTinyMarginTopBottom"/>
+					<!-- <NumericContent id="CPZLFS" value="99" valueColor="Good" indicator="None" state="Loaded" class="sapUiTinyMarginTopBottom" withMargin="false"/> -->
+					<Link width="100%" text="产品质量分数" tooltip="CPZLFS" press="onPress" subtle="true" class="mysapMLnk1"/>
+				</VBox>
+				<VBox width="100%" justifyContent="Center" alignContent="Center"  alignItems="Center" class="KPICardBR">
+					<mc:RadialMicroChart  id="GJCJHGL" size="M" percentage="98.7" class="sapUiTinyMarginTopBottom"/>
+					<Link width="100%" text="国家抽检合格率" tooltip="GJCJHGL"  press="onPress" subtle="true" class="mysapMLnk1 sapUiTinyMarginBottom"/>
+				</VBox>
+				<VBox width="100%" justifyContent="Center" alignContent="Center"  alignItems="Center" class="KPICardB">
+					<mc:RadialMicroChart id="ZLYSPAQSJ" size="M" percentage="100" valueColor="green"  class="sapUiTinyMarginTopBottom"/>
+					<!-- <NumericContent  id="ZLYSPAQSJ" value="1" valueColor="Error" indicator="None" state="Loaded" class="sapUiTinyMarginTopBottom" withMargin="false"/> -->
+					<Link width="100%" text="质量与食品安全事件" tooltip="ZLYSPAQSJ"  press="onPress" subtle="true" class="mysapMLnk1"/>
+				</VBox>
+			</HBox>
+			<HBox width="100%" height="50%">
+				<layoutData>
+					<FlexItemData growFactor="1"/>
+				</layoutData>
+				<HBox width="100%" justifyContent="Center" alignItems="Center" class="KPICardBR">
+					<HBox width="45%" wrap="Wrap" alignContent="Center"  justifyContent="Center" alignItems="Center" class="mysapMLnk2 sapUiTinyMargin">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+						<HBox>
+							<Link text="采购物资"  tooltip="CGWZHGL"  press="onPress" subtle="true"/>
+						</HBox>
+						<HBox>
+							<Link text="合格率"  tooltip="CGWZHGL" press="onPress" subtle="true"/>
+						</HBox>
+					</HBox>
+					<HBox  width="50%" height="100%" justifyContent="Center" alignItems="Center" class="myHbox sapUiTinyMargin">
+						<html:div id="KPI1" class="KPIgauge" style="height:100%;width=100%;background-color: #fff;"></html:div>
+					</HBox>
+				</HBox>
+				<HBox width="100%" justifyContent="Center" alignItems="Center" class="KPICardBR">
+					<HBox width="45%" wrap="Wrap" alignContent="Center"  justifyContent="Center" alignItems="Center" class="mysapMLnk2 sapUiTinyMargin">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+						<HBox>
+							<Link text="原奶综合" tooltip="YNZHHGL"  press="onPress" subtle="true"/>
+						</HBox>
+						<HBox>
+							<Link text="合格率" tooltip="YNZHHGL" press="onPress" subtle="true"/>
+						</HBox>
+					</HBox>
+					<HBox  width="50%" height="100%" justifyContent="Center" alignItems="Center" class="myHbox sapUiTinyMargin">
+						<html:div id="KPI2" class="KPIgauge" style="height:100%;width=100%;background-color: #fff;"></html:div>
+					</HBox>
+				</HBox>
+				<HBox width="100%" justifyContent="Center" alignItems="Center" class="KPICardBR">
+					<HBox width="45%" wrap="Wrap" alignContent="Center"  justifyContent="Center" alignItems="Center" class="mysapMLnk2 sapUiTinyMargin">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+						<HBox>
+							<Link text="原奶微生物" tooltip="YNWSWHGL" press="onPress" subtle="true"/>
+						</HBox>
+						<HBox>
+							<Link text="合格率" press="onPress" subtle="true"/>
+						</HBox>
+					</HBox>
+					<HBox  width="50%" height="100%" justifyContent="Center" alignItems="Center" class="myHbox sapUiTinyMargin">
+						<html:div id="KPI3" class="KPIgauge" style="height:100%;width=100%;background-color: #fff;"></html:div>
+					</HBox>			
+				</HBox>
+				<HBox width="100%" justifyContent="Center" alignItems="Center" class="KPICardB">
+					<HBox width="45%" wrap="Wrap" alignContent="Center"  justifyContent="Center" alignItems="Center" class="mysapMLnk2 sapUiTinyMargin">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+						<HBox>
+							<Link text="合规设计"  tooltip="HGSJTGL" press="onPress" subtle="true"/>
+						</HBox>
+						<HBox>
+							<Link text="通过率"  tooltip="HGSJTGL" press="onPress" subtle="true"/>
+						</HBox>
+					</HBox>
+					<HBox  width="50%" height="100%" justifyContent="Center" alignItems="Center" class="myHbox sapUiTinyMargin">
+						<html:div id="KPI4" class="KPIgauge" style="height:100%;width=100%;background-color: #fff;"></html:div>
+					</HBox>						
+				</HBox>
+			</HBox>
+			<HBox width="100%" height="50%">
+				<layoutData>
+					<FlexItemData growFactor="1"/>
+				</layoutData>
+				<HBox width="100%" justifyContent="Center" alignItems="Center" class="KPICardR">
+					<HBox width="45%" wrap="Wrap" alignContent="Center"  justifyContent="Center" alignItems="Center" class="mysapMLnk2 sapUiTinyMargin">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+						<HBox>
+							<Link text="审核问题" press="onPress" subtle="true"/>
+						</HBox>
+						<HBox>
+							<Link text="整改率" press="onPress" subtle="true"/>
+						</HBox>
+					</HBox>
+					<HBox  width="50%" height="100%" justifyContent="Center" alignItems="Center" class="myHbox sapUiTinyMargin">
+						<html:div id="KPI5" class="KPIgauge" style="height:100%;width=100%;background-color: #fff;"></html:div>
+					</HBox>	
+				</HBox>
+				<HBox width="100%" justifyContent="Center" alignItems="Center" class="KPICardR"  >
+					<HBox width="45%" wrap="Wrap" alignContent="Center"  justifyContent="Center" alignItems="Center" class="mysapMLnk2 sapUiTinyMargin">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+						<HBox>
+							<Link text="投诉处理" press="onPress" subtle="true"/>
+						</HBox>
+						<HBox>
+							<Link text="有效率" press="onPress" subtle="true"/>
+						</HBox>
+					</HBox>
+					<HBox  width="50%" height="100%" justifyContent="Center" alignItems="Center" class="myHbox sapUiTinyMargin">
+						<html:div id="KPI6" class="KPIgauge" style="height:100%;width=100%;background-color: #fff;"></html:div>
+					</HBox>	
+				</HBox>
+				<HBox width="100%" justifyContent="Center" alignItems="Center" class="KPICardRE"  >
+					<Link width="100%" text="" press="onPress" subtle="true"/>
+				</HBox>
+				<HBox width="100%" justifyContent="Center" alignItems="Center" class="KPICardRE"  >
+					<Link width="100%" text="" press="onPress" subtle="true"/>
+				</HBox>
+			</HBox>
+		</VBox>
+	</Page>
+<!--	<Page id="idKPIDetail" showHeader='false' showSubHeader='false' showFooter='false' visible='false' class="KPI">
+		<mvc:XMLView id="KPIDetail" viewName="sap.vo.mengniu.view.blocks.KPIDetail"/>
+	</Page>-->
+	<!--</NavContainer>-->
+</mvc:View>

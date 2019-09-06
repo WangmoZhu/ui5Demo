@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	<Popover
+		title="当前选择"
+		class="sapUiContentPadding"
+		placement="HorizontalPreferredRight"
+		initialFocus="close">
+		<endButton>
+			<Button  icon="sap-icon://decline" tooltip="Close"  press="handleClose" />
+		</endButton>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button
+					text="返回"
+					press="handleDrillUp"
+					visible="{popover>/showDrillUp}" />
+				<Button
+					text="维度下钻"
+					press="handleDrillDown"
+					visible="{popover>/showDrillDown}" />
+			</Toolbar>
+		</footer>
+		
+		<l:VerticalLayout class="sapUiTinyMargin" >
+			<Text text="{popover>/dimension}" class="sapUiTinyMarginBottom"/>
+			<l:HorizontalLayout >
+				<Text text="{popover>/measureName}:" />
+				<Text text="{popover>/measureValue}" class="sapUiTinyMarginBegin" />
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+	
+	</Popover>
+</core:FragmentDefinition>

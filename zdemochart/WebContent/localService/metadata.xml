@@ -1,0 +1,88 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZAI_HUAWEI_SRV" xml:lang="zh" sap:schema-version="1">
+            <EntityType Name="invoice" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Guid"/>
+                </Key>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="增值税发票类型" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="发票代码" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CheckCode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="发票校验码" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Number" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="发票号码" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IssueDate" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="发票-开票日期" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EncryptionBlock" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="发票-密码区" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BuyerName" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="购买方名称" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BuyerId" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="购买方纳税人识别号" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BuyerAddress" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="购买方地址、电话" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BuyerBank" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="购买方开户行及帐号" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SellerName" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="销售方名称" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SellerId" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="销售方纳税人识别号" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SellerAddress" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="销售方地址、电话" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SellerBank" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="销售方开户行及帐号" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SubtotalAmount" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="合计金额" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SubtotalTax" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="合计税额" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Total" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="价税合计" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MsgType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="信息类型" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Msg" Type="Edm.String" Nullable="false" MaxLength="220" sap:unicode="false" sap:label="消息文本" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Guid" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="np_invoiceimage" Relationship="ZAI_HUAWEI_SRV.invoiceimage" FromRole="FromRole_invoiceimage" ToRole="ToRole_invoiceimage"/>
+                <NavigationProperty Name="np_invoiceinvoice_item" Relationship="ZAI_HUAWEI_SRV.invoiceinvoice_item" FromRole="FromRole_invoiceinvoice_item" ToRole="ToRole_invoiceinvoice_item"/>
+            </EntityType>
+            <EntityType Name="image" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Image"/>
+                </Key>
+                <Property Name="Image" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="BASE64" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="invoice_item" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Name"/>
+                    <PropertyRef Name="Specification"/>
+                    <PropertyRef Name="Unit"/>
+                    <PropertyRef Name="Quantity"/>
+                    <PropertyRef Name="UnitPrice"/>
+                    <PropertyRef Name="Amount"/>
+                    <PropertyRef Name="TaxRate"/>
+                    <PropertyRef Name="Tax"/>
+                </Key>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="货物或应税劳务、服务名称" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Specification" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="规格型号" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Unit" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="单位" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Quantity" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="数量" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UnitPrice" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="单价" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Amount" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="金额" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TaxRate" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="税率" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tax" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="税额" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="invoiceimage" sap:content-version="1">
+                <End Type="ZAI_HUAWEI_SRV.invoice" Multiplicity="1" Role="FromRole_invoiceimage"/>
+                <End Type="ZAI_HUAWEI_SRV.image" Multiplicity="*" Role="ToRole_invoiceimage"/>
+            </Association>
+            <Association Name="invoiceinvoice_item" sap:content-version="1">
+                <End Type="ZAI_HUAWEI_SRV.invoice" Multiplicity="1" Role="FromRole_invoiceinvoice_item"/>
+                <End Type="ZAI_HUAWEI_SRV.invoice_item" Multiplicity="*" Role="ToRole_invoiceinvoice_item"/>
+            </Association>
+            <EntityContainer Name="ZAI_HUAWEI_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="invoiceSet" EntityType="ZAI_HUAWEI_SRV.invoice" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="imageSet" EntityType="ZAI_HUAWEI_SRV.image" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="invoice_itemSet" EntityType="ZAI_HUAWEI_SRV.invoice_item" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="invoiceinvoice_item_AssocSet" Association="ZAI_HUAWEI_SRV.invoiceinvoice_item" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="invoiceSet" Role="FromRole_invoiceinvoice_item"/>
+                    <End EntitySet="invoice_itemSet" Role="ToRole_invoiceinvoice_item"/>
+                </AssociationSet>
+                <AssociationSet Name="invoiceimage_AssocSet" Association="ZAI_HUAWEI_SRV.invoiceimage" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="invoiceSet" Role="FromRole_invoiceimage"/>
+                    <End EntitySet="imageSet" Role="ToRole_invoiceimage"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZAI_HUAWEI_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZAI_HUAWEI_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

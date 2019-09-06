@@ -1,0 +1,24 @@
+<mvc:View controllerName="echart.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:c="echart.custom">
+	<html:style>
+		.mySquare {                  /* style the CSS class that has been written by the renderer method */
+        display: inline-block;   /* enable squares to appear next to each other within one line */
+        border: 1px solid red;   /* add some border, so the square can actually be seen */
+        background-color: #ddd;
+        padding: 8px;
+        text-align: center;
+        -moz-box-sizing: border-box; /* consider padding+border part of the width/height */
+        box-sizing: border-box;
+    }
+	</html:style>
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+				   <c:simple></c:simple>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,236 @@
+<mvc:View controllerName="ZCT_MATQISET.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" 	xmlns:t="sap.ui.table">
+	<App >
+		<pages>
+		<Page showHeader="false" >
+			<content width="100%">
+					<HBox width="100%" >
+					<HBox width="3%"></HBox>
+					<HBox width="94%" class="hboxBackgroundColor hboxBackgroundPanel">
+					<!--<f:Form  editable="true" ariaLabelledBy="Title1" id="searchCondition">
+		    			<f:layout>
+							<f:ResponsiveGridLayout labelSpanL="3" labelSpanM="3" emptySpanL="0" emptySpanM="0" columnsL="5" columnsM="5" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements >
+									<f:FormElement 	label="年份">
+										<f:fields >																	
+											<ComboBox  showSecondaryValues="true"  selectedKey="{/searchCriteria/STORAGE_LOC}" width="10rem"
+											items="{/LGORTS}" selectionChange="handleChange"> 
+											<core:ListItem key="{STORAGE_LOC}" text="{STORAGE_LOC}"
+											additionalText="{LGOBE}"/>
+											</ComboBox>											
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer>
+								<f:formElements >
+									<f:FormElement 	label="月份">
+										<f:fields >																	
+											<ComboBox  showSecondaryValues="true"  selectedKey="{/searchCriteria/STORAGE_LOC}"  width="10rem"
+											items="{/LGORTS}" selectionChange="handleChange"> 
+											<core:ListItem key="{STORAGE_LOC}" text="{STORAGE_LOC}"
+											additionalText="{LGOBE}"/>
+											</ComboBox>											
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer>
+								<f:formElements >
+									<f:FormElement 	label="周数">
+										<f:fields >																	
+											<ComboBox  showSecondaryValues="true"  selectedKey="{/searchCriteria/STORAGE_LOC}" width="10rem"
+											items="{/LGORTS}" selectionChange="handleChange"> 
+											<core:ListItem key="{STORAGE_LOC}" text="{STORAGE_LOC}"
+											additionalText="{LGOBE}"/>
+											</ComboBox>											
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer>
+								<f:formElements >
+									<f:FormElement 	label="项目">
+										<f:fields >																	
+											<ComboBox  showSecondaryValues="true"  selectedKey="{/searchCriteria/STORAGE_LOC}" width="10rem"
+											items="{/LGORTS}" selectionChange="handleChange"> 
+											<core:ListItem key="{STORAGE_LOC}" text="{STORAGE_LOC}"
+											additionalText="{LGOBE}"/>
+											</ComboBox>											
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer>
+								<f:formElements >
+									<f:FormElement 	label="阶段">
+										<f:fields >																	
+											<ComboBox  showSecondaryValues="true"  selectedKey="{/searchCriteria/STORAGE_LOC}" width="10rem"
+											items="{/LGORTS}" selectionChange="handleChange"> 
+											<core:ListItem key="{STORAGE_LOC}" text="{STORAGE_LOC}"
+											additionalText="{LGOBE}"/>
+											</ComboBox>											
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>-->
+						<Panel width="100%">
+					<VBox width="100%">
+					<HBox width="100%">
+						<VBox width="5%" justifyContent="Center">
+							<Text text="年份：" textAlign="End" width="100%" />
+						</VBox>
+						<VBox width="18%">
+							<DateRangeSelection displayFormat="yyyy.MM.dd" placeholder=" " />
+						</VBox>
+						<VBox width="10%" justifyContent="Center">
+							<Text text="月份：" textAlign="End" width="100%" />
+						</VBox>
+						<VBox width="18%">
+							<Select width="100%" />
+						</VBox>
+						<VBox width="10%" justifyContent="Center">
+							<Text text="地区：" textAlign="End" width="100%" />
+						</VBox>
+						<VBox width="18%">
+							<Select width="100%" />
+						</VBox>
+						<VBox width="10%" justifyContent="Center" />
+						<HBox width="11%" justifyContent="End">
+							<Button id="moreButton" text="更多查询" icon="sap-icon://navigation-down-arrow" width="7rem" press="onPressSearch" class="buttonSearch conditionClass1"
+							ariaDescribedBy="defaultButtonDescription genericButtonDescription" />
+							<Button  class="buttonSearch conditionClass" width="4rem" text="查询"  />
+						</HBox>
+					</HBox>
+					<HBox id="moreFilter" visible="false">
+						<VBox width="5%" justifyContent="Center">
+							<Text text="周数：" textAlign="End" width="100%" />
+						</VBox>
+						<VBox width="18%">
+							<Select width="100%" />
+						</VBox>
+						<VBox width="10%" justifyContent="Center">
+							<Text text="项目：" textAlign="End" width="100%" />
+						</VBox>
+						<VBox width="18%">
+							<Select width="100%" />
+						</VBox>
+						<VBox width="10%" justifyContent="Center">
+							<Text text="阶段：" textAlign="End" width="100%" />
+						</VBox>
+						<VBox width="18%">
+							<Select width="100%" />
+						</VBox>
+					</HBox>
+				</VBox>
+			</Panel>
+				</HBox>
+			
+				<HBox width="3%"></HBox>
+			</HBox>
+			<VBox width="100%">
+					<HBox width="100%">
+						<HBox width="3%"></HBox>
+						<HBox width="47%" class="insertWidth">
+						<html:div  style="display:inline-block; width:100%; height:380px" >
+									
+									<Title text="项目齐套进度" class="profix"/>
+								<!--	<html:div>
+										<VBox  class="hboxBackgroundColor">
+										<html:div  id="lineChartsC" style="display:inline-block; width:600px; height:60px; border:1px red solid">
+										</html:div>-->
+										<html:div  class="hboxBackgroundColor" style="width:100%;border:0px red solid">
+										<html:div  id="lineChartsC" style="display:inline-block; width:95%; height:60px; border:0px red solid">
+											<html:div  id="lineChartsD" style="display:inline-block; width:45%; height:60px; border:0px red solid;float:left"></html:div>
+											<html:div  id="lineChartsE" style="display:inline-block; width:55%; height:60px; border:0px red solid:float:left"></html:div>
+										</html:div>
+										<html:div id="lineChartsA"  style="display:inline-block; width:95%; height:320px; border:0px red solid">
+										</html:div>
+										</html:div>
+									<!--	</VBox>
+									</html:div>-->
+						</html:div>
+						</HBox>
+						<HBox width="47%" class="insertWidth">
+						<html:div  style="display:inline-block; width:100%; height:380px;">
+									<Title text="套件集结详细进度" class="profix"/>
+										<!--	<VBox  class="hboxBackgroundColor">
+											<html:div  id="barChartsC"  style="display:inline-block; width:600px; height:60px; border:0px red solid">
+											</html:div>-->
+											<html:div class="hboxBackgroundColor" style="margin-left:10px;width:100%">
+											<html:div  id="barChartsC"  style="display:inline-block; width:95%; height:60px; border:0px red solid">
+											</html:div>
+											<html:div  id="barChartsA"  style="display:inline-block; width:95%; height:320px; border:0px red solid">
+											</html:div>
+											</html:div>
+										<!--	</VBox>-->
+						</html:div>
+						</HBox>
+					</HBox>
+						<HBox width="100%">
+						<HBox width="3%"></HBox>
+							<HBox width="47%" class="insertWidth">
+						<html:div style="display:inline-block;width:100%; height:380px">
+									<Title text="分颜色物料齐套进度"  class="profix" />
+										<html:div  class="hboxBackgroundColor" style="width:100%;border:0px red solid; height:90%">
+								<html:div id="lineChartsB"  style="display:inline-block; width:95%; height:340px; border:0px red solid">
+											</html:div>
+						</html:div>
+						</html:div>
+						</HBox>
+						<HBox width="47%"  class="insertWidth">
+						<html:div style="display:inline-block ;width:100%; height:380px">
+									<Title text="物料缺套跟进表" class="profix"/>
+									<html:div  class="hboxBackgroundColor" style="margin-left:10px;width:100%; height:90%">
+									<html:div style="display:inline-block; width:95%; height:340px; margin: 2.5%;">
+										<t:Table rows="{/ProductCollection}" id="materialTable"	selectionMode="None" visibleRowCount="7" showNoData="true">
+											<t:columns>
+												<t:Column >
+													<Label text="采购" />
+													<t:template>
+														<Text text="{value1}" wrapping="false" />
+													</t:template>
+												</t:Column>
+												<t:Column >
+													<Label text="器件类型" />
+													<t:template>
+														<Text text="{value2}" wrapping="false" />
+													</t:template>
+												</t:Column>
+												<t:Column >
+													<Label text="缺套数" />
+													<t:template>
+														<Text text="{value3}" wrapping="false" />
+													</t:template>
+												</t:Column>
+												<t:Column >
+													<Label text="成套数" />
+													<t:template>
+														<Text text="{value4}" wrapping="false" />
+													</t:template>
+												</t:Column>
+												<t:Column >
+													<Label text="成套K数" />
+													<t:template>
+														<Text text="{value5}" wrapping="false" />
+													</t:template>
+												</t:Column>
+												
+											</t:columns>
+										</t:Table>
+								</html:div>
+						</html:div>
+						</html:div>
+						</HBox>
+					</HBox>
+				</VBox>
+				</content>
+			</Page>
+		</pages>
+		</App>
+</mvc:View>

@@ -1,0 +1,43 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.f"
+	xmlns:chart="sap.suite.ui.microchart" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data" controllerName="echart.controller.View1"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>Dashboard-Locations-Header}" showNavButton="true" navButtonPress="navigateBack">
+				<headerContent>
+					<l:HorizontalLayout></l:HorizontalLayout>
+				</headerContent>
+				<content>
+					<List id="structureTable" items="{path: 'viewModel>/items'}" noDataText="{i18n>StructureBrowser-NoStructures}">
+						<CustomListItem type="Active" press="onPressItem" busy="{viewModel>busy}">
+							<HBox width="100%" class="sapUiTinyMarginTopBottom sapUiTinyMarginBegin sapUiSmallMarginEnd" alignItems="Center">
+								<HBox width="{parts:[{path:'viewModel>level'}],formatter:'.formatIndentWidth'}"/>
+								<HBox width="2.5em" alignItems="Center" justifyContent="SpaceAround">
+									<core:Icon class="sapUiSmallMarginEnd" src="{parts:[{path:'viewModel>leaf'},{path:'viewModel>expanded'}],formatter:'.isLeaf'}"/>
+								</HBox>
+								<Image src="{viewModel>image}" width="42px"
+									visible="{path: 'viewModel>level', formatter: '.getImageVisible'}" class="sapUiSmallMarginEnd"/>
+								<!--<core:Icon class="sapUiSmallMarginEnd" src="{parts:[{path:'viewModel>type'}],formatter:'.typeIcon'}"/>-->
+								<HBox width="100%">
+									<ObjectIdentifier text="{parts:[{path:'viewModel>name'}]}" title="{parts:[{path:'viewModel>description'}]}"/>
+								</HBox>
+								<!--<Button icon="sap-icon://functional-location" visible="{path: 'viewModel>level', formatter: '.getImageVisible'}" type="Transparent" press="navigateWithDirectionsToAddress"/>
+								--><chart:StackedBarMicroChart size="{path: 'device>isPhone', formatter: '.getChartSize'}" press="press" precision="0" class="sapUiSmallMarginBeginEnd">
+									<chart:bars>
+										<chart:StackedBarMicroChartBar valueColor="#81F794" value="{viewModel>done}"/><!--
+										<chart:StackedBarMicroChartBar valueColor="#FFDC67" value="{viewModel>inProgress}"/>-->
+										<chart:StackedBarMicroChartBar valueColor="#F5655E" value="{viewModel>notDone}"/>
+									</chart:bars>
+								</chart:StackedBarMicroChart>
+							</HBox>
+						</CustomListItem>
+					</List>
+				</content>
+				<footer>
+					<Toolbar></Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

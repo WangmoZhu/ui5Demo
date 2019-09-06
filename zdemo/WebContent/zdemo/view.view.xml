@@ -1,0 +1,33 @@
+<!-- <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="zdemo.view" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title">
+		<content>
+			<Button text="Hello World" press="press"></Button>
+			<Button text="Press Me" press="" />
+		</content>
+	</Page>
+</core:View> -->
+
+<mvc:View
+    controllerName="zdemo.view"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="zdemo">
+ 
+    <!-- use our custom control, implementation see below -->
+    <!-- works w/o namespace prefix because the default is set to "nabisoft.bookstore.controls" -->
+    <book
+        id="myBook"
+        height="auto"
+        title="My Book in XMLView"
+        author="My Author"
+        description="This is a Book about..."
+        price="11.99"
+        currencyCode="USD"
+        comments="Great book!,A must have!,I liked chapter 6 the most!"
+        numberOfPages="349"
+        coverPictureUrl="https://lorempixel.com/150/200/"
+        expressDelivery="true"
+        buy="onBuy"
+        change="onChange" />
+                
+</mvc:View>

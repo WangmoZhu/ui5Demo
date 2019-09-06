@@ -1,0 +1,84 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:t="sap.ui.table" xmlns:core="sap.ui.core">
+  <t:Table rows="{/results}" title="" selectionMode="None" visibleRowCount="7" class="myUItableHdr">
+    <t:columns>
+      <t:Column width="6rem" sortProperty="A4ZQM_CP01TS049" filterProperty="A4ZQM_CP01TS049" >
+        <Label text="受理时间"/>
+        <t:template >
+          <Text text="{path:'A4ZQM_CP01TS048',formatter:'.onTimeFormat'}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="6rem" sortProperty="A4ZQM_CP01TS006" filterProperty="A4ZQM_CP01TS006">
+        <Label text="省"/>
+        <t:template>
+          <Text text="{A4ZQM_CP01TS006}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="6rem" sortProperty="A4ZQM_CP01TS007" filterProperty="A4ZQM_CP01TS007">
+        <Label text="市"/>
+        <t:template>
+          <Text text="{A4ZQM_CP01TS007}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="8rem" sortProperty="A4ZQM_CP01TS018" filterProperty="A4ZQM_CP01TS018">
+        <Label text="产品名称"/>
+        <t:template>
+          <Text text="{A4ZQM_CP01TS018}" wrapping="false" tooltip="{A4ZQM_CP01TS018}"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="8rem" sortProperty="A4ZQM_CP01TS020" filterProperty="A4ZQM_CP01TS020">
+        <Label text="产品批次"/>
+        <t:template >
+          <Text text="{A4ZQM_CP01TS020}" wrapping="false" tooltip="{A4ZQM_CP01TS020}"/>
+        </t:template>
+      </t:Column>
+       <t:Column width="4rem" sortProperty="A00O2TGSVB59E1S8IV0SSUUYUZ_F" filterProperty="A00O2TGSVB59E1S8IV0SSUUYUZ_F">
+        <Label text="包数"/>
+        <t:template >
+          <Text text="{A00O2TGSVB59E1S8IV0SSUUYUZ_F}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="8rem" sortProperty="ZPLANT_T" filterProperty="ZPLANT_T">
+        <Label text=" 工厂"/>
+        <t:template >
+          <Text text="{ZPLANT_T}" wrapping="false" tooltip="{ZPLANT_T}"/>
+        </t:template>
+      </t:Column>
+        <t:Column width="6rem" sortProperty="A4ZQM_CP01TS029" filterProperty="A4ZQM_CP01TS029">
+        <Label text="投诉类型"/>
+        <t:template >
+          <Text text="{A4ZQM_CP01TS029}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+        <t:Column width="8rem" sortProperty="A4ZQM_CP01TS030" filterProperty="A4ZQM_CP01TS030">
+        <Label text="投诉类型详细"/>
+        <t:template >
+          <Text text="{A4ZQM_CP01TS030}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="6rem" sortProperty="A4ZQM_CP01TS041" filterProperty="A4ZQM_CP01TS041">
+        <Label text="责任方"/>
+        <t:template >
+          <Text text="{A4ZQM_CP01TS041}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="6rem" sortProperty="A4ZQM_CP01TS045" filterProperty="A4ZQM_CP01TS045">
+        <Label text="反馈方式"/>
+        <t:template >
+          <Text text="{A4ZQM_CP01TS045}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+        <t:Column width="16rem" sortProperty="A4ZQM_CP01TS047" filterProperty="A4ZQM_CP01TS047">
+        <Label text="'情况描述"/>
+        <t:template >
+          <Text text="{A4ZQM_CP01TS047}" wrapping="false" tooltip="{A4ZQM_CP01TS047}"/>
+        </t:template>
+      </t:Column>
+        <!-- <t:Column width="11rem" sortProperty="A4ZQM_CP01TS054" filterProperty="A4ZQM_CP01TS054">
+        <Label text="处理结果"/>
+        <t:template >
+          <Text text="{A4ZQM_CP01TS054}" wrapping="false"/>
+        </t:template>
+      </t:Column>-->
+    </t:columns>
+  </t:Table>
+</core:FragmentDefinition>

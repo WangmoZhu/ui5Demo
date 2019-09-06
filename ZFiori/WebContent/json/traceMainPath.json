@@ -1,0 +1,78 @@
+{
+	"nodes": [{
+			"id": "chengpin",
+			"lane": "3",
+			"title": "蒙牛纯牛奶利乐包1000ml×6盒",
+			"children": null,
+			"state": "Positive",
+			"texts": ["工厂: 5004","总量：4320 PC"],
+			"stateText": "批次: AB17H30E04"
+		}, {
+			"id": "3",
+			"lane": "2",
+			"title": "蒙牛纯牛奶（利乐包、康美包）半成品",
+			"children": ["chengpin"],
+			"state": "Positive",
+			"texts": ["工厂: 5004","总量：51 T"],
+			"stateText": "2个批次",
+			"type":"Aggregated"
+		}, {
+			"id": "banchengpin",
+			"lane": "1",
+			"title": "牧场原奶半成品",
+			"children": ["3"],
+			"state": "Positive",
+			"texts": ["工厂: 5004, 3005","总量：239 T"],
+			"stateText": "4个批次",
+			"type":"Aggregated"
+		}, {
+			"id": "yuannai",
+			"lane": "0",
+			"title": "原奶-牧场",
+			"children": ["banchengpin"],
+			"state": "Positive",
+			"texts": "总量: 231 T",
+			"stateText": "18个批次",
+			"type":"Aggregated"
+		}, {
+			"id": "z18",
+			"lane": "0",
+			"title": "辅料",
+			"children": ["chengpin"],
+			"state": "Positive",
+			"texts": ["纸箱利乐包纯牛奶1L*6胶印过油手工箱（带提手）等"],
+			"stateText": "总量：5种",
+			"type":"Aggregated"
+		}, {
+			"id": "z19",
+			"lane": "0",
+			"title": "包材",
+			"children": ["chengpin"],
+			"state": "Positive",
+			"texts": "热熔胶盖胶等",
+			"stateText": "总量：3种",
+			"type":"Aggregated"
+		}
+	],
+	"lanes": [{
+		"id": "0",
+		"icon": "sap-icon://basket",
+		"label": "原料",
+		"position": 0
+	}, {
+		"id": "1",
+		"icon": "sap-icon://machine",
+		"label": "原奶 - 半成品",
+		"position": 1
+	}, {
+		"id": "2",
+		"icon": "sap-icon://cart",
+		"label": "产成品 - 半成品",
+		"position": 2
+	}, {
+		"id": "3",
+		"icon": "sap-icon://crm-sales",
+		"label": "产成品",
+		"position": 3
+	}]
+}

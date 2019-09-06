@@ -1,0 +1,36 @@
+/* Enter your custom styles here */
+.div{
+	background-color: white;
+	width: 100%;
+	z-index:0
+}
+/* .china{
+	width: 80%;
+	z-index: 1;
+}
+.world{
+	position:absolute !important;
+	left:500px ;
+	top:100px;
+	z-index:2;
+} */
+/* #__xmlview0--world{
+	position:absolute !important;
+	left:500px ;
+	top:100px;
+	z-index:2;
+} */
+.influence{
+	background-color: red;
+	width:200px
+}
+.sapMSLI {
+   /*  display: -webkit-box;
+    display: flex; */
+    height: 1.7rem;
+}
+.sapMGT.OneByOne {
+    width: 9rem;
+    height: 9rem;
+    margin-left: 1rem;
+}

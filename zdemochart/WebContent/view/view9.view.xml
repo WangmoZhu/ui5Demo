@@ -1,0 +1,14 @@
+<mvc:View xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" controllerName="ZAPI_VIEW.controller.view9"
+	xmlns="sap.m">
+	<App>
+		<Page showHeader="false">
+			<!--<html:div id="line"></html:div>-->
+			<!--<l:HorizontalLayout>-->
+			<!--	<html:div id="pie"></html:div>-->
+			<!--	<html:div id="column"></html:div>-->
+			<!--</l:HorizontalLayout>-->
+					<core:HTML content='&lt;div id=&quot;main&quot; style=&quot;width: 600px;height:400px;&quot;&gt;&lt;/div&gt;'>
+			</core:HTML>
+		</Page>
+	</App>
+</mvc:View>

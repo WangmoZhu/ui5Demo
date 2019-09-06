@@ -1,0 +1,45 @@
+/* ======================================= */
+/* CSS for control sap.f/DynamicPageTitle  */
+/* Fiori 3 theme                           */
+/* ======================================= */
+
+
+.sapFDynamicPageTitle {
+	padding: 0.5rem 3rem;
+}
+
+.sapFDynamicPage-Std-Tablet {
+	.sapFDynamicPageTitle,
+	.sapFDynamicPageTitleWrapper.sapFDynamicPageTitleSnapped > .sapFDynamicPageTitle {
+		padding: 0.5rem 2rem;
+	}
+}
+
+.sapFDynamicPage-Std-Phone {
+	.sapFDynamicPageTitle,
+	.sapFDynamicPageTitleWrapper.sapFDynamicPageTitleOnly > .sapFDynamicPageTitle,
+	.sapFDynamicPageTitleWrapper.sapFDynamicPageTitleSnapped > .sapFDynamicPageTitle {
+		padding: 0.5rem 1rem;
+	}
+}
+
+.sapFDynamicPageTitle.sapFDynamicPageTitleTranslucent {
+	background: @sapUiObjectHeaderBackground;
+}
+
+.sapFDynamicPageTitle.sapFDynamicPageTitleTransparent {
+	background: transparent;
+}
+
+.sapFDynamicPageTitleWrapper.sapFDynamicPageTitleSnappedTitleOnMobile > .sapFDynamicPageTitle {
+	box-shadow: @sapUiShadowHeader;
+}
+
+.sapFDynamicPageTitle .sapMTB {
+	background: transparent;
+	padding: 0;
+}
+
+.sapFDynamicPageTitleMainNavigationArea > .sapMTBSeparator {
+	margin: 0 0.5rem;
+}

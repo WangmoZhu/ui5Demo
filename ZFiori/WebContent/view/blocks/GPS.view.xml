@@ -1,0 +1,8 @@
+<mvc:View  controllerName="sap.vo.mengniu.controller.blocks.GPS" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" height="100%">        
+        <Page showHeader='false' showSubHeader='false' showFooter='false' class="gps">
+		<Button icon="sap-icon://nav-back" press="onPress" class="backButton"/>
+                <html:iframe src="http://g7s.ucenter.huoyunren.com/login.html?referer=http%3A//g7s.huoyunren.com/" class="myIframe" height="100%" style="height:100%;width:100%">
+                </html:iframe>
+        </Page>
+</mvc:View>

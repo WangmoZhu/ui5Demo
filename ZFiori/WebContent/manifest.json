@@ -1,0 +1,148 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "sap.vo.mengniu",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.32.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "sap.vo.mengniu.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.vo.mengniu.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style2.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.vo.mengniu.view",
+				"controlId": "app",
+				"controlAggregation": "pages"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "home",
+					"target": "home"
+				},
+				{
+					"pattern": "single/{appId}/:viewIndex:",
+					"name": "single",
+					"target": "single"
+				},
+				{
+					"pattern": "singleView/{viewName}",
+					"name": "singleView",
+					"target": "single"
+				},
+				{
+					"pattern": "m/home",
+					"name": "mHome",
+					"target": "mHome"
+				},
+				{
+					"pattern": "m/{appId}",
+					"name": "mSingle",
+					"target": "mSingle"
+				},
+				{
+					"pattern": "dashboard",
+					"name": "dashboard",
+					"target": "dashboard"
+				}
+			],
+			"targets": {
+				"sFrame": {
+					"viewName": "SFrame"					
+				},
+				"home": {
+					"viewName": "Home"
+				},
+				"single": {
+					"viewName": "SingleApp",
+					"parent":"sFrame",
+					"controlId": "App",
+					"controlAggregation": "detailPages"
+				},				
+				"mFrame": {
+					"viewName": "MFrame"
+				},
+				"mHome": {
+					"viewName": "MHome",
+					"parent": "mFrame",
+					"controlId": "mFrame",
+					"controlAggregation": "content",
+					"clearControlAggregation":true
+				},
+				"mSingle": {
+					"viewName": "SingleApp",
+					"parent": "mFrame",
+					"controlId": "mFrame",
+					"controlAggregation": "content",
+					"clearControlAggregation":true
+				},				
+				"dashboard": {
+					"viewName": "Dashboard"
+				}
+			}
+		}
+	}
+}

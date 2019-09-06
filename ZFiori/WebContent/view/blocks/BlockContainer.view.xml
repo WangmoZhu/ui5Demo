@@ -1,0 +1,13 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.vo.mengniu.controller.blocks.BlockContainer"
+	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:suite="sap.suite.ui.commons" xmlns:l="sap.ui.layout" height="100%">
+	<suite:ChartContainer id="idChartContainer" showFullScreen="false" showPersonalization="false" autoAdjustHeight="true"
+		showLegendButton="false" showLegend="true" title="" height="100%">
+		<suite:dimensionSelectors>
+			<core:Icon id="customIcon"></core:Icon>
+			<Text id="title" text=""></Text>
+		</suite:dimensionSelectors>
+		<suite:customIcons>
+			<core:Icon id="btnFullScreen" src="sap-icon://full-screen" tooltip="全屏" press="onFullScreen" width="2em"></core:Icon>
+		</suite:customIcons>
+	</suite:ChartContainer>
+</mvc:View>

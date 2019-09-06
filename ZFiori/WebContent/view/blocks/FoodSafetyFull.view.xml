@@ -1,0 +1,95 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.vo.mengniu.controller.blocks.FoodSafety"
+  xmlns:viz="sap.viz.ui5.controls" xmlns:t="sap.ui.table" xmlns:data="sap.viz.ui5.data" xmlns:feeds="sap.viz.ui5.controls.common.feeds"
+  xmlns:s="sap.suite.ui.commons" xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:l="sap.ui.layout" height="100%">
+  <Page id="idPage2" showHeader='false' showSubHeader='false' showFooter='false' visible='true' class="FoodSafety">
+    <Panel  height="100%" backgroundDesign="Transparent" class="myPanel">
+      <headerToolbar>
+        <Toolbar>
+           <Button id="NavToMapButton" icon="sap-icon://nav-back" type="Transparent" visible='false' press="onNavToMap"></Button>
+          <Select id="BU" autoAdjustWidth="true" visible="true" change="loadData" selectedKey='group'>
+            <core:Item key="group" text="集团"/>
+            <core:Item key="11" text="常温事业部"/>
+            <core:Item key="12" text="低温事业部"/>
+            <core:Item key="13" text="冰品事业部"/>
+            <core:Item key="14" text="奶酪事业部"/>
+          </Select>
+          <MultiComboBox id="GeoSelector" width="12rem" selectionFinish="refreshPage"   placeholder="所有生产大区" class="myMultiComboBox"/>
+          <DatePicker id="StartDate" width="12rem" valueFormat="yyyyMMdd" change="loadData"/>
+          <DatePicker id="EndDate" width="12rem" valueFormat="yyyyMMdd" change="loadData"/>
+           <Select id="CategoryId" autoAdjustWidth="true" visible="true" change="refreshPage" selectedKey='group'>
+            <core:Item key="所有种类" text="所有种类"/>
+            <core:Item key="生乳" text="生乳"/>
+            <core:Item key="原辅料" text="原辅料"/>
+            <core:Item key="成品" text="成品"/>
+          </Select>
+          <ToolbarSpacer />
+          <Button  icon="sap-icon://download" type="Transparent" press="onDownLoad"/>
+        </Toolbar>
+      </headerToolbar>
+    <l:Splitter height="100%" width="100%" orientation="Horizontal" class='MySplitter'>
+      <l:VerticalLayout  width="100%" visible='true'>
+        <l:layoutData><l:SplitterLayoutData size="auto" resizable="false"/></l:layoutData>
+        <!--<l:HorizontalLayout class="center">
+          <Button id="NavToMapButton" icon="sap-icon://nav-back" class="sapUiSmallMarginTop" type="Transparent" visible='false' press="onNavToMap"></Button>
+          <RadioButtonGroup columns="5" width="100%" class="sapUiSmallMarginTop" select="onSelectRadioButton">
+            <buttons>
+              <RadioButton id="group" text="集团"/>
+              <RadioButton id="normal" text="常温事业部"/>
+              <RadioButton id="low" text="低温事业部"/>
+              <RadioButton id="ice" text="冰品事业部"/>
+              <RadioButton id="milk" text="奶源事业部"/>
+            </buttons>
+          </RadioButtonGroup>
+        </l:HorizontalLayout>-->
+        <html:div id="FoodSafetyMap" class="FoodSafetyMap" style="height:350px;width=100%;background-color: #fff;"></html:div>
+        <Text id="FoodSafetyText" text="© 2017 Baidu - GS(2016)2089号 - 甲测资字1100930 - 京ICP证030173号 - Data © 长地万方"></Text>
+      </l:VerticalLayout>
+      <l:VerticalLayout id="MyLayout" width="100%" class="MyLayout">
+        <l:layoutData><l:SplitterLayoutData size="35%" resizable="false"/></l:layoutData>
+        <!--<viz:Popover id="PopOver"/>-->
+        <viz:VizFrame id="VizFrame1" uiConfig="{applicationSet:'fiori'}" showLegend="false" showLegendButton="false" height='25rem' width="95%"
+          vizType="bar" selectData='selectData' deselectData='deselectData' visible='true'>
+          <viz:dataset>
+            <data:FlattenedDataset data="{VizFrameModel>/results1}">
+              <data:dimensions>
+                <data:DimensionDefinition name="市场" value="{VizFrameModel>market}"/>
+              </data:dimensions>
+              <data:measures>
+                <data:MeasureDefinition name="投诉数量" value="{VizFrameModel>value}"/>
+              </data:measures>
+            </data:FlattenedDataset>
+          </viz:dataset>
+          <viz:feeds>
+            <feeds:FeedItem uid="valueAxis" type="Measure" values="投诉数量"/>
+            <feeds:FeedItem uid="categoryAxis" type="Dimension" values="市场"/>
+          </viz:feeds>
+        </viz:VizFrame>
+        <viz:VizFrame id="VizFrame2" uiConfig="{applicationSet:'fiori'}" showLegend="false"  showLegendButton="false"
+          height='25rem' width="98%" vizType="pie"
+          selectData='selectData' deselectData='deselectData' visible='false'>
+          <viz:dataset>
+            <data:FlattenedDataset data="{VizFrameModel>/results2}">
+              <data:dimensions>
+                <data:DimensionDefinition name="投诉分类" value="{VizFrameModel>Category}"/>
+              </data:dimensions>
+              <data:measures>
+                <data:MeasureDefinition name="投诉数量" value="{VizFrameModel>value}"/>
+              </data:measures>
+            </data:FlattenedDataset>
+          </viz:dataset>
+          <viz:feeds>
+
+            <feeds:FeedItem uid="size" type="Measure" values="投诉数量"/>
+            <feeds:FeedItem uid="color" type="Dimension" values="投诉分类"/>
+            <!--<feeds:FeedItem uid="valueAxis" type="Measure" values="投诉数量"/>-->
+            <!--<feeds:FeedItem uid="categoryAxis" type="Dimension" values="省份"/>-->
+          </viz:feeds>
+        </viz:VizFrame>
+
+      </l:VerticalLayout>
+    </l:Splitter>
+      <!-- <core:HTML content='&lt;div style="height:350px;width=350px  background-color: #fff;" id="FoodSafetyMap" &lt;/div&gt;'/>
+     -->
+     </Panel>
+    </Page>
+  </mvc:View>

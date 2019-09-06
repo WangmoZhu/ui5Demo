@@ -1,0 +1,62 @@
+[
+    {
+        "node":"1",
+        "parentNode":"0",
+        "text":"Node 1",
+        "visible":true
+    },
+    {
+        "node":"2",
+        "parentNode":"0",
+        "text":"Node 2",
+        "visible":true
+    },
+    {
+        "node":"3",
+        "parentNode":"1",
+        "text":"Node 1-1",
+        "visible":false
+    },
+    {
+        "node":"4",
+        "parentNode":"1",
+        "text":"Node 1-2",
+        "visible":false
+    },
+    {
+        "node":"5",
+        "parentNode":"2",
+        "text":"Node 2-1",
+        "visible":false
+    },
+    {
+        "node":"6",
+        "parentNode":"3",
+        "text":"Node 1-1-1",
+        "visible":false
+    },
+    {
+        "node":"7",
+        "parentNode":"6",
+        "text":"Node 1-1-1-1",
+        "visible":false
+    },
+    {
+        "node":"8",
+        "parentNode":"0",
+        "text":"Node 3",
+        "visible":true
+    },
+    {
+        "node":"9",
+        "parentNode":"8",
+        "text":"Node 3-1",
+        "visible":false
+    },
+    {
+        "node":"10",
+        "parentNode":"5",
+        "text":"Node 2-1-1",
+        "visible":false
+    }
+]

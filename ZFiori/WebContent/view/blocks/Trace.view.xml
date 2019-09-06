@@ -1,0 +1,19 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.vo.mengniu.controller.blocks.Trace"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" height="100%">
+	<FlexBox height="100%" alignItems="Center" justifyContent="Center" >
+		<items>
+			<Image src="./image/Trace.png" densityAware="false" press="onSearch" width="100%" height="100%"/>
+		</items>
+	</FlexBox>
+	<!-- <Toolbar><SearchField id="sf" placeholder="请输入批次号" class="sapUiSmallMargin" /><ToolbarSpacer/><Input id="input" type="Text" placeholder="请输入批次号" /><Button text="搜索" press="onSearch"/></Toolbar> -->
+	<!--<l:HorizontalLayout>
+		<Input id="input" type="Text" placeholder="请输入批次号" width="100%" class="sapUiSmallMarginTop sapUiMediumMarginBeginEnd"/>
+		<Button text="搜索" press="onSearch" class="searchBtn sapUiSmallMarginTop"/>
+	</l:HorizontalLayout>
+	<ProcessFlow  class="Trace sapUiMediumMarginTop"
+		xmlns="sap.suite.ui.commons" id="processflow1" visible="true" scrollable="false" foldedCorners="true" nodePress="onNodePress" nodeTitlePress="onNodeTitlePress" lanes="{/lanes}">
+			<lanes>
+			<ProcessFlowLaneHeader laneId="{id}" iconSrc="{icon}" text="{label}" position="{position}" />
+		</lanes>
+	</ProcessFlow>-->
+</mvc:View>

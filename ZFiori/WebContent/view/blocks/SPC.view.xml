@@ -1,0 +1,151 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.vo.mengniu.controller.blocks.SPC"
+  xmlns:html="http://www.w3.org/1999/xhtml" height="100%" displayBlock="true" xmlns:t="sap.ui.table" xmlns:s="sap.suite.ui.commons"
+  xmlns:l="sap.ui.layout" xmlns:viz="sap.viz.ui5.controls" xmlns:data="sap.viz.ui5.data" xmlns:feeds="sap.viz.ui5.controls.common.feeds">
+  <Page id="accident" enableScrolling="false" showHeader='false' showSubHeader='true' showFooter='false' class="SPC">
+    <l:Splitter id="Splitter1" orientation="Horizontal" height="100%">
+      <l:layoutData><l:SplitterLayoutData size="auto"/></l:layoutData>
+      <l:contentAreas>
+        <s:ChartContainer id="ChartContainer" showFullScreen="false" autoAdjustHeight="true" showZoom='false' contentChange="onChartTypeChange"
+          showPersonalization="false" showLegendButton="false" showLegend="false" height="100%">
+          <s:layoutData><l:SplitterLayoutData size="50%" resizable="false"/></s:layoutData>
+          <s:content>
+            <s:ChartContainerContent icon="sap-icon://column-chart" title="column" height="100%">
+              <s:content>
+                <viz:Popover id="PopOverLine"/>
+                <viz:VizFrame id="line" uiConfig="{applicationSet:'fiori'}" vizType="column" height='100%' width="100%">
+                  <viz:dataset>
+                    <data:FlattenedDataset data="{ChartData>/time}">
+                      <data:dimensions>
+                        <data:DimensionDefinition name="Store Name" value="{ChartData>CreateDate}"/>
+                      </data:dimensions>
+                      <data:measures>
+                        <data:MeasureDefinition name="质量问题数量" value="{ChartData>Value} "/>
+                      </data:measures>
+                    </data:FlattenedDataset>
+                  </viz:dataset>
+                  <viz:feeds>
+                    <feeds:FeedItem uid="valueAxis" type="Measure" values="质量问题数量"/>
+                    <feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name"/>
+                  </viz:feeds>
+                </viz:VizFrame>
+              </s:content>
+            </s:ChartContainerContent>
+          </s:content>
+        </s:ChartContainer>
+        <l:Splitter orientation="Vertical">
+          <l:layoutData><l:SplitterLayoutData size="auto"/></l:layoutData>
+          <s:ChartContainer id="ChartContainer2" showFullScreen="false" autoAdjustHeight="true" showZoom='false' contentChange="onChartTypeChange"
+            showPersonalization="false" showLegendButton="false" showLegend="true" height="100%">
+            <s:layoutData><l:SplitterLayoutData size="auto"/></s:layoutData>
+            <s:content>
+              <s:ChartContainerContent icon="sap-icon://line-chart" title="Line" height="100%">
+                <s:content>
+                  <viz:Popover id="PopOverPie"/>
+                  <viz:VizFrame id="pie" uiConfig="{applicationSet:'fiori'}" vizType="pie" height="100%">
+                    <viz:dataset>
+                      <data:FlattenedDataset data="{ChartData>/category}">
+                        <data:dimensions>
+                          <data:DimensionDefinition name="Store Name" value="{ChartData>Category}"/>
+                          <!--<data:DimensionDefinition name="Country" value="{Country}"/>-->
+                        </data:dimensions>
+                        <data:measures>
+                          <data:MeasureDefinition name="质量问题分类" value="{ChartData>Value}"/>
+                        </data:measures>
+                      </data:FlattenedDataset>
+                    </viz:dataset>
+                    <viz:feeds>
+                      <feeds:FeedItem uid="size" type="Measure" values="质量问题分类"/>
+                      <feeds:FeedItem uid="color" type="Dimension" values="Store Name"/>
+                    </viz:feeds>
+                  </viz:VizFrame>
+                </s:content>
+              </s:ChartContainerContent>
+            </s:content>
+          </s:ChartContainer>
+          <!--<HBox width="100%" justifyContent="Center" alignItems="Center">
+            <layoutData><l:SplitterLayoutData size="30%"/></layoutData>
+            <VBox width="100%" justifyContent="Center" alignItems="Center">
+              <layoutData><l:SplitterLayoutData size="50%"/></layoutData>
+              <Button height="100%" width="100%" id="Buttonaudit" icon="sap-icon://survey" type="Transparent"
+                     text="审核问题" press="onSelect"/>
+            </VBox>
+            <VBox width="100%" justifyContent="Center" alignItems="Center">
+              <layoutData><l:SplitterLayoutData size="50%"/></layoutData>
+              <Button height="100%" width="100%" icon="sap-icon://kpi-corporate-performance" type="Transparent"
+                     text="SPC" press="onSelect"/>
+            </VBox>
+          </HBox>-->
+          <FlexBox height="100%" alignItems="Center" justifyContent="Center" class="MyFlexBox">
+            <layoutData><l:SplitterLayoutData size="20%" resizable="false"/></layoutData>
+            <items>
+              <Button id="Buttonaudit" text="审核问题系统" type="Transparent" icon="sap-icon://survey" press="onSelectSalesforce">
+              </Button>
+              <Button id="Buttonspc" text="SPC数据分析平台" type="Transparent" icon="sap-icon://kpi-corporate-performance" press="onNavToSPC"
+                class="sapUiSmallMarginEnd">
+              </Button>
+            </items>
+          </FlexBox>
+        </l:Splitter>
+      </l:contentAreas>
+    </l:Splitter>
+  </Page>
+  <!--<Panel id="accidentDetail" visible="false" height="100%">
+    <headerToolbar>
+      <Toolbar>
+        <Button icon="sap-icon://nav-back" press="onNavBack"/>
+      </Toolbar>
+    </headerToolbar>
+
+  </Panel>-->
+  <Panel id="audit" visible="false" height="100%">
+    <headerToolbar>
+      <Toolbar>
+        <Button icon="sap-icon://nav-back" press="onNavBack"/>
+      </Toolbar>
+    </headerToolbar>
+    <content>
+      <html:div style="height:100%;width:100%; background: url(./image/salesforce.jpg) center center no-repeat;background-size: contain;"></html:div>
+    </content>
+  </Panel>
+  <Panel id="spc" visible="false" height="100%">
+    <headerToolbar>
+      <Toolbar>
+        <Button icon="sap-icon://nav-back" press="onNavBack"/>
+        <Select autoAdjustWidth="true" visible="true" change="onSPCSelect1">
+          <core:Item key="0" text="集团"/>
+          <core:Item key="1" text="常温事业部"/>
+          <core:Item key="2" text="低温事业部"/>
+          <core:Item key="3" text="冰品事业部"/>
+        </Select>
+        <Select autoAdjustWidth="true" visible="true" change="onSPCSelect1">
+          <core:Item key="0" text="全部工厂"/>
+          <core:Item key="1" text="工厂1"/>
+          <core:Item key="2" text="工厂2"/>
+          <core:Item key="3" text="工厂3"/>
+        </Select>
+        <Select autoAdjustWidth="true" visible="true" change="onSPCSelect">
+          <core:Item key="spc1" text="进行过程能力分析"/>
+          <core:Item key="spc2" text=" 正态性检验分析"/>
+          <core:Item key="spc3" text="单值稳定性（单值）分析"/>
+          <core:Item key="spc4" text="单值稳定性（单值）分析"/>
+        </Select>
+        <ToolbarSpacer/>
+        <Button id="Inof" icon="sap-icon://sys-help" type="Transparent" press="onHelp"></Button>
+      </Toolbar>
+    </headerToolbar>
+    <content>
+      <Page id="spc1" visible="true" showHeader='false' showSubHeader='true' showFooter='false'>
+        <html:div style="height:90%;width:100%; background: url(./image/SPC1.png) center center no-repeat;background-size: contain;"></html:div>
+      </Page>
+      <Page id="spc2" visible="false" showHeader='false' showSubHeader='true' showFooter='false'>
+        <html:div style="height:90%;width:100%; background: url(./image/SPC_Normal.png) center center no-repeat;background-size: contain;"></html:div>
+      </Page>
+      <Page id="spc3" visible="false" showHeader='false' showSubHeader='true' showFooter='false'>
+        <html:div style="height:90%;width:100%; background: url(./image/SPC_Single.png) center center no-repeat;background-size: contain;"></html:div>
+      </Page>
+      <Page id="spc4" visible="false" showHeader='false' showSubHeader='true' showFooter='false'>
+        <html:div style="height:90%;width:100%; background: url(./image/SPC_Single_R.png) center center no-repeat;background-size: contain;"></html:div>
+      </Page>
+    </content>
+  </Panel>
+</mvc:View>

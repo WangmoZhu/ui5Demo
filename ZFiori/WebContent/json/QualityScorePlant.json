@@ -1,0 +1,230 @@
+{
+    "d": {
+        "results": [{
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%B7%B4%E7%9B%9F')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%B7%B4%E7%9B%9F')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "巴盟",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.72"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%8C%85%E5%A4%B4')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%8C%85%E5%A4%B4')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "包头",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.76"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%AE%9D%E9%B8%A1')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%AE%9D%E9%B8%A1')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "宝鸡",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "100.00"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E4%BF%9D%E5%AE%9A')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E4%BF%9D%E5%AE%9A')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "保定",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.76"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E6%B2%88%E9%98%B3')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E6%B2%88%E9%98%B3')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "沈阳",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.76"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E9%AB%98%E7%A7%91')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E9%AB%98%E7%A7%91')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "高科",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.75"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.4.0.X.0.0.0.1_07.2017%E5%92%8C%E6%9E%97%E4%B8%89%E5%8E%82')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.4.0.X.0.0.0.1_07.2017%E5%92%8C%E6%9E%97%E4%B8%89%E5%8E%82')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "和林三厂",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "100.00"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.4.0.X.0.0.0.1_07.2017%E5%92%8C%E6%9E%97%E5%9B%9B%E5%8E%82')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.4.0.X.0.0.0.1_07.2017%E5%92%8C%E6%9E%97%E5%9B%9B%E5%8E%82')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "和林四厂",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "100.00"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E8%A1%A1%E6%B0%B4')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E8%A1%A1%E6%B0%B4')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "衡水",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.93"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E7%84%A6%E4%BD%9C')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E7%84%A6%E4%BD%9C')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "焦作",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.90"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E6%BB%A6%E5%8D%97')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E6%BB%A6%E5%8D%97')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "滦南",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.65"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.3.0.X.0.0.0.1_07.2017%E9%A9%AC%E9%9E%8D%E5%B1%B1')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.3.0.X.0.0.0.1_07.2017%E9%A9%AC%E9%9E%8D%E5%B1%B1')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "马鞍山",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.93"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E7%9C%89%E5%B1%B1')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E7%9C%89%E5%B1%B1')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "眉山",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.82"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.4.0.X.0.0.0.1_07.2017%E9%BD%90%E9%BD%90%E5%93%88%E5%B0%94')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.4.0.X.0.0.0.1_07.2017%E9%BD%90%E9%BD%90%E5%93%88%E5%B0%94')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "齐齐哈尔",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.76"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E6%B8%85%E8%BF%9C')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E6%B8%85%E8%BF%9C')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "清远",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "100.0000000"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%A1%9E%E5%8C%97')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%A1%9E%E5%8C%97')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "塞北",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "100.0000000"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%B1%B1%E8%A5%BF')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%B1%B1%E8%A5%BF')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "山西",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "100.0000000"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%B0%9A%E5%BF%97')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%B0%9A%E5%BF%97')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "尚志",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.88"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%AE%BF%E8%BF%81')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%AE%BF%E8%BF%81')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "宿迁",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.93"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%A4%AA%E5%8E%9F')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%A4%AA%E5%8E%9F')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "太原",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.3000000"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E6%B3%B0%E5%AE%89')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E6%B3%B0%E5%AE%89')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "泰安",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.7000000"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%94%90%E5%B1%B1')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E5%94%90%E5%B1%B1')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "唐山",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.76"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.4.0.X.0.0.0.1_07.2017%E4%B9%8C%E5%85%B0%E6%B5%A9%E7%89%B9')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.4.0.X.0.0.0.1_07.2017%E4%B9%8C%E5%85%B0%E6%B5%A9%E7%89%B9')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "乌兰浩特",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "99.76"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E6%AD%A6%E6%B1%89')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E6%AD%A6%E6%B1%89')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "武汉",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "100.0000000"
+        }, {
+            "__metadata": {
+                "id": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E9%93%B6%E5%B7%9D')",
+                "uri": "http://linux-46zn.mengniu.cn:8003/sap/opu/odata/sap/ZEQMOA99_Q001_SRV/ZEQMOA99_Q001Results('7.0.0.0.0.2.0.X.0.0.0.1_07.2017%E9%93%B6%E5%B7%9D')",
+                "type": "ZEQMOA99_Q001_SRV.ZEQMOA99_Q001Result"
+            },
+            "A0CALMONTH": "07.2017",
+            "ZQM_Q005_T": "银川",
+            "A00O2TGSVB59CBK2H00S4A1BL7_F": "100.0000000"
+        }]
+    }
+}

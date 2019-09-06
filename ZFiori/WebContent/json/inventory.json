@@ -1,0 +1,46 @@
+{
+    "results":[{
+        "productName":"特仑苏",
+        "productBatch":"10000011",
+        "plantNumber":"5002",
+        "plantName":"和林常温一厂",
+        "plantLocation":"和林",
+        "type":"在途库存",
+        "inventory":200
+    },{
+        "productName":"特仑苏",
+        "productBatch":"10000011",
+        "plantNumber":"5003",
+        "plantName":"和林常温一厂",
+        "plantLocation":"和林",
+        "type":"转移中库存",
+        "inventory":105
+    },{
+        "productName":"特仑苏",
+        "productBatch":"10000011",
+        "plantNumber":"5004",
+        "plantName":"和林常温一厂",
+        "plantLocation":"和林",
+        "type":"供应商库存",
+        "inventory":125
+    },{
+        "productName":"特仑苏",
+        "productBatch":"10000011",
+        "plantNumber":"5004",
+        "plantName":"和林常温一厂",
+        "plantLocation":"和林",
+        "type":"退货库存",
+        "inventory":60
+    },{
+        "productName":"特仑苏",
+        "productBatch":"10000011",
+        "plantNumber":"5004",
+        "plantName":"和林常温一厂",
+        "plantLocation":"和林",
+        "type":"质检库存",
+        "inventory":25
+    }]
+}
+
+
+

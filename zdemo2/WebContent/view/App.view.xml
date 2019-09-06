@@ -1,0 +1,11 @@
+<!-- App视图 -->
+<mvc:View xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="ZTM.controller.App" 
+	displayBlock="true"
+	busy="{/appProperties/busy}">
+	
+	<App id="appNavContainer" />
+	
+	
+</mvc:View>

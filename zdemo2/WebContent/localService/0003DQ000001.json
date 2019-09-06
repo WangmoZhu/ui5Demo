@@ -1,0 +1,160 @@
+{
+	"d": 
+	{
+		"Fcode": "",
+		"Werks": "0003",
+		"Gzpph": "DQ000001",
+		"Gzpms": "电气一票测试数据",
+		"Sfsqf": "",
+		"Type": "DQ01",
+		"Typtxt": "电气一票",
+		"Gzpno": "",
+		"StatusH": "U0001",
+		"Ddtext": "拟票",
+		"Pernr": "GOLDAN",
+		"GzbName": "工作人员1",
+		"GzbNum": 5,
+		"Arbpl": "ZPM00001",
+		"Address": "苏州",
+		"Task": "清扫主供电箱灰尘",
+		"Gnwz": "1024-10BAA10GV001",
+		"Kcno": "S1729",
+		"Matnr": "10000006",
+		"Begda": "\/Date(1493856000000)\/",
+		"Begtm": "PT09H00M00S",
+		"Endda": "\/Date(1493856000000)\/",
+		"Endtm": "PT18H00M00S",
+		"Suspend": "",
+		"RespTobe": "",
+		"ChgIssuer": "",
+		"ChgLicens": "",
+		"ChgDate": "\/Date(-62135769600000)\/",
+		"ChgTime": "PT00H00M00S",
+		"DelayDate": "\/Date(-62135769600000)\/",
+		"DelayTime": "PT00H00M00S",
+		"Respo": "",
+		"Licens": "",
+		"Supervisor": "",
+		"EndRespo": "",
+		"EndUsnam": "",
+		"EndTdate": "\/Date(-62135769600000)\/",
+		"EndTtime": "PT00H00M00S",
+		"EndBgfs": "",
+		"EndResult": "",
+		"EndIssue": "",
+		"EndYdbg": "",
+		"EndSbzt": "",
+		"EndWylw": "",
+		"EndSfqj": "",
+		"EndCczs": 0,
+		"EndKglkzs": 0,
+		"EndZbfzr": "",
+		"EndDate": "\/Date(-62135769600000)\/",
+		"EndTime": "PT00H00M00S",
+		"np_wt2bt": null,
+		"np_wt2ra": 
+			[
+				{
+					"Docnum": "DOC000000001",
+					"Werks": "0003",
+					"Gzpph": "DQ000001",
+					"Attsize": "0000000000000024",
+					"Url": "https://www.hao123.com"
+				}
+			],
+
+		"np_wt2ro": 
+		[
+				{
+					"Werks": "0003",
+					"Gzpph": "DQ000001",
+					"RelPos": "001",
+					"RelObj": "DH100001"
+				},
+
+				{
+					"Werks": "0003",
+					"Gzpph": "DQ000001",
+					"RelPos": "002",
+					"RelObj": "DH100002"
+				}
+			],
+
+		"np_wt2sm": 
+		[
+				{
+					"Werks": "0003",
+					"Gzpph": "DQ000001",
+					"Smtyp": "A",
+					"Smcode": "A0000001",
+					"Smtext": "应拉断路由，隔离开关",
+					"Complete": "120",
+					"Content": "300"
+				},
+
+				{
+					"Werks": "0004",
+					"Gzpph": "DQ000001",
+					"Smtyp": "B",
+					"Smcode": "A0000003",
+					"Smtext": "应接合地刀，隔离开关",
+					"Complete": "370",
+					"Content": "700"
+				},
+
+				{
+					"Werks": "0005",
+					"Gzpph": "DQ000001",
+					"Smtyp": "C",
+					"Smcode": "A0000002",
+					"Smtext": "应设遮拦，应挂标志牌",
+					"Complete": "456",
+					"Content": "600"
+				},
+
+				{
+					"Werks": "0006",
+					"Gzpph": "DQ000001",
+					"Smtyp": "D",
+					"Smcode": "A0000004",
+					"Smtext": "补充安全措施",
+					"Complete": "977",
+					"Content": "100"
+				}
+			],
+
+		"np_wt2ophis": 
+		[
+				{
+					"Werks": "0003",
+					"Gzpph": "DQ000001",
+					"Chgnr": "001",
+					"Perdate": "\/Date(1493942400000)\/",
+					"Pertime": "PT09H00M00S",
+					"Perresp": "H13186",
+					"Perlics": "",
+					"Redate": "\/Date(-62135769600000)\/",
+					"Retime": "PT00H00M00S",
+					"Reresp": "",
+					"Relics": ""
+				}
+			],
+
+		"np_wt2tr": 
+		[
+				{
+					"Werks": "0003",
+					"Gzpph": "DQ000001",
+					"Chgnr": "001",
+					"Tesdate": "\/Date(1494201600000)\/",
+					"Testime": "PT09H00M00S",
+					"Tesresp": "H13186",
+					"Teslics": "",
+					"Redate": "\/Date(-62135769600000)\/",
+					"Retime": "PT00H00M00S",
+					"Reresp": "",
+					"Relics": ""
+				}
+			]
+	}
+}

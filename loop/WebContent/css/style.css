@@ -1,0 +1,12 @@
+/* Enter your custom styles here */
+
+.vbox{
+	border: 1px solid;
+    padding-left: 0.5rem;
+    width: 3.5rem;
+    padding-top: 0.5rem;
+}
+
+.present{
+	border: 1px solid red;
+}

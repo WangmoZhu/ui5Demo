@@ -1,0 +1,320 @@
+<mvc:View
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m" controllerName="sap.vo.mengniu.controller.blocks.KPIDetail"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:c="sap.suite.ui.commons"
+  xmlns:l="sap.ui.layout" displayBlock="true" height="100%"
+  xmlns:viz="sap.viz.ui5.controls"
+  xmlns:t="sap.ui.table"
+  xmlns:data="sap.viz.ui5.data"
+  xmlns:feeds="sap.viz.ui5.controls.common.feeds"
+  xmlns:s="sap.suite.ui.commons"
+  xmlns:mc="sap.suite.ui.microchart">
+  <!-- <NavContainer id="Nav"> -->
+  <Page id="Dashboard" showHeader="true" showSubHeader='false' showFooter='false' visible='true' showNavButton="true" navButtonPress="onNavButtonPress">
+    <headerContent>
+      <Button icon="sap-icon://search" press="onDetail"/>
+    </headerContent>
+    <l:Splitter orientation="Vertical">
+      <l:Splitter>
+        <l:layoutData>
+          <l:SplitterLayoutData resizable="false" size="50%" />
+        </l:layoutData>
+        <l:VerticalLayout width="100%">
+          <l:layoutData>
+            <l:SplitterLayoutData id="size1" resizable="false" size="40%" />
+          </l:layoutData>
+          <l:HorizontalLayout>
+          <Title text="{All>/name1}" class="sapUiMediumMarginBegin sapUiSmallMarginTop sapUiTinyMarginEnd" />
+          <NumericContent value="{All>/value1}" valueColor="Good" truncateValueTo="10" scale="{All>/unit}" class="myLongNumber"/>
+          <Title text="{All>/name2}" class="sapUiSmallMargin" />
+          <NumericContent value="{All>/value2}" valueColor="{All>/color}" truncateValueTo="6" scale="%"/>
+          </l:HorizontalLayout>
+          <viz:VizFrame id="c0" uiConfig="{applicationSet:'fiori'}" vizType="donut" height='10rem' width="100%">
+            <viz:dataset>
+              <data:FlattenedDataset data="{All>/Data}">
+                <data:dimensions>
+                  <data:DimensionDefinition name="Store Name" value="{All>category}"/>
+                </data:dimensions>
+                <data:measures>
+                  <data:MeasureDefinition name="今年" value="{All>value}"/>
+                </data:measures>
+              </data:FlattenedDataset>
+            </viz:dataset>
+            <viz:feeds>
+              <feeds:FeedItem uid="size" type="Measure" values="今年"/>
+              <feeds:FeedItem uid="color" type="Dimension" values="Store Name"/>
+            </viz:feeds>
+          </viz:VizFrame>
+        </l:VerticalLayout>
+        <viz:VizFrame id="c1" uiConfig="{applicationSet:'fiori'}" vizType="line" height='20rem' width="100%">
+          <viz:dataset>
+            <data:FlattenedDataset data="{/Data}">
+              <data:dimensions>
+                <data:DimensionDefinition name="Store Name" value="{category}"/>
+              </data:dimensions>
+              <data:measures>
+                <data:MeasureDefinition name="今年" value="{thisYear}"/>
+                <data:MeasureDefinition name="同期" value="{lastYear}"/>
+              </data:measures>
+            </data:FlattenedDataset>
+          </viz:dataset>
+          <viz:feeds>
+            <feeds:FeedItem uid="valueAxis" type="Measure" values="今年"/>
+            <feeds:FeedItem uid="valueAxis" type="Measure" values="同期"/>
+            <feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name"/>
+          </viz:feeds>
+        </viz:VizFrame>
+      </l:Splitter>
+      <l:Splitter>
+        <viz:VizFrame id="c3" uiConfig="{applicationSet:'fiori'}" vizType="pie" height='20rem' width="100%">
+          <viz:dataset>
+            <data:FlattenedDataset data="{/Data}">
+              <data:dimensions>
+                <data:DimensionDefinition name="Store Name" value="{category}"/>
+              </data:dimensions>
+              <data:measures>
+                <data:MeasureDefinition name="今年" value="{thisYear}"/>
+                <!-- <data:MeasureDefinition name="同期" value="{lastYear}"/> -->
+              </data:measures>
+            </data:FlattenedDataset>
+          </viz:dataset>
+          <viz:feeds>
+            <!-- <feeds:FeedItem uid="valueAxis" type="Measure" values="今年"/><feeds:FeedItem uid="valueAxis" type="Measure" values="同比"/><feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name"/> -->
+            <feeds:FeedItem uid="size" type="Measure" values="今年"/>
+            <feeds:FeedItem uid="color" type="Dimension" values="Store Name"/>
+          </viz:feeds>
+        </viz:VizFrame>
+        <viz:VizFrame id="c2" uiConfig="{applicationSet:'fiori'}" vizType="column" height='20rem' width="100%">
+          <viz:layoutData>
+            <l:SplitterLayoutData id="size2" resizable="false" size="100%" />
+          </viz:layoutData>
+          <viz:dataset>
+            <data:FlattenedDataset data="{/Data}">
+              <data:dimensions>
+                <data:DimensionDefinition name="Store Name" value="{category}"/>
+              </data:dimensions>
+              <data:measures>
+                <data:MeasureDefinition name="今年" value="{thisYear}"/>
+                <data:MeasureDefinition name="同期" value="{lastYear}"/>
+              </data:measures>
+            </data:FlattenedDataset>
+          </viz:dataset>
+          <viz:feeds>
+            <feeds:FeedItem uid="valueAxis" type="Measure" values="今年"/>
+            <feeds:FeedItem uid="valueAxis" type="Measure" values="同期"/>
+            <feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name"/>
+          </viz:feeds>
+        </viz:VizFrame>
+      </l:Splitter>
+    </l:Splitter>
+  </Page>
+  <Page id="Detail" showHeader='false' showSubHeader='false' showFooter='false' visible='false'>
+    <s:ChartContainer id="ChartContainer" showFullScreen="false" autoAdjustHeight="false" showZoom='true' contentChange="onChartTypeChange" showPersonalization="false" showLegendButton="true" showLegend="true" height="100%" class="myChart">
+      <s:content>
+        <s:ChartContainerContent id="ColumnChart" icon="sap-icon://business-objects-experience" title="柱形图" height="100%">
+          <s:content>
+            <viz:Popover id="PopOverCombination"/>
+            <viz:VizFrame id="combination" uiConfig="{applicationSet:'fiori'}" vizType="column" height='100%' width="100%" selectData="onSelectData" deselectData="onDeSelectData">
+              <!--当plotArea.dataShape.primaryAxis=["bar", "bar", "line",...]即有多个bar时, vizType="combination",bar是挨着显示 vizType="stacked_combination"，bar堆叠显示，categoryAxis在下方 vizType="horizontal_stacked_combination"，bar堆叠显示，categoryAxis在左侧-->
+              <viz:dataset>
+                <data:FlattenedDataset data="{/Data}">
+                  <data:dimensions>
+                    <data:DimensionDefinition name="Store Name" value="{category}"/>
+                    <!--<data:DimensionDefinition name="Country" value="{Country}"/>-->
+                  </data:dimensions>
+                  <data:measures>
+                    <data:MeasureDefinition name="今年" value="{thisYear}"/>
+                    <data:MeasureDefinition name="同期" value="{lastYear}"/>
+                    <!-- <data:MeasureDefinition name="今年目标" value="{thisYearTarget}"/> -->
+                  </data:measures>
+                </data:FlattenedDataset>
+              </viz:dataset>
+              <viz:feeds>
+                <feeds:FeedItem uid="valueAxis" type="Measure" values="今年"/>
+                <feeds:FeedItem uid="valueAxis" type="Measure" values="同期"/>
+                <!-- <feeds:FeedItem uid="valueAxis" type="Measure" values="今年目标"/> -->
+                <feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name"/>
+                <!--<feeds:FeedItem uid="categoryAxis" type="Dimension" values="Country,Store Name"/>-->
+                <!--Dimension有三个可选值(categoryAxis/dataFrame/color)-->
+              </viz:feeds>
+            </viz:VizFrame>
+          </s:content>
+        </s:ChartContainerContent>
+        <s:ChartContainerContent id="LineChart" icon="sap-icon://line-chart" title="折线图" height="100%">
+          <s:content>
+            <viz:Popover id="PopOverLine"/>
+            <viz:VizFrame id="line" uiConfig="{applicationSet:'fiori'}" vizType="line" height='100%' width="100%" selectData="onSelectData" deselectData="onDeSelectData">
+              <viz:dataset>
+                <data:FlattenedDataset data="{/Data}">
+                  <data:dimensions>
+                    <data:DimensionDefinition name="Store Name" value="{category}"/>
+                  </data:dimensions>
+                  <data:measures>
+                    <data:MeasureDefinition name="今年" value="{thisYear} "/>
+                    <data:MeasureDefinition name="同期" value="{lastYear} "/>
+                    <!-- <data:MeasureDefinition name="今年目标" value="{thisYearTarget} "/> -->
+                  </data:measures>
+                </data:FlattenedDataset>
+              </viz:dataset>
+              <viz:feeds>
+                <feeds:FeedItem uid="valueAxis" type="Measure" values="今年"/>
+                <feeds:FeedItem uid="valueAxis" type="Measure" values="同期"/>
+                <!-- <feeds:FeedItem uid="valueAxis" type="Measure" values="今年目标"/> -->
+                <feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name"/>
+                <!--Dimension有三个可选值(categoryAxis/dataFrame/color)-->
+              </viz:feeds>
+            </viz:VizFrame>
+          </s:content>
+        </s:ChartContainerContent>
+        <s:ChartContainerContent id="BarChart" icon="sap-icon://horizontal-bullet-chart" title="子弹图" height="100%">
+          <s:content>
+            <viz:Popover id="PopOverBulletHorizontal"/>
+            <viz:VizFrame id="bulletHorizontal" uiConfig="{applicationSet:'fiori'}" vizType="bullet" height='100%' width="100%" selectData="onSelectData" deselectData="onDeSelectData">
+              <viz:dataset>
+                <data:FlattenedDataset data="{/Data}">
+                  <data:dimensions>
+                    <data:DimensionDefinition name="Store Name" value="{category}"/>
+                    <!--<data:DimensionDefinition name="Country" value="{Country}"/>-->
+                  </data:dimensions>
+                  <data:measures>
+                    <!--<data:MeasureDefinition name="Cost" value="{lastYear}"/>-->
+                    <data:MeasureDefinition name="今年" value="{thisYear}"/>
+                    <data:MeasureDefinition name="同期" value="{lastYear}"/>
+                    <!-- <data:MeasureDefinition name="今年目标" value="{thisYearTarget}"/> -->
+                  </data:measures>
+                </data:FlattenedDataset>
+              </viz:dataset>
+              <viz:feeds>
+                <feeds:FeedItem uid="actualValues" type="Measure" values="今年"/>
+                <feeds:FeedItem uid="forecastValues" type="Measure" values="同期"/>
+                <!-- <feeds:FeedItem uid="targetValues" type="Measure" values="今年目标"/> -->
+                <!--<feeds:FeedItem uid="additionalValues" type="Measure" values="Cost"/>-->
+                <feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name"/>
+                <!--<feeds:FeedItem uid="categoryAxis" type="Dimension" values="Country,Store Name"/>-->
+                <!--Measure有4种(actualValues/forecastValues/targetValues/additionalValues)，可以任意选择一个或多个
+                      Dimension有2个可选值(categoryAxis/color)-->
+              </viz:feeds>
+            </viz:VizFrame>
+          </s:content>
+        </s:ChartContainerContent>
+        <s:ChartContainerContent id="bulletVerticalChart" icon="sap-icon://vertical-bullet-chart" title="柱形子弹图" height="100%">
+          <s:content>
+            <viz:Popover id="PopOverBulletVertical"/>
+            <viz:VizFrame id="bulletVertical" uiConfig="{applicationSet:'fiori'}" vizType="vertical_bullet" height='100%' width="100%" selectData="onSelectData" deselectData="onDeSelectData">
+              <viz:dataset>
+                <data:FlattenedDataset data="{/Data}">
+                  <data:dimensions>
+                    <data:DimensionDefinition name="Store Name" value="{category}"/>
+                    <!--<data:DimensionDefinition name="Country" value="{Country}"/>-->
+                  </data:dimensions>
+                  <data:measures>
+                    <!--<data:MeasureDefinition name="Cost" value="{lastYear}"/>-->
+                    <data:MeasureDefinition name="今年" value="{thisYear}"/>
+                    <data:MeasureDefinition name="同期" value="{lastYear}"/>
+                    <!-- <data:MeasureDefinition name="今年目标" value="{thisYearTarget}"/> -->
+                  </data:measures>
+                </data:FlattenedDataset>
+              </viz:dataset>
+              <viz:feeds>
+                <feeds:FeedItem uid="actualValues" type="Measure" values="今年"/>
+                <feeds:FeedItem uid="forecastValues" type="Measure" values="同期"/>
+                <!-- <feeds:FeedItem uid="targetValues" type="Measure" values="今年目标"/> -->
+                <!--<feeds:FeedItem uid="additionalValues" type="Measure" values="Cost"/>-->
+                <feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name"/>
+                <!--<feeds:FeedItem uid="categoryAxis" type="Dimension" values="Country,Store Name"/>-->
+                <!--Measure有4种(actualValues/forecastValues/targetValues/additionalValues)，可以任意选择一个或多个
+                    Dimension有2个可选值(categoryAxis/color)-->
+              </viz:feeds>
+            </viz:VizFrame>
+          </s:content>
+        </s:ChartContainerContent>
+        <s:ChartContainerContent id="pieChart" autoAdjustHeight="true" icon="sap-icon://pie-chart" title="饼图" height='100%' width="100%" selectData="onSelectData" deselectData="onDeSelectData">
+          <s:content>
+            <viz:Popover id="PopOverPie"/>
+            <viz:VizFrame id="pie" uiConfig="{applicationSet:'fiori'}" vizType="pie">
+              <viz:dataset>
+                <data:FlattenedDataset data="{/Data}">
+                  <data:dimensions>
+                    <data:DimensionDefinition name="Store Name" value="{category}"/>
+                    <!--<data:DimensionDefinition name="Country" value="{Country}"/>-->
+                  </data:dimensions>
+                  <data:measures>
+                    <data:MeasureDefinition name="今年" value="{thisYear}"/>
+                  </data:measures>
+                </data:FlattenedDataset>
+              </viz:dataset>
+              <viz:feeds>
+                <feeds:FeedItem uid="size" type="Measure" values="今年"/>
+                <feeds:FeedItem uid="color" type="Dimension" values="Store Name"/>
+                <!--<feeds:FeedItem uid="color" type="Dimension" values="Country,Store Name"/>-->
+                <!--Dimension有2个可选值(dataFrame/color)-->
+              </viz:feeds>
+            </viz:VizFrame>
+          </s:content>
+        </s:ChartContainerContent>
+        <s:ChartContainerContent id="TableChart" autoAdjustHeight="true" icon="sap-icon://table-chart" title="表格">
+          <s:content>
+            <t:Table id="table" rows="{/Data}" class="myDataTable" visibleRowCount="10" enableBusyIndicator="true" visibleRowCountMode="Auto" minAutoRowCount="3"
+              enableSelectAll="false" selectionMode="None" sort="onSort" noData="请选择维度并开始分析">
+              <t:columns>
+                <t:Column >
+                  <Label text="分类"/>
+                  <t:template>
+                    <Text text="{category}"/>
+                  </t:template>
+                </t:Column>
+                <t:Column >
+                  <Label text="今年"/>
+                  <t:template>
+                    <!-- <Text text="{path:'thisYear',formatter:'.formatter'}"/>-->
+                    <Text text="{thisYear}"/>
+                  </t:template>
+                </t:Column>
+                <t:Column >
+                  <Label text="同期"/>
+                  <t:template>
+                    <!-- <Text text="{path:'lastYear',formatter:'.formatter}"/>-->
+                    <Text text="{lastYear}"/>
+                  </t:template>
+                </t:Column>
+                <!--
+                  <t:Column ><Label text="今年目标"/><t:template><Text text="{thisYearTarget}"/></t:template></t:Column> -->
+              </t:columns>
+            </t:Table>
+          </s:content>
+        </s:ChartContainerContent>
+      </s:content>
+      <!-- <s:customIcons> -->
+      <!-- <core:Icon id="Sort" src="sap-icon://sort" press="onSortButton"/> -->
+      <!-- <core:Icon id="Download" class="Download" src="sap-icon://download-from-cloud" press="onDownload"/> -->
+      <!-- </s:customIcons> -->
+      <s:toolbar>
+        <OverflowToolbar >
+          <Button id="NavButton" icon="sap-icon://nav-back" type="Transparent" press="onNavButtonPressToDashboard"/>
+          <MultiComboBox id="GroupSelector" width="10rem" selectionFinish="onChangeYT" placeholder="所有业态" class="myMultiComboBox"/>
+          <MultiComboBox id="GeoSelector" width="12rem" selectionFinish="onChangeSCDQ" placeholder="所有生产大区" class="myMultiComboBox"/>
+          <MultiComboBox id="PlantSelector" width="14rem" selectionFinish="onChangePlant" placeholder="所有工厂" class="myMultiComboBox"/>
+          <DatePicker id="StartDate" width="11rem" valueFormat="yyyyMMdd" change="onChangeDate" placeholder="开始日期"/>
+          <DatePicker id="EndDate" width="11rem" valueFormat="yyyyMMdd" change="onChangeDate" placeholder="结束日期"/>
+          <Label text="分类" />
+          <Select id="CategorySelector" autoAdjustWidth="true" change="onChangeCategory" />
+          <Label text="值" />
+          <!--<Select id="ValueSelector" autoAdjustWidth="true" />-->
+          <MenuButton id="MenuButton" buttonMode="Split">
+            <menu>
+              <Menu id="Menu" itemSelected="onMenuItemSelected" />
+            </menu>
+          </MenuButton>
+          <ToggleButton id="SearchBtn" class="myFilterButton" icon="sap-icon://add-filter" type="Transparent" press="onFilter"/>
+          <Button id="VizSortId" text="排序" type="Transparent" press="onVizSort" />
+          <Button id="Apply" type="Transparent" text="分析" press="updateChart"/>
+          <ToolbarSpacer/>
+          <s:ChartContainerToolbarPlaceholder />
+        </OverflowToolbar>
+      </s:toolbar>
+    </s:ChartContainer>
+  </Page>
+  <!-- </NavContainer> -->
+</mvc:View>

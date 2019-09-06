@@ -1,0 +1,24 @@
+<mvc:View controllerName="echart.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<l:VerticalLayout>
+						<u:FileUploader
+							id="fileUploader"
+							name="myFileUpload"
+							uploadUrl="upload/"
+							tooltip="Upload your file to the local server"
+							uploadComplete="handleUploadComplete"/>
+						<Button
+							text="Upload File"
+							press="handleUploadPress"/>
+					</l:VerticalLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

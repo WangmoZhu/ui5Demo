@@ -1,0 +1,20 @@
+<mvc:View 
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	controllerName="sap.vo.mengniu.controller.MFrame"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout" displayBlock="true" height="100%" 
+	xmlns:v="sap.vco">
+	<Page id="mFrame" class="mypage">
+		<customHeader>
+			<Toolbar width="100%">
+				<Button type="Transparent" id="home" icon="sap-icon://home" tooltip="首页" press="onHomePress"/>
+				<Image id="logo" src="./image/logo.png" height="100%"/>
+				<Title id="title" text="{app>/title}" level="H2" titleStyle="H2" class="myBoldText"/>
+				<ToolbarSpacer/>
+				<Label text="集团用户"/>
+				<Button type="Transparent" id="notice" icon="sap-icon://log" tooltip="退出"/>
+			</Toolbar>
+		</customHeader>
+	</Page>
+</mvc:View>

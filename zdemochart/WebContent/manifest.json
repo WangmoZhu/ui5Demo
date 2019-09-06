@@ -1,0 +1,181 @@
+{
+	"_version": "1.4.0",
+	"sap.app": {
+		"id": "ZAPI_VIEW",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{description}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://detail-view",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_bluecrystal"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "ZAPI_VIEW.view.App",
+			"type": "XML",
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.38.0",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.38.0"
+				},
+				"sap.m": {
+					"minVersion": "1.38.0"
+				},
+				"sap.ushell": {
+					"minVersion": "1.38.0"
+				},
+				"sap.collaboration": {
+					"minVersion": "1.38",
+					"lazy": true
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"resourceRoots": {
+			"openui5.camera": "thirdparty/openui5/camera/",
+			"echarts": "thirdparty/echarts/echarts",
+			"jQuery": "thirdparty/echarts/jQuery",
+			"chinamap": "thirdparty/map/china",
+			"worldmap": "thirdparty/map/world"
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ZAPI_VIEW.i18n.i18n"
+				},
+				"preload": false,
+				"async": true
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "ZAPI_VIEW.view",
+				"controlId": "appNavContainer",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"clearAggregation": false,
+				"bypassed": {
+					"target": ["main"]
+				}
+			},
+			"routes": [{
+				"name": "main",
+				"pattern": "main",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["main"]
+			}, {
+				"name": "view8",
+				"pattern": "view8",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["view8"]
+			}, {
+				"name": "view9",
+				"pattern": "view9",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["view9"]
+			}, {
+				"name": "view10",
+				"pattern": "view10",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["view10"]
+			}],
+			"targets": {
+				"main": {
+					"viewName": "main",
+					"viewLevel": 1,
+					"clearAggregation": true
+				},
+				"view1": {
+					"viewName": "view1",
+					"viewLevel": 1,
+					"clearAggregation": true
+				},
+				"view2": {
+					"viewName": "view2",
+					"viewLevel": 1,
+					"clearAggregation": true
+				},
+				"view3": {
+					"viewName": "view3",
+					"viewLevel": 1,
+					"clearAggregation": true
+				},
+				"view4": {
+					"viewName": "view4",
+					"viewLevel": 1,
+					"clearAggregation": true
+				},
+				"view5": {
+					"viewName": "view5",
+					"viewLevel": 1
+				},
+				"view6": {
+					"viewName": "view6",
+					"viewLevel": 1,
+					"clearAggregation": true
+				},
+				"view7": {
+					"viewName": "view7",
+					"viewLevel": 1
+				},
+				"view8": {
+					"viewName": "view8",
+					"viewLevel": 1
+				},
+				"view9": {
+					"viewName": "view9",
+					"viewLevel": 1
+				},
+				"view10": {
+					"viewName": "view10",
+					"viewLevel": 1
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zapi_view",
+		"_version": "1.1.0"
+	}
+}

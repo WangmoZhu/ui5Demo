@@ -1,0 +1,14 @@
+<mvc:View controllerName="echart.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" binding="{json>/personInfo}">
+				<content >
+					<Input value="{json>firstName}"></Input>
+					<Input value="{json>lastName}"></Input>
+					<Button text="Save" press=".onPress($event, ${json>firstName}, ${json>lastName})"></Button>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

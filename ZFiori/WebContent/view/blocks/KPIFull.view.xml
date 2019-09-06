@@ -1,0 +1,45 @@
+<mvc:View
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m" controllerName="sap.vo.mengniu.controller.blocks.KPIFull"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:c="sap.suite.ui.commons"
+  xmlns:l="sap.ui.layout" displayBlock="true" height="100%"
+  xmlns:viz="sap.viz.ui5.controls"
+  xmlns:data="sap.viz.ui5.data"
+  xmlns:s="sap.suite.ui.commons"
+  xmlns:feeds="sap.viz.ui5.controls.common.feeds">
+  <Page  id="KPIFull" showHeader='false' showSubHeader='false' showFooter='false' height="100%"  class="KPI KPIFull">
+    <!--<Panel  width="100%" backgroundDesign="Transparent" class="myPanel">-->
+    <l:VerticalLayout id="containerLayout" width="100%" >
+      <l:BlockLayout id="BlockLayout" content="{/rows}">
+        <l:BlockLayoutRow content="{path:'cells',templateShareable:'true'}">
+          <l:BlockLayoutCell width="1">
+            <Link width="100%" text="{name}" tooltip="{id}"  press="onPress" subtle="true" class="myLink sapUiTinyMargin"/>
+            <viz:VizFrame id="vizFrame1" uiConfig="{applicationSet:'fiori'}" vizProperties="{property}" vizType="{type}" height='14.0rem'
+                    width="100%" legendVisible="false" visible="{visible}">
+              <viz:dataset>
+                <data:FlattenedDataset data="{data}">
+                  <data:dimensions>
+                    <data:DimensionDefinition name="Month" value="{Month}"/>
+                  </data:dimensions>
+                  <data:measures>
+                    <data:MeasureDefinition name="KPI" value="{KPI}"/>
+                  </data:measures>
+                </data:FlattenedDataset>
+              </viz:dataset>
+              <viz:feeds>
+                <feeds:FeedItem uid="valueAxis" type="Measure" values="KPI"/>
+                <feeds:FeedItem uid="categoryAxis" type="Dimension" values="Month"/>
+              </viz:feeds>
+            </viz:VizFrame>
+          </l:BlockLayoutCell>
+        </l:BlockLayoutRow>
+      </l:BlockLayout>
+    </l:VerticalLayout>
+    <!--</Panel>-->
+  </Page>
+  <!-- <Page showHeader='false' showSubHeader='false' showFooter='false' visible="false" height="100%"  class="KPI KPIFull">
+    <mvc:XMLView id="KPIDetail" viewName="sap.vo.mengniu.view.blocks.KPIDetail"/>
+  </Page> -->
+</mvc:View>

@@ -1,0 +1,54 @@
+{
+    "title": "质量监管网络云平台",
+    "list":
+        [
+            {
+                "id":"FoodSafety",
+                "img":"FoodSafety1.png",
+                "icon":"sap-icon://vertical-bar-chart",
+                "title":"食品安全质量实时监控",
+                "bView":"FoodSafety",
+                "sView": "FoodSafetyFull"
+            },
+            {
+                "id":"Complaints",
+                "img":"Complaints1.png",
+                "icon":"sap-icon://bubble-chart",
+                "title":"市场投诉实时监控",
+                "bView":"Complaints",
+                "sView": "ComplaintsFull"
+            },
+            {
+                "id":"KPI",
+                "img":"KPI.png",
+                "icon":"sap-icon://kpi-corporate-performance",
+                "title":"质量指标智能分析",
+                "bView":"KPI",
+                "sView": "KPIFull,KPIDetail"
+            },
+            {
+                "id":"Surveillance",
+                "img":"Surveillance1.png",
+                "icon":"sap-icon://show",
+                "title":"情景监控",
+                "bView":"Surveillance",
+                "sView": "Surveillance,GPS"
+            },
+            {
+                "id":"SPC",
+                "img":"SPC.png",
+                "icon":"sap-icon://tools-opportunity",
+                "title":"过程质量监督",
+                "bView":"SPC",
+                "sView": "SPC,KPIDetail,SalesForce,SPCFull"
+            },
+            {
+                "id":"Trace",
+                "img":"Trace1.png",
+                "icon":"sap-icon://dimension",
+                "title":"质量追溯",
+                "bView":"Trace",
+                "sView": "TraceFull"
+            }
+        ]
+}

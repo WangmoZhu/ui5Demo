@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>ED1_300_handzwm_zh</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>com.sap.adt.abapnature</nature>
+		<nature>com.sap.adt.standalonenature</nature>
+		<nature>com.sap.adt.abapnature</nature>
+	</natures>
+</projectDescription>

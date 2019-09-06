@@ -1,0 +1,28 @@
+<!-- helloWorld 显示视图：
+     1.xmlns 声明 xml 命名空间，sap.ui.layout、sap.ui.cor.mvc、sap.ui.core、sap.m,
+            说明xmlns:l 其中 l 为别名，后续使用中会使用前缀(别名)加标签方式指定标签来源；
+     2.controllerName 指定控制器文件，ZAPI_VIEW.controller.helloWorld;
+     3.Panel 面板标签使用；
+     4.content 标签使用；
+     5.Button 标签使用；
+-->
+<mvc:View controllerName="ZAPI_VIEW.controller.main" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<Page title="">
+		<layout:VerticalLayout class="sapUiResponsiveMargin">
+			<layout:HorizontalLayout allowWrapping="true">
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="Echarts" subheader=" " press="onPress8"></GenericTile>
+			</layout:HorizontalLayout>
+		</layout:VerticalLayout>
+		<layout:VerticalLayout class="sapUiResponsiveMargin">
+			<layout:HorizontalLayout allowWrapping="true">
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="Echarts1" subheader=" " press="onPress9"></GenericTile>
+			</layout:HorizontalLayout>
+		</layout:VerticalLayout>
+		<layout:VerticalLayout class="sapUiResponsiveMargin">
+			<layout:HorizontalLayout allowWrapping="true">
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="地图 " subheader=" " press="onPress10"></GenericTile>
+			</layout:HorizontalLayout>
+		</layout:VerticalLayout>
+	</Page>
+</mvc:View>

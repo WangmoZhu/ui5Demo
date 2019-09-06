@@ -1,0 +1,49 @@
+sap.ui.define([
+	"sap/ui/core/mvc/Controller",
+	"sap/m/library"
+], function(Controller) {
+	"use strict";
+
+	return Controller.extend("echart.controller.View1", {
+		
+		onInit: function(){
+			
+			var page = this.byId("page");
+			
+			var oModel = new sap.ui.model.json.JSONModel();
+			var data = {
+					person: {
+						name: "jack",
+						work: "abap",
+						base: "china",
+						sex:"male",
+						vaild:""
+					}
+			}
+			oModel.setData(data);
+			this.getView().setModel(oModel);
+			
+			this._oMessageManager = sap.ui.getCore().getMessageManager();
+			this._oMessageManager.registerObject(this.getView(), true);
+			this.getView().setModel(this._oMessageManager.getMessageModel(), "message");	
+			
+			page.bindElement("/person");
+		},
+		
+		onPress: function(event,value){
+			sap.m.MessageToast.show(value);
+			console.log(this);
+		},
+		
+		onOpenMessages: function (oEvent) {
+			this.byId("messages").openBy(oEvent.getSource());
+			console.log(this.getView());
+		},
+		
+		onVaild: function(oEvent){
+			
+		}
+
+		
+	});
+});

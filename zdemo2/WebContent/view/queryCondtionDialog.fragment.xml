@@ -1,0 +1,258 @@
+<!-- 搜索帮助页面 -->
+<core:FragmentDefinition 
+	xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:t="sap.ui.table" xmlns:m="sap.m" 
+	xmlns:u="sap.ui.unified" 
+	xmlns:smi="sap.ui.comp.smartmultiinput"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog id="queryCondtionDialog" title="{/appProperties/title}" resizable ="false" >
+		<content>
+		
+		
+<!-- 		仓库号选择 -->
+			<Panel expandable="false" expanded="true" headerText=""
+				visible="{path:'/appProperties/fcode',formatter: '.setFC1Visible'}">
+				<content>
+					<f:Form editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanL="2" labelSpanM="2" 
+								emptySpanL="1" emptySpanM="1" columnsL="1" columnsM="1" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="仓库号：" visible="true">
+										<f:fields>
+											<Select selectedKey="{/LgnumSet/Lgnum}" items ="{/LgnumSet/lg_2np}">
+													<core:Item text="{Lnumt} : {Lgnum}" key="{Lgnum}" />
+											</Select>
+
+										</f:fields>
+									</f:FormElement>
+
+								</f:formElements>
+							</f:FormContainer>
+							
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+			
+<!-- 			消息展示 -->
+			<Panel expandable="false" expanded="true" visible="{path:'/appProperties/fcode',formatter: '.setRun1Visible'}">
+				<Table items="{/oModel}" id="ThyyNoTable">
+					<columns>
+						<Column  hAlign="Center" width="1em" >
+							<Text text="标志" />
+						</Column>
+						<Column  hAlign="Center" width="4em">
+							<Text text="类型" />
+						</Column>
+						<Column   hAlign="Center" width="4em">
+							<Text text="波次号" />
+						</Column>
+						<Column hAlign="Left"  width="20em">
+							<Text text="描述" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Inactive" press="pressEvent">
+							<cells>
+								<core:Icon src="{res}" color="{color}" />
+								<Text text="{type}" />
+								<Text text="{title}" />
+								<Text text="{description}" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</Panel>
+			
+<!-- 			查询条件 -->
+			<Panel expandable="false" expanded="true" headerText=""
+				id="panelone" width="auto" visible="{path:'/appProperties/fcode',formatter: '.setFC2Visible'}">
+				<content>
+					<f:Form editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanL="2" labelSpanM="2" labelSpanS ="2" 
+								emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsL="2" columnsM="2" columnsS="2" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="波次号" >
+										<f:fields>
+											<Input type="search" value="{/HeadSet/Wave}"
+												showValueHelp="false" id="234" required="false" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="波次状态">
+										<f:fields>
+											<Select selectedKey="{/HeadSet/Status}" >
+												<core:Item text="全部" key="" />
+												<core:Item text="初始的" key="I" />
+												<core:Item text="已释放" key="R" />
+												<core:Item text="已锁定" key="H" />
+												<core:Item text="传输到子系统" key="C" />
+												<core:Item text="需补货" key="E" />
+												<core:Item text="已释放提货" key="L" />
+											</Select>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="工作日" labelFor="multiInput2" >
+										<f:fields>
+											<MultiComboBox
+												selectionFinish="handleSelectDay"
+												width="28em" >
+												<core:Item text="周一" key="周一" />
+												<core:Item text="周二" key="周二" />
+												<core:Item text="周三" key="周三" />
+												<core:Item text="周四" key="周四" />
+												<core:Item text="周五" key="周五" />
+												<core:Item text="周六" key="周六" />
+											</MultiComboBox>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="物料" labelFor="multiInput4" >
+										<f:fields>
+<!-- 											<MultiInput id="multiInput4" -->
+<!-- 												width="100%" -->
+<!-- 												tokenUpdate = "handleSelectLA" -->
+<!-- 												enableMultiLineMode="true" -->
+<!-- 												showValueHelp="false" -->
+<!-- 												suggestionItems="{path: '/ZshMatnrSet',sorter: { path: 'Matnr' } }"> -->
+<!-- 												<core:Item key="{Matnr}" text="{Matnr} - {Maktx}" /> -->
+<!-- 											</MultiInput> -->
+												
+											<MultiInput id="multiInput4" 
+												width="100%"
+												tokenUpdate = "handleSelectLA"
+												showValueHelp="false"
+												enableMultiLineMode="true">
+											</MultiInput>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="加急订单">
+										<f:fields>
+											<Select selectedKey="{/HeadSet/Urgentlogo}" >
+												<core:Item text="请选择" key="A" />
+												<core:Item text="是" key="X" />
+												<core:Item text="否" key="" />
+											</Select>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="线路" >
+										<f:fields>
+											<MultiComboBox
+												selectionFinish="handleSelectLC"
+												width="28em"
+												items="{/ZshRouteSet}">
+												<core:Item key="{Route}" text="{Route} - {Descr}" />
+											</MultiComboBox>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="创建日期">
+										<f:fields>
+											<DatePicker valueFormat="yyyyMMdd" displayFormat="yyyy-MM-dd"
+												value="{path:'/HeadSet/CreateStart', type:'sap.ui.model.type.String'}" />
+											<DatePicker valueFormat="yyyyMMdd" displayFormat="yyyy-MM-dd"
+												value="{path:'/HeadSet/CreateEnd', type:'sap.ui.model.type.String'}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="客户">
+										<f:fields>
+											<Input type="search" value="{/HeadSet/PartnerName}"
+												showValueHelp="false" id="qw" required="false" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="业务员">
+										<f:fields>
+											<Input type="search" value="{/HeadSet/Salername}"
+												showValueHelp="false" id="rt" required="false" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="冷链">
+										<f:fields>
+											<Select selectedKey="{/HeadSet/Coldchain}" >
+												<core:Item text="请选择" key="A" />
+												<core:Item text="是" key="X" />
+												<core:Item text="否" key="" />
+											</Select>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="类别" labelFor="multiInput1" >
+										<f:fields>
+											<MultiComboBox
+												selectionFinish="handleSelectLB"
+												width="28em"
+												items="{/ZshLgbkzSet}">
+												<core:Item key="{Lgbkz}" text="{Lgbkz} - {Lbkzt}" />
+											</MultiComboBox>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="执行人">
+										<f:fields>
+											<Input type="search" value="{/HeadSet/ReleasedBy}"
+												showValueHelp="false" id="sd" required="false" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="加急波次">
+										<f:fields>
+											<Select selectedKey="{/HeadSet/Urgent}" >
+												<core:Item text="请选择" key="A" />
+												<core:Item text="加急" key="X" />
+												<core:Item text="普通" key="" />
+											</Select>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							
+<!-- 							<f:FormContainer> -->
+<!-- 								<f:formElements> -->
+<!-- 									<f:FormElement label=""> -->
+<!-- 										<f:fields> -->
+<!-- 										</f:fields> -->
+<!-- 									</f:FormElement> -->
+<!-- 								</f:formElements> -->
+<!-- 							</f:FormContainer> -->
+							
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+			
+			<!-- 退货原因搜素帮助 -->
+			<Panel expandable="false" expanded="true" visible="{path:'/appProperties/fcode',formatter: '.setFC3Visible'}">
+				<Table items="{/ZshLgbkzSet}" id="ZLgbkz">
+					<columns>
+						<Column >
+							<Text text="类别" />
+						</Column>
+						<Column minScreenWidth="Tablet">
+							<Text text="类别描述" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation" press="handleListItem">
+							<cells>
+								<Text text="{Lgbkz}" />
+								<Text text="{Lbkzt}" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</Panel>
+			
+			
+			
+			
+		</content>
+		<buttons>
+			<!-- 确定按钮 -->
+			<Button type="Emphasized" text="执行" press="onComnutAction" visible="{path:'/appProperties/fcode',formatter: '.setBtVisible'}" />
+			<!-- 取消按钮 -->
+			<Button type="Emphasized" text="关闭" press="onCancelAction" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,114 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<TableSelectDialog
+		noDataText="无数据"
+		title="投诉情况"
+		search="handleSearch"
+		confirm="handleClose"
+		cancel="handleClose"
+		items="{
+			path : '/results',
+			sorter : {
+				path : '创建日期',
+				descending : true
+			}
+		}">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier
+					title="{创建日期}" />
+				<ObjectIdentifier
+					title="{通知单编号}" />
+				<ObjectIdentifier
+					title="{通知类型}" />       
+				<ObjectIdentifier
+					title="{事故类型}" />
+				<ObjectIdentifier
+					title="{工厂}" />
+				<ObjectIdentifier
+					title="{单位}" />
+				<ObjectIdentifier
+					title="{处理结果备注}" />
+				<ObjectIdentifier
+					title="{不合格分类}" />
+				<ObjectIdentifier
+					title="{具体不合格项}" />
+				<ObjectIdentifier
+					title="{事故描述}" />
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column >
+				<header>
+					<Text text="创建日期" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true" >
+				<header>
+					<Text text="通知单编号" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<header>
+					<Text text="通知类型" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<header>
+					<Text text="事故类型" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<header>
+					<Text text="工厂" />   
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<header>
+					<Text text="单位" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true"
+				width="8em">
+				<header>
+					<Text text="处理结果备注" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<header>
+					<Text text="不合格分类" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<header>  
+					<Text text="具体不合格项" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true"
+				width="15em">
+				<header>
+					<Text text="事故描述" />
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

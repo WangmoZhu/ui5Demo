@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sl="sap.ui.comp.navpopover"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:t="sap.ui.table"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns="sap.m" controllerName="ZTM.controller.phoneApi">
+	<Page showHeader="false">
+		<Panel visible="true" expandable="true" expanded="true">
+			
+			<Page>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer />
+							<Button id="Button1" type="Accept" text="Fiori扫码" width="5rem"
+							press="handlePress1" />
+							<Button id="Button2" type="Accept" text="相机" width="5rem"
+							press="handlePress" />
+							<Button id="Button3" type="Accept" text="扫码" width="5rem"
+							press="handlescan" />
+							
+					</OverflowToolbar>
+				</footer>
+			</Page>
+			
+			
+			
+			<Page>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer />
+							<Button id="Button5" type="Accept" text="地图" width="5rem"
+							press="handleMap" />
+							<Button id="Button4" type="Accept" text="蓝牙" width="5rem"
+							press="handleBluetooth" />
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</Panel>
+		<Panel>
+			<content>
+				<Label text="结果： " />
+				<Input width="200px" id="result" value="{/appProperties/result}" />
+			</content>
+		</Panel>
+		
+		
+		
+		
+		
+		<Panel>
+			<content id="allmap"></content>
+		</Panel>
+
+	</Page>
+</mvc:View>

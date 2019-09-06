@@ -1,0 +1,156 @@
+{
+    "resources": [
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "README.md"
+        },
+        {
+            "name": ".user.project.json"
+        },
+        {
+            "name": "controller/view3.controller.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/view4.controller.js"
+        },
+        {
+            "name": "controller/main.controller.js"
+        },
+        {
+            "name": "controller/view1.controller.js"
+        },
+        {
+            "name": "controller/view5.controller.js"
+        },
+        {
+            "name": "controller/messages.js"
+        },
+        {
+            "name": "controller/view7.controller.js"
+        },
+        {
+            "name": "controller/view2.controller.js"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "controller/designMode.js"
+        },
+        {
+            "name": "controller/view6.controller.js"
+        },
+        {
+            "name": "model/poster.js"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/metadata.xml"
+        },
+        {
+            "name": "thirdparty/openui5/camera/CameraRenderer.js"
+        },
+        {
+            "name": "thirdparty/openui5/camera/library.js"
+        },
+        {
+            "name": "thirdparty/openui5/camera/soundmanager2.js"
+        },
+        {
+            "name": "thirdparty/openui5/camera/library-preload.js"
+        },
+        {
+            "name": "thirdparty/openui5/camera/Camera.js"
+        },
+        {
+            "name": ".project.json"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "localService/ZAI_HUAWEI_SRV/metadata.xml"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/i18n_zh_CN.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/i18n_en.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "images/SAP.jpg"
+        },
+        {
+            "name": "images/camera.png"
+        },
+        {
+            "name": "images/hand.jpg"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "view/view5.view.xml"
+        },
+        {
+            "name": "view/view2.view.xml"
+        },
+        {
+            "name": "view/view1.view.xml"
+        },
+        {
+            "name": "view/view6.view.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/Dialog.fragment.xml"
+        },
+        {
+            "name": "view/view4.view.xml"
+        },
+        {
+            "name": "view/view7.view.xml"
+        },
+        {
+            "name": "view/main.view.xml"
+        },
+        {
+            "name": "view/view3.view.xml"
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+"KPIFilter": 
+		{"KPI": "FoodSafety",
+		 "Filter" :{
+		 	"filter_items":[
+		 		{"name":"工厂",
+		 		 "id":"ZPLANT_T",
+		 		 "ViewSettingsItem":[
+		 		 	{"name":"北京工厂",
+		 			 "id":"zpalnt1"},
+		 		 	{"name":"上海工厂",
+		 			 "id":"zpalnt2"},
+		 		 	{"name":"和林工厂",
+		 			 "id":"zpalnt3"}]	
+		 		},
+		 		{"name":"产品",
+		 		 "id":"ZPRODUCT_T",
+		 		 "ViewSettingsItem":[
+		 		 	{"name":"产品1",
+		 		     "id":"ZPRODUCT_1"},
+		 		 	{"name":"产品2",
+		 		     "id":"ZPRODUCT_2"},
+		 		 	{"name":"产品3",
+		 		     "id":"ZPRODUCT_3"}]	
+		 		},
+		 		{"name":"投诉类型",
+		 		  "id":"ZCOMPLANT_T",
+		 		 "ViewSettingsItem":[
+		 		 	{"name":"异物",
+		 		     "id":"ZCOMPLANT_1"},
+		 		 	{"name":"包装污损",
+		 		     "id":"ZCOMPLANT_2"},
+		 		 	{"name":"规格不符",
+		 		     "id":"ZCOMPLANT_3"},
+		 		 	{"name":"异味",
+		 		     "id":"ZCOMPLANT_4"}]	
+		 		}
+		 		]
+		 }
+		}
+}

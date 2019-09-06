@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	     <!-- 元数据加载：
+	          1.指定默认浏览器IE；
+	          2.默认格式UTF-8 
+	     -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+		
+		<!--  资源及UI 属性加载声明：
+		      1.加载资源；
+		      2.启动sap UI ; 
+		      3.加载 preload；
+		      4.加载 sap.m包；
+		      5.声明本地资源根路径（当前路径），浏览器加载路径；
+		      6.UI theme设置 ;
+		      7.UI 复杂变量格式声明；
+		-->
+		<script src="./resources/sap-ui-core.js" 
+		        id="sap-ui-bootstrap"
+			    data-sap-ui-libs="sap.m"
+			    data-sap-ui-preload= "auto"
+			    data-sap-ui-resourceroots='{"ZAPI_VIEW": "./"}'
+			    data-sap-ui-theme="sap_belize"
+			    data-sap-ui-xx-bindingSyntax="complex" >	
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+		/*#content {*/
+			padding-left: 0; /* overrides the padding of demokit */
+		/*}*/
+		</style>
+		
+		<!--  功能说明：
+		      1.加载核心服务；
+		      2.动态生成HTML5 shell；
+		      3.动态生成component容器（指定名字为本工程名字）；
+		      4.指定放在content上（此处为html body） 
+		-->
+		<!-- sap.ui.core.ComponentContainer 方法会启动本文件下Component.js ,自此fiori 应用启动 -->
+		<script>
+   		  sap.ui.getCore().attachInit(function() {
+			new sap.m.Shell({
+				app : new sap.ui.core.ComponentContainer({
+					height : "100%",
+					width :"100%",
+					name : "ZAPI_VIEW"
+				})
+			}).placeAt("content");
+		}); 
+		</script>
+	
+	</head>
+	<!-- HTML5 body，此处应用为显示上层服务容器内容 --> 
+<!-- 	<body class="sapUiBody" id="content">
+	</body> -->
+	<!-- HTML5 body，此处应用为显示上层服务容器内容：
+	     1.声明UI 类型Body；
+	     2.指定body 角色为应用程序，root view（App）为入口应用程序；
+	     3.设置div 容器，存放入口App；
+	     4.说明：此处设置后可以真正前后台分离，即UI 可以本地测试（区别上面注册代码，以上本地不能进行UI 测试）；
+	--> 
+	<body class="sapUiBody" role="application">
+		<div id="content"></div> 
+	</body>	
+</html>

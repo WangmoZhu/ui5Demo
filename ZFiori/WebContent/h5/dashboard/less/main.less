@@ -1,0 +1,261 @@
+@width: 1920;
+@height: 1080;
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.dashboardContainer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: -webkit-radial-gradient(#082A52, #03072D); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(#082A52, #03072D); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(#082A52, #03072D); /* Firefox 3.6 - 15 */
+    background: radial-gradient(#082A52, #03072D); /* 标准的语法（必须放在最后） */
+    .bg-earch {
+        position: fixed;
+        top: 90px;
+        bottom: 50px;
+        left: 90px;
+        right: 90px;
+        background: url('../img/bg-earth.png') no-repeat center center;
+        opacity: .17;
+        background-size: contain;
+    }
+    .main {        
+        height: 100%;
+        .contentLeft {
+            position: relative;
+            @leftWidth: 1050; 
+            width: percentage(@leftWidth/@width);
+            height: 100%;
+            float: left;
+            .header {
+                margin-top: 40px;
+                width: percentage(480/@leftWidth);
+                height: auto;
+            }
+            .counterContainer {
+                position: absolute;
+                top: percentage(570/@height);
+                left: 70px;
+                z-index: 1;
+                .title {
+                    font-size: 28px;
+                    color: #FFFFFF;
+                }
+                ul.numberGroup {
+                    margin-top: 10px;
+                    display: inline-block;
+                    li {
+                        display: inline-block;
+                        width: 46px;
+                        height: 74px;
+                        background: rgba(0,70,178,0.30);
+                        line-height: 74px;
+                        text-align: center;
+                        font-size: 56px;
+                        color: #1CD5FD;     
+                        + li {
+                            margin-left: 4px;
+                        }                   
+                    }
+                    + span {
+                        font-size: 24px;
+                        color: #C3CED9;
+                        margin-left: 15px;
+                    }
+                }
+            }
+            .mapContainer {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                height: percentage(680/@height);
+                transform:translateX(10%);
+            }
+            .chartContainer {
+                position: absolute;
+                bottom: 50px;
+                left: 70px;
+                right: 0;
+                height: percentage(280/@height);
+                .kpiContainer .content.list {
+                    li {
+                        position: relative;
+                        span {
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            bottom: 20px;
+                            display: block;
+                            text-align: center;
+                            font-size: 20px;
+                            color: #D7DDE4;
+                            line-height: 1;
+                            letter-spacing: 0;
+                        }
+                        .kpiChartContent {
+                            position: absolute;
+                            top: 10px;
+                            left: 10px;
+                            right: 10px;
+                            bottom: 40px;
+                        }
+                    }
+                }
+                #kpiGroup2 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 90px;
+                    color: #FFD247;
+                    letter-spacing: 0;
+                }
+            }
+        }
+        .contentRight {
+            overflow: hidden;
+            height: 100%;
+            padding: 40px 50px 50px 80px;
+            display: flex;
+            flex-direction: column;
+            .top {
+                height: 160px;
+                flex-grow: 1;
+                flex-shrink: 1;
+                .left {
+                    float: left;
+                    height: 100%;
+                    width: percentage(280/(280+10+380));                    
+                    #kpiTopLeft + ul {
+                            position: relative;
+                            top: 16.5%;
+                            left: 7%;
+                            height: 100%;
+                        li {
+                            height: 12.7%; 
+                            position: relative;
+                            &:after {
+                                content: attr(content);
+                                position: absolute;
+                                display: inline-block;
+                                top: 0;
+                                bottom: 0;
+                                margin: auto 0;
+                                width: 20px;
+                                height: 20px;
+                                line-height: 20px;
+                                text-align: center;
+                                border-radius: 50%;
+                                color: #031939;
+                                font-size: 14px;
+                                background: #1CD5FD;
+                            }
+                        }
+                    }
+                }
+                .right {
+                    height: 100%;
+                    overflow: hidden;
+                    padding-left: 30px;
+                }
+            }            
+            .middle {
+                margin-top: 25px;
+                height: 170px;
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+            .bottom {
+                margin-top: 25px;
+                height: 165px;
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+        }
+    }
+    .kpiBlock {
+        height: 100%;
+        position: relative;
+        .title {
+            font-size: 20px;
+            color: #fff;
+            height: 28px;
+            padding-left: 24px;
+            padding-top: 3px;
+            background: data-uri('../img/pre-title-icon.png') no-repeat;
+            background-size: auto 100%;            
+            line-height: 1;
+        }
+        .kpiContainer {
+            position: absolute;
+            top: 50px;
+            bottom: 0;
+            width: calc(~"100% - 18px");
+            background: rgba(3,21,61,0.50);
+            border: none;
+            border-left: 1px solid #17A5FF;
+            border-top: 1px solid #17A5FF;
+            border-bottom: 1px solid #17A5FF;
+            &:before {
+                content: '';
+                position: absolute;
+                left: 100%;
+                top: 0;
+                width: 18px;
+                height: 18px;
+                background: -webkit-linear-gradient(left bottom, rgba(3,21,61,0.50) 0%, rgba(3,21,61,0.50) 49%, #17A5FF 49%,#17A5FF 52%,rgba(255,0,0,0) 52%, rgba(255,0,0,0));
+                background: -o-linear-gradient(top right, rgba(3,21,61,0.50) 0%, rgba(3,21,61,0.50) 49%, #17A5FF 49%,#17A5FF 52%,rgba(255,0,0,0) 52%, rgba(255,0,0,0)); 
+                background: -moz-linear-gradient(top right, rgba(3,21,61,0.50) 0%, rgba(3,21,61,0.50) 49%, #17A5FF 49%,#17A5FF 52%,rgba(255,0,0,0) 52%, rgba(255,0,0,0)); 
+                background: linear-gradient(to top right, rgba(3,21,61,0.50) 0%, rgba(3,21,61,0.50) 49%, #17A5FF 49%,#17A5FF 52%,rgba(255,0,0,0) 52%, rgba(255,0,0,0)); 
+
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                left: calc(~"100% - 1px");
+                top: 18px;
+                bottom: -1px;                
+                width: 18px;
+                border: none;
+                border-right: 1px solid #17A5FF;
+                border-bottom: 1px solid #17A5FF;
+                background: rgba(3,21,61,0.50);
+            }
+            .content {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: -18px;
+                &.list {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    display: flex;
+                    li {
+                        margin: 0;
+                        padding: 0;
+                        height: 100%;
+                        flex: auto;
+                    }
+                }
+            }
+        }
+    }
+}

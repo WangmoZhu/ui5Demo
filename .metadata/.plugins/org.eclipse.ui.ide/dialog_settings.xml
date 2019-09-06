@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/Users/zwm/Downloads/echart"/>
+		<item value="/Users/zwm/Downloads/sap.m.sample.Button"/>
+		<item value="/Users/zwm/Downloads/sap.m.sample.Table"/>
+	</list>
+	<section name="ExternalProjectImportWizard">
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+</section>

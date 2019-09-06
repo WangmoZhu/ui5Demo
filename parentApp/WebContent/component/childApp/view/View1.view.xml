@@ -1,0 +1,13 @@
+<mvc:View controllerName="echart.component.childApp.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="Child">
+				<content>
+					<Text text="hello child"/>
+					<Button text="Hello" press=".onPress"></Button>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

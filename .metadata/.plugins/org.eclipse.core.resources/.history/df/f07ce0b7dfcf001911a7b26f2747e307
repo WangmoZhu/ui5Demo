@@ -1,0 +1,28 @@
+sap.ui.define([
+	"sap/ui/core/Control"
+],function(control){
+	"use strict";
+	
+	return control.extend("echart.custom.simple",{
+		
+		metadata: {
+			properties: {
+				"name" : {type: "string", defaultValue: "zm"},
+				"size" : {type: "sap.ui.core.CSSSize", defaultValue: "200px"}
+			},
+			events: {
+				
+			},
+			aggregation: {
+				
+			}
+		},
+		
+		renderer: function(oRm, oControl){
+			oRm.write("<div>");
+			oRm.writeControlData(oControl);
+	        oRm.writeEscaped(oControl.getName()); // write the Control property 'name', with XSS protection
+	        oRm.write("</div>");
+		}
+	});
+})

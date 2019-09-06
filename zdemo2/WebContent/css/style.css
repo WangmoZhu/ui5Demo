@@ -1,0 +1,111 @@
+/*
+ * (c) Copyright 2009-2016 SAP SE. All rights reserved
+ */
+/* buttonæ”¾å¤§ */
+.butStorageBinSelection {
+	height: 10rem !important;
+}
+
+.butStorageBinSelection  div.sapMBtnInner {
+	height: 10rem;
+}
+
+.butStorageBinSelection span.sapMBtnContent {
+	line-height: 10rem;
+	vertical-align: middle;
+	font-size: 1.5rem
+}
+
+
+
+/* add  my start*/
+
+.sapMSplitContainerMaster{
+	width : 200px !important;
+}
+.sapMPanelHdr{
+	height : 2rem!important;
+	line-height : 2rem!important;
+}
+.sapMPanelContent{
+	padding : 0rem !important;
+}
+
+/* add  my end */
+
+.infoAboveFooter {
+	position: fixed;
+	width: 100%;
+	bottom: 3em;
+}
+
+/* footeræ”¾å¤§ buttonæ”¾å¤§ */
+.footerBar {
+	height: 5rem !important;
+}
+
+.footerBar div.sapMBarRight {
+	height: 5rem !important;
+}
+
+.footerButton {
+	height: 1.5rem !important;
+}
+
+.footerButton  div.sapMBtnInner {
+	height: 4rem;
+}
+/* .sapMBtn { */
+/* 	border : 1px solid #587B99; */
+/* } */
+.footerButton span.sapMBtnContent {
+	line-height: 4rem;
+	vertical-align: middle;
+	font-size: 1.0rem
+}
+
+#pdfContainer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%
+}
+#ydpdfContainer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%
+}
+#dhpdfContainer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%
+}
+#trpdfContainer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%
+}
+#tfpdfContainer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%
+}
+
+
+#businessContainer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: calc(100% - 3px);
+}
+

@@ -1,0 +1,52 @@
+<mvc:View controllerName="sap.vo.mengniu.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:l="sap.ui.layout" displayBlock="true" height="100%" xmlns:v="sap.vco">
+	<App height="100%" width="100%" class="myPage">
+		<pages>
+			<Page enableScrolling="false">
+				<customHeader>
+					<Toolbar width="100%">
+						<Button type="Transparent" id="menu" icon="sap-icon://menu2" tooltip="选择模块" press="onMenuPress"/>
+						<Image id="logo" src="./image/logo.png" height="100%"/>
+						<Title text="{app>/title}" level="H2" titleStyle="H2" class="myBoldText"/>
+						<ToolbarSpacer/>
+						<v:VariantManagement id="vm" user="{VM>/user}" item="{VM>/item}" defaultKey="{VM>/defaultKey}" select="onSelect" manage="onManage"
+						save="onSave" create="onCreate" initDefault="onSelect" textManage="管理" textSave="保存" textCreate="新建" customStyle="false" visible="false"></v:VariantManagement>
+						<Label text="{User>/UserName}"/>
+						<Button type="Transparent" id="notice" icon="sap-icon://log" tooltip="退出" press="onLogoff"/>
+					</Toolbar>
+				</customHeader>
+				<content>
+					<SplitApp id="App" mode="HideMode" class="SplitApp">
+						<masterPages>
+							<mvc:XMLView id="Selection" viewName="sap.vo.mengniu.view.Selection" class="master"/>
+						</masterPages>
+						<detailPages>
+							<Page id="index" showHeader="false" class="sapUiContentPadding" enableScrolling="false">
+								<l:Splitter id="Splitter1" width="100%" height="50%" orientation="Horizontal" class="mySplitterUp">
+									<Panel class="myBox sapUiNoContentPadding myPanelLeft" width="99%" height="100%">
+										<layoutData><l:SplitterLayoutData size="50%" resizable="false"/></layoutData>
+										<Page id="blockContainer0" showHeader="false"></Page>
+									</Panel>
+									<Panel class="myBox sapUiNoContentPadding" width="99%" height="100%">
+										<layoutData><l:SplitterLayoutData size="50%" resizable="false"/></layoutData>
+										<Page id="blockContainer1" showHeader="false"></Page>
+									</Panel>
+								</l:Splitter>
+								<l:Splitter id="Splitter2" width="100%" height="50%" orientation="Horizontal">
+									<Panel class="myBox sapUiNoContentPadding myPanelLeft" width="99%" height="99%">
+										<layoutData><l:SplitterLayoutData size="50%" resizable="false"/></layoutData>
+										<Page id="blockContainer2" showHeader="false"></Page>
+									</Panel>
+									<Panel class="myBox sapUiNoContentPadding" width="99%" height="99%">
+										<layoutData><l:SplitterLayoutData size="50%" resizable="false"/></layoutData>
+										<Page id="blockContainer3" showHeader="false"></Page>
+									</Panel>
+								</l:Splitter>
+							</Page>
+						</detailPages>
+					</SplitApp>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

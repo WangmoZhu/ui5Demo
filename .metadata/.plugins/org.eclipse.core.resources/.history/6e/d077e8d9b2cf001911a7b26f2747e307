@@ -1,0 +1,18 @@
+sap.ui.define([
+	"sap/ui/core/Control"
+],function(control){
+	"use strict";
+	
+	return control.extend("echart.custom.simple",{
+		
+		metadata: {
+			properties: {
+				
+			},
+			events: {
+				
+			},
+			aggregation
+		}
+	});
+})

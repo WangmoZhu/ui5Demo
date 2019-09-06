@@ -1,0 +1,1722 @@
+{
+	"plant": [
+		{"name": "和林工厂"},
+		{"name": "北京工厂"},
+		{"name": "唐山工厂"},
+		{"name": "保定工厂"}
+		],
+	"Large": {
+		"Month": {
+			"Data": [{
+				"category": "1月",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 582543.16,
+				"thisYear": 2326251.94,
+				"RevenueForecast": 2026251.94,
+				"thisYearTarget": 2526251.94,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "1月",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 611658.59,
+				"thisYear": 908333.87,
+				"RevenueForecast": 898333.87,
+				"thisYearTarget": 958333.87,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "3月",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 397952.77,
+				"thisYear": 2090030.97,
+				"RevenueForecast": 1990030.97,
+				"thisYearTarget": 2190030.97,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "4月",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 343427.25,
+				"thisYear": 1932991.59,
+				"RevenueForecast": 1802991.59,
+				"thisYearTarget": 2232991.59,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "5月",
+				"Country": "America",
+				"Consumption": 487910.26,
+				"lastYear": 235072.19,
+				"thisYear": 1878466.82,
+				"RevenueForecast": 1808466.82,
+				"thisYearTarget": 1678466.82,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "6月",
+				"Country": "England",
+				"Consumption": 310292.22,
+				"lastYear": 274735.17,
+				"thisYear": 1722148.36,
+				"RevenueForecast": 1622148.36,
+				"thisYearTarget": 1722148.36,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "7月",
+				"Country": "Germany",
+				"Consumption": 176502.55,
+				"lastYear": 263180.86,
+				"thisYear": 1394072.66,
+				"RevenueForecast": 1304072.66,
+				"thisYearTarget": 1104072.66,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "8月",
+				"Country": "America",
+				"Consumption": 143432.18,
+				"lastYear": 233160.58,
+				"thisYear": 1331176.71,
+				"RevenueForecast": 1301176.71,
+				"thisYearTarget": 1356787.71,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "9月",
+				"Country": "England",
+				"Consumption": 108268.95,
+				"lastYear": 115844.26,
+				"thisYear": 752565.16,
+				"RevenueForecast": 750565.16,
+				"thisYearTarget": 1052565.16,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "10月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 98268.52,
+				"thisYear": 428214.13,
+				"RevenueForecast": 420214.13,
+				"thisYearTarget": 653214.13,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "11月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 98268.52,
+				"thisYear": 428214.13,
+				"RevenueForecast": 420214.13,
+				"thisYearTarget": 653214.13,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "12月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 98268.52,
+				"thisYear": 428214.13,
+				"RevenueForecast": 420214.13,
+				"thisYearTarget": 653214.13,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"plant": {
+			"Data": [{
+				"category": "保定工厂",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 582543.16,
+				"thisYear": 2326251.94,
+				"RevenueForecast": 2026251.94,
+				"thisYearTarget": 2526251.94,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "北京事业部",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 611658.59,
+				"thisYear": 908333.87,
+				"RevenueForecast": 898333.87,
+				"thisYearTarget": 958333.87,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "和林事业部",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 397952.77,
+				"thisYear": 2090030.97,
+				"RevenueForecast": 1990030.97,
+				"thisYearTarget": 2190030.97,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "焦作事业部",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 343427.25,
+				"thisYear": 1932991.59,
+				"RevenueForecast": 1802991.59,
+				"thisYearTarget": 2232991.59,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"complant": {
+			"Data": [{
+				"category": "异物",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 582543.16,
+				"thisYear": 2326251.94,
+				"RevenueForecast": 2026251.94,
+				"thisYearTarget": 2526251.94,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "包装污损",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 611658.59,
+				"thisYear": 908333.87,
+				"RevenueForecast": 898333.87,
+				"thisYearTarget": 958333.87,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "规格不符",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 397952.77,
+				"thisYear": 2090030.97,
+				"RevenueForecast": 1990030.97,
+				"thisYearTarget": 2190030.97,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "异味",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 343427.25,
+				"thisYear": 1932991.59,
+				"RevenueForecast": 1802991.59,
+				"thisYearTarget": 2232991.59,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"product": {
+			"Data": [{
+				"category": "产品1",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 582543.16,
+				"thisYear": 236251.94,
+				"RevenueForecast": 202251.94,
+				"thisYearTarget": 256251.94,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "产品2",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 611658.59,
+				"thisYear": 90333.87,
+				"RevenueForecast": 89333.87,
+				"thisYearTarget": 95833.87,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "产品3",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 397952.77,
+				"thisYear": 209030.97,
+				"RevenueForecast": 199030.97,
+				"thisYearTarget": 2190030.97,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "产品4",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 343427.25,
+				"thisYear": 19329.59,
+				"RevenueForecast": 1802991.59,
+				"thisYearTarget": 2232991.59,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"department": {
+			"Data": [{
+				"category": "常温",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 582543.16,
+				"thisYear": 236251.94,
+				"RevenueForecast": 202251.94,
+				"thisYearTarget": 256251.94,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "低温",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 611658.59,
+				"thisYear": 90333.87,
+				"RevenueForecast": 89333.87,
+				"thisYearTarget": 95833.87,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "冰淇淋",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 397952.77,
+				"thisYear": 209030.97,
+				"RevenueForecast": 199030.97,
+				"thisYearTarget": 219030.97,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "新疆",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 343427.25,
+				"thisYear": 19329.59,
+				"RevenueForecast": 1802991.59,
+				"thisYearTarget": 223991.59,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "乳制品",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 343427.25,
+				"thisYear": 1939.59,
+				"RevenueForecast": 1802991.59,
+				"thisYearTarget": 223291.59,
+				"Fat Percentage": "1 Percent"
+			}]
+		}
+
+	},
+	"Small": {
+		"Month": {
+			"Data": [{
+				"category": "1月",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.958,
+				"thisYear": 0.988,
+				"RevenueForecast": 0.997,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "2月",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.938,
+				"thisYear": 0.918,
+				"RevenueForecast": 0.967,
+				"thisYearTarget": 0.917,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "3月",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.918,
+				"thisYear": 0.978,
+				"RevenueForecast": 0.997,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "4月",
+				"Country": "Germany",
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "5月",
+				"Country": "America",
+				"Consumption": 487910.26,
+				"lastYear": 0.9658,
+				"thisYear": 0.9628,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.957,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "6月",
+				"Country": "England",
+				"Consumption": 310292.22,
+				"lastYear": 0.9658,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "7月",
+				"Country": "Germany",
+				"Consumption": 176502.55,
+				"lastYear": 0.9658,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.957,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "8月",
+				"Country": "America",
+				"Consumption": 143432.18,
+				"lastYear": 0.9658,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "9月",
+				"Country": "England",
+				"Consumption": 108268.95,
+				"lastYear": 0.9658,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.957,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "10月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9758,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "11月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9858,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "12月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9458,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"plant": {
+			"Data": [{
+				"category": "保定工厂",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "北京事业部",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9658,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "和林事业部",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9658,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "焦作事业部",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"complant": {
+			"Data": [{
+				"category": "异物",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9658,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "包装污损",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9958,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "规格不符",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9858,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "异味",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "发霉",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9858,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"product": {
+			"Data": [{
+				"category": "特仑苏",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9858,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "真果粒",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9958,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "冠益乳",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9598,
+				"thisYear": 0.9628,
+				"RevenueForecast": 0.9417,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "未来星",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.958,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.97,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "嗨Mil",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9758,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "奶特",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9628,
+				"thisYear": 0.9958,
+				"RevenueForecast": 0.9617,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"department": {
+			"Data": [{
+				"category": "常温事业部",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.948,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "低温事业部",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9258,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.947,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "冰品事业部",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9658,
+				"thisYear": 0.8328,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "奶源事业部",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9828,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}]
+		}
+
+	},
+	"normal": {
+		"Month": {
+			"Data": [{
+				"category": "1月",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.958,
+				"thisYear": 0.938,
+				"RevenueForecast": 0.997,
+				"thisYearTarget": 0.977,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "2月",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.938,
+				"thisYear": 0.918,
+				"RevenueForecast": 0.967,
+				"thisYearTarget": 0.917,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "3月",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.918,
+				"thisYear": 0.938,
+				"RevenueForecast": 0.997,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "4月",
+				"Country": "Germany",
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "5月",
+				"Country": "America",
+				"Consumption": 487910.26,
+				"lastYear": 0.9658,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.977,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "6月",
+				"Country": "England",
+				"Consumption": 310292.22,
+				"lastYear": 0.9658,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.977,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "7月",
+				"Country": "Germany",
+				"Consumption": 176502.55,
+				"lastYear": 0.9658,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "8月",
+				"Country": "America",
+				"Consumption": 143432.18,
+				"lastYear": 0.9658,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "9月",
+				"Country": "England",
+				"Consumption": 108268.95,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.977,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "10月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9458,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "11月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9358,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "12月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9258,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"plant": {
+			"Data": [{
+				"category": "保定工厂",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "北京事业部",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9658,
+				"thisYear": 0.9228,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "和林事业部",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9658,
+				"thisYear": 0.9228,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.947,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "焦作事业部",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"complant": {
+			"Data": [{
+				"category": "异物",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9658,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "包装污损",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9958,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "规格不符",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9858,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "异味",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "发霉",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9858,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"product": {
+			"Data": [{
+				"category": "特仑苏",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9858,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "真果粒",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9958,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "冠益乳",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9598,
+				"thisYear": 0.9628,
+				"RevenueForecast": 0.9417,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "未来星",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.958,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.97,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "嗨Mil",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9758,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "奶特",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9628,
+				"thisYear": 0.9958,
+				"RevenueForecast": 0.9617,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"department": {
+			"Data": [{
+				"category": "常温事业部",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.948,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "低温事业部",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9258,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.947,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "冰品事业部",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9658,
+				"thisYear": 0.8328,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "奶源事业部",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9828,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}]
+		}
+
+	},
+	"low": {
+		"Month": {
+			"Data": [{
+				"category": "1月",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.958,
+				"thisYear": 0.938,
+				"RevenueForecast": 0.997,
+				"thisYearTarget": 0.977,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "2月",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.968,
+				"thisYear": 0.978,
+				"RevenueForecast": 0.967,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "3月",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.958,
+				"thisYear": 0.978,
+				"RevenueForecast": 0.997,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "4月",
+				"Country": "Germany",
+				"lastYear": 0.9758,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.957,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "5月",
+				"Country": "America",
+				"Consumption": 487910.26,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "6月",
+				"Country": "England",
+				"Consumption": 310292.22,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "7月",
+				"Country": "Germany",
+				"Consumption": 176502.55,
+				"lastYear": 0.9658,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.977,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "8月",
+				"Country": "America",
+				"Consumption": 143432.18,
+				"lastYear": 0.9658,
+				"thisYear": 0.9628,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "9月",
+				"Country": "England",
+				"Consumption": 108268.95,
+				"lastYear": 0.9658,
+				"thisYear": 0.9228,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "10月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9658,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "11月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9658,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "12月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9958,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"plant": {
+			"Data": [{
+				"category": "保定工厂",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "北京事业部",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9658,
+				"thisYear": 0.9228,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "和林事业部",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9658,
+				"thisYear": 0.9228,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.947,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "焦作事业部",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"complant": {
+			"Data": [{
+				"category": "异物",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9658,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "包装污损",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9958,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "规格不符",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9858,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "异味",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "发霉",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9858,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"product": {
+			"Data": [{
+				"category": "特仑苏",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9858,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "真果粒",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9958,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "冠益乳",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9598,
+				"thisYear": 0.9628,
+				"RevenueForecast": 0.9417,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "未来星",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.958,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.97,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "嗨Mil",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9758,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "奶特",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9628,
+				"thisYear": 0.9958,
+				"RevenueForecast": 0.9617,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"department": {
+			"Data": [{
+				"category": "常温事业部",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.948,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "低温事业部",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9258,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.947,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "冰品事业部",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9658,
+				"thisYear": 0.8328,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "奶源事业部",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9828,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}]
+		}
+
+	},
+	"ice": {
+		"Month": {
+			"Data": [{
+				"category": "1月",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.958,
+				"thisYear": 0.938,
+				"RevenueForecast": 0.997,
+				"thisYearTarget": 0.977,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "2月",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.968,
+				"thisYear": 0.978,
+				"RevenueForecast": 0.967,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "3月",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.958,
+				"thisYear": 0.978,
+				"RevenueForecast": 0.997,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "4月",
+				"Country": "Germany",
+				"lastYear": 0.9758,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.957,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "5月",
+				"Country": "America",
+				"Consumption": 487910.26,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "6月",
+				"Country": "England",
+				"Consumption": 310292.22,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "7月",
+				"Country": "Germany",
+				"Consumption": 176502.55,
+				"lastYear": 0.9658,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.977,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "8月",
+				"Country": "America",
+				"Consumption": 143432.18,
+				"lastYear": 0.9658,
+				"thisYear": 0.9628,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "9月",
+				"Country": "England",
+				"Consumption": 108268.95,
+				"lastYear": 0.9658,
+				"thisYear": 0.9228,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "10月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9658,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "11月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9658,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "12月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9958,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"plant": {
+			"Data": [{
+				"category": "保定工厂",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "北京事业部",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9658,
+				"thisYear": 0.9228,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "和林事业部",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9658,
+				"thisYear": 0.9228,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.947,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "焦作事业部",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"complant": {
+			"Data": [{
+				"category": "异物",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9658,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "包装污损",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9958,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "规格不符",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9858,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "异味",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "发霉",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9858,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"product": {
+			"Data": [{
+				"category": "特仑苏",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9858,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "真果粒",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9958,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "冠益乳",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9598,
+				"thisYear": 0.9628,
+				"RevenueForecast": 0.9417,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "未来星",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.958,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.97,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "嗨Mil",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9758,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "奶特",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9628,
+				"thisYear": 0.9958,
+				"RevenueForecast": 0.9617,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"department": {
+			"Data": [{
+				"category": "常温事业部",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.948,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "低温事业部",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9258,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.947,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "冰品事业部",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9658,
+				"thisYear": 0.8328,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "奶源事业部",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9828,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}]
+		}
+
+	},
+	"milk": {
+		"Month": {
+			"Data": [{
+				"category": "1月",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.958,
+				"thisYear": 0.938,
+				"RevenueForecast": 0.997,
+				"thisYearTarget": 0.977,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "2月",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.968,
+				"thisYear": 0.978,
+				"RevenueForecast": 0.967,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "3月",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.958,
+				"thisYear": 0.978,
+				"RevenueForecast": 0.997,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "4月",
+				"Country": "Germany",
+				"lastYear": 0.9758,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.957,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "5月",
+				"Country": "America",
+				"Consumption": 487910.26,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "6月",
+				"Country": "England",
+				"Consumption": 310292.22,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "7月",
+				"Country": "Germany",
+				"Consumption": 176502.55,
+				"lastYear": 0.9658,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.977,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "8月",
+				"Country": "America",
+				"Consumption": 143432.18,
+				"lastYear": 0.9658,
+				"thisYear": 0.9628,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "9月",
+				"Country": "England",
+				"Consumption": 108268.95,
+				"lastYear": 0.9658,
+				"thisYear": 0.9228,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "10月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9658,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "11月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9658,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "12月",
+				"Country": "England",
+				"Consumption": 100015.23,
+				"lastYear": 0.9958,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"plant": {
+			"Data": [{
+				"category": "保定工厂",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9658,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "北京事业部",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9658,
+				"thisYear": 0.9228,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "和林事业部",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9658,
+				"thisYear": 0.9228,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.947,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "焦作事业部",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"complant": {
+			"Data": [{
+				"category": "异物",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9658,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "包装污损",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9958,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "规格不符",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9858,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "异味",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9928,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "发霉",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9858,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"product": {
+			"Data": [{
+				"category": "特仑苏",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.9858,
+				"thisYear": 0.9428,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "真果粒",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9958,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "冠益乳",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9598,
+				"thisYear": 0.9628,
+				"RevenueForecast": 0.9417,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "未来星",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.958,
+				"thisYear": 0.9728,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.97,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "嗨Mil",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9758,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "奶特",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9628,
+				"thisYear": 0.9958,
+				"RevenueForecast": 0.9617,
+				"thisYearTarget": 0.997,
+				"Fat Percentage": "1 Percent"
+			}]
+		},
+		"department": {
+			"Data": [{
+				"category": "常温事业部",
+				"Country": "America",
+				"Consumption": 267185.27,
+				"lastYear": 0.948,
+				"thisYear": 0.9328,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.927,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "低温事业部",
+				"Country": "America",
+				"Consumption": 538515.47,
+				"lastYear": 0.9258,
+				"thisYear": 0.9528,
+				"RevenueForecast": 0.9217,
+				"thisYearTarget": 0.947,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "冰品事业部",
+				"Country": "Germany",
+				"Consumption": 304964.89,
+				"lastYear": 0.9658,
+				"thisYear": 0.8328,
+				"RevenueForecast": 0.9717,
+				"thisYearTarget": 0.987,
+				"Fat Percentage": "1 Percent"
+			}, {
+				"category": "奶源事业部",
+				"Country": "Germany",
+				"Consumption": 291191.83,
+				"lastYear": 0.9958,
+				"thisYear": 0.9828,
+				"RevenueForecast": 0.9817,
+				"thisYearTarget": 0.967,
+				"Fat Percentage": "1 Percent"
+			}]
+		}
+
+	}
+}

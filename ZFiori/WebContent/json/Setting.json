@@ -1,0 +1,134 @@
+{
+	"List": [{
+		"Des": "管理员用户",
+		"Changedtime": "20170102",
+		"ID": "Group",
+		"TableItems": [{
+			"Name": "Setting",
+			"Editable": "false",
+			"Flag": "true"
+		},{
+			"Name": "FoodSafety",
+			"Flag": "true"
+		}, {
+			"Name": "Complaints",
+			"Flag": "true"
+		}, {
+			"Name": "KPI",
+			"Flag": "true"
+		}, {
+			"Name": "SPC",
+			"Flag": "true"
+		}, {
+			"Name": "Trace",
+			"Flag": "true"
+		}]
+
+	},{
+		"Des": "集团用户",
+		"Changedtime": "20170102",
+		"ID": "Group",
+		"TableItems": [{
+			"Name": "FoodSafety",
+			"Flag": "true"
+		}, {
+			"Name": "Complaints",
+			"Flag": "true"
+		}, {
+			"Name": "KPI",
+			"Flag": "true"
+		}, {
+			"Name": "SPC",
+			"Flag": "true"
+		}, {
+			"Name": "Trace",
+			"Flag": "true"
+		}]
+
+	},{
+		"Des": " 冰品事业部用户",
+		"Changedtime": "20170103",
+		"ID": "ICE",
+		"TableItems": [{
+			"Name": "FoodSafety",
+			"Flag": "true"
+		}, {
+			"Name": "Complaints",
+			"Flag": "true"
+		}, {
+			"Name": "KPI",
+			"Flag": "true"
+		}, {
+			"Name": "SPC",
+			"Flag": "true"
+		}, {
+			"Name": "Trace",
+			"Flag": "true"
+		}]
+
+	},{
+		"Des": "常温事业部用户",
+		"Changedtime": "20170104",
+		"ID": "Normal",
+		"TableItems": [{
+			"Name": "FoodSafety",
+			"Flag": "true"
+		}, {
+			"Name": "Complaints",
+			"Flag": "true"
+		}, {
+			"Name": "KPI",
+			"Flag": "true"
+		}, {
+			"Name": "SPC",
+			"Flag": "true"
+		}, {
+			"Name": "Trace",
+			"Flag": "true"
+		}]
+
+	},{
+		"Des": "低温事业部用户",
+		"Changedtime": "20170105",
+		"ID": "Low",
+		"TableItems": [{
+			"Name": "FoodSafety",
+			"Flag": "true"
+		}, {
+			"Name": "Complaints",
+			"Flag": "true"
+		}, {
+			"Name": "KPI",
+			"Flag": "true"
+		}, {
+			"Name": "SPC",
+			"Flag": "true"
+		}, {
+			"Name": "Trace",
+			"Flag": "true"
+		}]
+
+	},{
+		"Des": "奶源事业部用户",
+		"Changedtime": "20170106",
+		"ID": "Milk",
+		"TableItems": [{
+			"Name": "FoodSafety",
+			"Flag": "true"
+		}, {
+			"Name": "Complaints",
+			"Flag": "true"
+		}, {
+			"Name": "KPI",
+			"Flag": "true"
+		}, {
+			"Name": "SPC",
+			"Flag": "true"
+		}, {
+			"Name": "Trace",
+			"Flag": "true"
+		}]
+
+	}]
+
+}

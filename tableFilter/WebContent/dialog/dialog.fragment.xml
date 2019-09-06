@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.ui.comp.valuehelpdialog"
+	xmlns:core="sap.ui.core">
+	<ValueHelpDialog
+		title="Filter Dialog"
+		ok=".onValueHelpOkPress"
+		filterMode="true"
+		cancel=".onValueHelpCancelPress"
+		afterClose=".onValueHelpAfterClose"
+		key="ProductId"
+		descriptionKey="Name"
+		supportRanges="true"
+		supportRangesOnly="true"
+	>
+	</ValueHelpDialog>
+</core:FragmentDefinition>

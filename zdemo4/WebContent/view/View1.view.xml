@@ -1,0 +1,116 @@
+<mvc:View controllerName="echart.controller.View1"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:micro="sap.suite.ui.microchart" displayBlock="true" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.f">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<GenericTile id="tile" header="Inspections"
+						press="press" class="tile_height">
+						<!-- <TileContent></TileContent> -->
+						<tileContent>
+							<TileContent>
+								<content>
+									<VBox>
+										<!-- <GenericTag> </GenericTag> -->
+										<ObjectNumber state="Error" number="Overdue"
+											unit="3"></ObjectNumber>
+										<ObjectNumber state="Success" number="Done"
+											unit="27"></ObjectNumber>
+										<ObjectNumber state="Warning" number="Today"
+											unit="43"></ObjectNumber>
+										<NumericContent id="nc1" scale="Pending"
+											value="9" withMargin="true" />
+										<micro:StackedBarMicroChart
+											size="XS" id="sbm">
+											<micro:bars>
+												<micro:StackedBarMicroChartBar
+													valueColor="Error" value="3" />
+												<micro:StackedBarMicroChartBar
+													valueColor="Good" value="27" />
+												<micro:StackedBarMicroChartBar
+													valueColor="Critical" value="43" />
+											</micro:bars>
+										</micro:StackedBarMicroChart>
+									</VBox>
+								</content>
+							</TileContent>
+
+						</tileContent>
+
+					</GenericTile>
+					<GenericTile header="Inspections" press="press"
+						class="tile_height" frameType="TwoByOne">
+						<!-- <TileContent></TileContent> -->
+						<tileContent>
+							<TileContent>
+								<content>
+									<VBox>
+										<!-- <GenericTag> </GenericTag> -->
+										<HBox>
+											<VBox width="55%">
+												<l:HorizontalLayout>
+													<l:VerticalLayout>
+														<ObjectNumber state="Error" number="Overdue"
+															unit="3"></ObjectNumber>
+														<ObjectNumber state="Success" number="Done"
+															unit="27"></ObjectNumber>
+														<ObjectNumber state="Warning" number="Today"
+															unit="43"></ObjectNumber>
+													</l:VerticalLayout>
+													<NumericContent scale="Pending" value="9"
+														withMargin="false" />
+												</l:HorizontalLayout>
+												<micro:StackedBarMicroChart
+													size="XS" class="tile">
+													<micro:bars>
+														<micro:StackedBarMicroChartBar
+															valueColor="Error" value="3" />
+														<micro:StackedBarMicroChartBar
+															valueColor="Good" value="27" />
+														<micro:StackedBarMicroChartBar
+															valueColor="Critical" value="43" />
+													</micro:bars>
+												</micro:StackedBarMicroChart>
+											</VBox>
+
+											<VBox>
+												<l:HorizontalLayout>
+													<l:VerticalLayout>
+														<ObjectNumber state="Error" number="Overdue"
+															unit="3"></ObjectNumber>
+														<ObjectNumber state="Success" number="Done"
+															unit="27"></ObjectNumber>
+														<ObjectNumber state="Warning" number="Today"
+															unit="43"></ObjectNumber>
+													</l:VerticalLayout>
+													<NumericContent scale="Pending" value="9"
+														withMargin="false" />
+												</l:HorizontalLayout>
+												<micro:StackedBarMicroChart
+													size="XS" class="tile">
+													<micro:bars>
+														<micro:StackedBarMicroChartBar
+															valueColor="Error" value="3" />
+														<micro:StackedBarMicroChartBar
+															valueColor="Good" value="27" />
+														<micro:StackedBarMicroChartBar
+															valueColor="Critical" value="43" />
+													</micro:bars>
+												</micro:StackedBarMicroChart>
+											</VBox>
+										</HBox>
+									</VBox>
+								</content>
+							</TileContent>
+
+						</tileContent>
+
+					</GenericTile>
+
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

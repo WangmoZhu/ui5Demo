@@ -1,0 +1,152 @@
+<mvc:View
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m" controllerName="sap.vo.mengniu.controller.blocks.SPCFull"
+  xmlns:html="http://www.w3.org/1999/xhtml" height="100%" displayBlock="true"
+  xmlns:t="sap.ui.table"
+  xmlns:s="sap.suite.ui.commons"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:viz="sap.viz.ui5.controls"
+  xmlns:data="sap.viz.ui5.data"
+  xmlns:feeds="sap.viz.ui5.controls.common.feeds">
+  <Panel id="spc" visible="true" height="100%">
+    <headerToolbar>
+      <Toolbar>
+        <!--<Button icon="sap-icon://nav-back" press="onNavBack"/>-->
+        <Select id="YT" autoAdjustWidth="true" change="onChangeYT" placeholder="业态"/>
+        <Select id="SCDQ" autoAdjustWidth="true" change="onChangeSCDQ" placeholder="生产大区" />
+        <Select id="Plant" autoAdjustWidth="true" width="15rem" change="onChangePlant" placeholder="工厂" />
+        <Select id="Product" width="15rem" change="onChangeProduct" placeholder="产品" />
+        <Select id="KPI" autoAdjustWidth="true" change="onChangeKPI">
+          <core:Item key="蛋白质" text="蛋白质"/>
+          <core:Item key="脂肪" text="脂肪"/>
+          <core:Item key="总固形物" text="总固形物"/>
+          <core:Item key="钙" text="钙"/>
+          <core:Item key="非脂乳固体" text="非脂乳固体"/>
+          <core:Item key="pH值" text="PH值"/>
+          <core:Item key="乳糖" text="乳糖"/>
+          <core:Item key="酸度" text="酸度"/>
+        </Select>
+        <DatePicker id="StartDate" width="10rem" valueFormat="yyyyMMdd" placeholder="开始日期" change="onChangePlant" />
+        <DatePicker id="EndDate" width="10rem" valueFormat="yyyyMMdd" placeholder="结束日期" change="onChangePlant" />
+        <Input id="LSL" placeholder="规格下限LSL" width="7rem" />
+        <Input id="TARGET" placeholder="规格目标" width="6rem" />
+        <Input id="USL" placeholder="规格上限USL" width="7rem" />
+        <Button id="Apply" text="开始分析" type="Transparent" press="onApply" />
+        <ToolbarSpacer/>
+        <Select id="Type" autoAdjustWidth="true" visible="false" change="onSPCSelect">
+          <core:Item key="spc3" text="单值稳定性（单值）分析"/>
+          <core:Item key="spc2" text="过程能力分析"/>
+          <core:Item key="spc1" text="正态性检验分析"/>
+        </Select>
+        <!-- <Button icon="sap-icon://sys-help" type="Transparent" press="onHelp"/> -->
+      </Toolbar>
+    </headerToolbar>
+    <content>
+      <Page id="spc3" visible="true" showHeader='false'>
+        <l:Splitter>
+          <Image src="{/XBRCHART}" width="100%" height="90%" mode="Background" backgroundPosition="center" backgroundSize="contain"/>
+          <f:SimpleForm class="mySpcForm" editable="false" layout="ResponsiveGridLayout" title="单值稳定性分析" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="2" emptySpanL="2" emptySpanM="2" emptySpanS="0"
+columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" visible="{= ${/SAMPLENUM} > 0}">
+            <f:layoutData>
+              <l:SplitterLayoutData size="50%" resizable="false" />
+            </f:layoutData>
+            <f:content>
+              <Label text="使用意义" />
+              <Text text="判断核心指标的变化情况是否处于统计受控状态。" />
+              <Label text="样本数量" />
+              <Text text="{/SAMPLENUM}" />
+              <Label text="均值" />
+              <Text text="{/SAMPLEMEAN}" />
+              <Label text="标准差" />
+              <Text text="{/SAMPLESTD}" />
+              <Label text="根据样本生成的数据控制下限" />
+              <Text text="{/SLCL}" />
+              <Label text="根据样本生成的数据控制上限" />
+              <Text text="{/SUCL}" />
+              <Label text="超出范围的样本数量" />
+              <Text text="{/BEYOND}" />
+              <Label text="超出范围的样本数量占比" />
+              <Text text="{= (Math.round(${/BEYOND} / ${/SAMPLENUM} * 10000)/100).toFixed(2)} %" />
+              <Label text="" />
+            <Text text="" />
+            <Label text="判异规则" />
+            <Text text="1、1个点在界外" />
+            <Label text="" />
+            <Text text="2、连续3点中，存在2点接近控制界限" />
+            <Label text="" />
+            <Text text="3、在中心线一侧连续存在9点" />
+            <Label text="" />
+            <Text text="4、连续11点中，至少10点在一侧" />
+            <Label text="" />
+            <Text text="5、连续7点上升或下降" />
+            <Label text="" />
+            <Text text="6、连续15点在中心线附近" />
+            </f:content>
+          </f:SimpleForm>
+        </l:Splitter>
+      </Page>
+      <Page id="spc2" visible="false" showHeader='false'>
+        <l:Splitter>
+          <Image src="{/PROCHART}" width="100%" height="90%" mode="Background" backgroundPosition="center" backgroundSize="contain"/>
+          <f:SimpleForm class="mySpcForm" editable="false" layout="ResponsiveGridLayout" title="过程能力分析" labelSpanXL="6" labelSpanL="6" labelSpanM="6" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1" emptySpanS="0"
+columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" visible="{= ${/SAMPLENUM} > 0}">
+            <f:layoutData>
+              <l:SplitterLayoutData size="50%" resizable="false" />
+            </f:layoutData>
+            <f:content>
+              <Label text="使用意义" />
+              <Text text="判断样本是否具有正态分布特性。" />
+              <Label text="样本数量" />
+              <Text text="{/SAMPLENUM}" />
+              <Label text="均值" />
+              <Text text="{/SAMPLEMEAN}" />
+              <Label text="标准差" />
+              <Text text="{/SAMPLESTD}" />
+              <Label text="能力比 Cp" />
+              <Text text="{/SCP}" />
+              <Label text="过程能力指数 Cpk" />
+              <Text text="{/SCPK}" />
+              <Label text="测量过程均值趋近规格下限的程度 Cpl" />
+              <Text text="{/SCPL}" />
+              <Label text="测量过程均值趋近规格上限的程度 Cpu" />
+              <Text text="{/SCPU}" />
+              <Label text="质量损失函数 Cpm" />
+              <Text text="{/SCPM}" />
+              <Label text="正态分布预期 低于规格下限 占比" />
+              <Text text="{/EXPLSL} %" />
+              <Label text="正态分布预期 高于规格上限 占比" />
+              <Text text="{/EXPUSL} %" />
+              <Label text="实际样本数据 低于规格下限 占比" />
+              <Text text="{/OBSLSL} %" />
+              <Label text="实际样本数据 高于规格上限 占比" />
+              <Text text="{/OBSUSL} %" />
+            </f:content>
+          </f:SimpleForm>
+        </l:Splitter>
+      </Page>
+      <Page id="spc1" visible="false" showHeader='false'>
+        <l:Splitter>
+          <Image id="NormalityChart" src="{/NORMALITYCHART}" class="whiteBG" height="90%"/>
+          <f:SimpleForm class="mySpcForm" editable="false" layout="ResponsiveGridLayout" title="正态性检验分析（QQ图）" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1"
+emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" visible="{= ${/SAMPLENUM} > 0}">
+            <f:layoutData>
+              <l:SplitterLayoutData size="50%" resizable="false" />
+            </f:layoutData>
+            <f:content>
+              <Label text="使用意义" />
+              <Text text="判断样本是否具有正态分布特性，如果直线与点重合度高，当P值大于0.05，即为正态分布。" />
+              <Label text="样本数量" />
+              <Text text="{/SAMPLENUM}" />
+              <Label text="标准差" />
+              <Text text="{/SAMPLESTD}" />
+              <Label text="P值" />
+              <Text text="{/SPVALUE}" />
+            </f:content>
+          </f:SimpleForm>
+        </l:Splitter>
+      </Page>
+    </content>
+  </Panel>
+</mvc:View>

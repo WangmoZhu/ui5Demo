@@ -1,0 +1,251 @@
+<mvc:View controllerName="echart.controller.View1" xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:v="sap.ui.vbm"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+			
+			<!-- 	<content> -->
+					<!-- <f:SimpleForm id="phoneFormSimple" editable="true"
+						layout="ResponsiveGridLayout" title="Phone Numbers">
+						<f:content>
+							<Toolbar>
+								<ToolbarSpacer />
+								<Button icon="sap-icon://phone" tooltip="Client Numbers" />
+							</Toolbar>
+							<Title text="Business Phone" level="H5" titleStyle="H5" />
+							<Label text="Number" design="Bold">
+								<layoutData>
+									<l:GridData span="XL2 L2 M2 S6" />
+								</layoutData>
+							</Label>
+							<MaskInput id="businessPhoneNumber"
+								value="{business_phone_number}" placeholder="Enter number..."
+								mask="(CCC) 
+						CCC-CCCC" placeholderSymbol="_">
+								<rules>
+									<MaskInputRule maskFormatSymbol="C" regex="[0-9]" />
+								</rules>
+								<layoutData>
+									<l:GridData span="XL4 L4 M4 S6" />
+								</layoutData>
+							</MaskInput>
+							<Label text="Business Extension" design="Bold">
+								<layoutData>
+									<l:GridData span="XL2 L2 M2 S6" />
+								</layoutData>
+							</Label>
+							<Input id="businessPhoneExtension"
+								value="{business_phone_extension}">
+								<layoutData>
+									<l:GridData span="XL4 L4 M4 S6" />
+								</layoutData>
+							</Input>
+							<Title text="Business 
+						Fax" level="H5" >
+							<layoutData>
+								<l:GridData span="XL12 L12 M12 S12"></l:GridData>
+							</layoutData>
+						</Title>
+							<Label text="Number" design="Bold">
+								<layoutData>
+									<l:GridData span="XL2 L2 M2 S6" />
+								</layoutData>
+							</Label>
+							<MaskInput id="buinessFaxNumber"
+								value="{business_fax_number}" placeholder="Enter number..."
+								mask="(CCC) CCC-CCCC" placeholderSymbol="_">
+								<rules>
+									<MaskInputRule maskFormatSymbol="C" regex="[0-9]" />
+								</rules>
+								<layoutData>
+									<l:GridData span="XL4 L4 M4 S6" />
+								</layoutData>
+							</MaskInput>
+						</f:content>
+					</f:SimpleForm> -->
+<!-- 					<l:VerticalLayout
+	class="sapUiContentPadding equalColumns" width="100%">
+	<l:content>
+		<FlexBox width="95%" class="columns" alignItems="Stretch">
+			<items>
+				<Text class="column1"
+					text="Although they have different amounts of text, 
+						both columns are of equal height.">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Text>
+				<Text class="column2"
+					text="Lorem ipsum dolor sit 
+						amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
+						ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
+						accusam et justo hey nonny no duo dolores et ea rebum. Stet clita kasd gubergren, 
+						no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor 
+						sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
+						ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
+						accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea 
+						takimata sanctus est Lorem ipsum dolor sit amet.">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Text>
+				<Text class="column2"
+					text="Lorem 
+						ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
+						tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+						At vero eos et accusam et justo hey nonny no duo dolores et ea rebum. Stet 
+						clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
+						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
+						voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita 
+						kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Text>
+			</items>
+		</FlexBox>
+	</l:content>
+</l:VerticalLayout> -->
+<content>
+			<Button press="onPress" text="hello"></Button>
+			<v:Circle ></v:Circle>
+			<f:SimpleForm id="FieldGroupView" minWidth="1024"
+				maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				title="Shopping Cart - Checkout" labelSpanL="4" labelSpanM="4"
+				emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2"
+				validateFieldGroup="onValidateFieldGroup">
+				<f:content>
+
+					<!-- Billing Information -->
+					<core:Title text="Billing Information" />
+					<Label text="Name" />
+					<Input fieldGroupIds="Billing Information" value="{BillingName}"
+						id="BillingName" />
+					<Label text="Street/No." />
+					<Input fieldGroupIds="Billing Information" value="{BillingStreet}"
+						id="BillingStreet">
+					</Input>
+					<Input fieldGroupIds="Billing Information" value="{BillingStreetNumber}"
+						id="BillingStreetNumber">
+						<layoutData>
+							<l:GridData span="L3 M3 S4" />
+						</layoutData>
+					</Input>
+					<Label text="ZIP Code/City" />
+					<Input fieldGroupIds="Billing Information" value="{BillingZipCode}"
+						id="BillingZipCode">
+						<layoutData>
+							<l:GridData span="L3 M3 S4" />
+						</layoutData>
+					</Input>
+					<Input fieldGroupIds="Billing Information" value="{BillingCity}"
+						id="BillingCity" />
+					<Label text="Country" />
+					<Select fieldGroupIds="Billing Information" width="100%"
+						selectedKey="{BillingCountry}" id="BillingCountry">
+						<items>
+							<core:Item text="Germany" key="Germany" />
+							<core:Item text="United States" key="United States" />
+							<core:Item text="Great Britain" key="Great Britain" />
+						</items>
+					</Select>
+
+					<!-- Discount -->
+					<core:Title text="Discount Code" />
+					<Input fieldGroupIds="Discount Code" value="{DiscountCode}"
+						placeholder="Enter your discout code here..." id="DiscountCode" />
+
+					<!-- Credit Card -->
+					<core:Title text="Credit Card" />
+					<Label text="Vendor" />
+					<ComboBox fieldGroupIds="Credit Card" width="100%"
+						placeholder="Choose your card vendor..." value="{CreditCardVendor}"
+						id="CreditCardVendor">
+						<items>
+							<core:Item text="" />
+							<core:Item text="Mastercard" />
+							<core:Item text="Visa" />
+							<core:Item text="American Express" />
+						</items>
+					</ComboBox>
+					<Label text="Credit Card Number" />
+					<Input fieldGroupIds="Credit Card" value="{CreditCardNumber}"
+						maxLength="16" id="CreditCardNumber" />
+					<Label text="Expiry Date" />
+					<ComboBox fieldGroupIds="Credit Card" placeholder="Month..."
+						value="{CreditCardMonth}" id="CreditCardMonth">
+						<items>
+							<core:Item text="01" />
+							<core:Item text="02" />
+							<core:Item text="03" />
+							<core:Item text="04" />
+							<core:Item text="05" />
+							<core:Item text="06" />
+							<core:Item text="06" />
+							<core:Item text="07" />
+							<core:Item text="08" />
+							<core:Item text="09" />
+							<core:Item text="10" />
+							<core:Item text="11" />
+							<core:Item text="12" />
+						</items>
+					</ComboBox>
+					<ComboBox fieldGroupIds="Credit Card" placeholder="Year..."
+						value="{CreditCardYear}" id="CreditCardYear">
+						<items>
+							<core:Item text="2015" />
+							<core:Item text="2016" />
+							<core:Item text="2017" />
+							<core:Item text="2018" />
+							<core:Item text="2019" />
+							<core:Item text="2020" />
+						</items>
+					</ComboBox>
+					<Label text="Validation Code" />
+					<Input fieldGroupIds="Credit Card" maxLength="3"
+						value="{CreditCardValidationCode}" id="CreditCardValidationCode" />
+					<!-- Online Info -->
+					<core:Title text="Online" />
+					<Label text="E-Mail" />
+					<Input fieldGroupIds="Online" value="{OnlineMail}" id="OnlineMail" />
+					<Label text="Twitter" />
+					<Input fieldGroupIds="Online" value="{OnlineTwitter}" id="OnlineTwitter" />
+				</f:content>
+			</f:SimpleForm>
+			<MessageStrip id="BillingInformationMessage" visible="false"
+				text="Default: Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+				showIcon="true" showCloseButton="true" close="onMsgStripClose">
+			</MessageStrip>
+			<MessageStrip id="DiscountCodeMessage" visible="false"
+				text="Default: Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+				showIcon="true" showCloseButton="true" close="onMsgStripClose">
+			</MessageStrip>
+			<MessageStrip id="CreditCardMessage" visible="false"
+				text="Default: Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+				showIcon="true" showCloseButton="true" close="onMsgStripClose">
+			</MessageStrip>
+			<MessageStrip id="OnlineMessage" visible="false"
+				text="Default: Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+				showIcon="true" showCloseButton="true" close="onMsgStripClose">
+			</MessageStrip>
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<Button id="submit" text="Submit" press="onAccept" type="Accept"
+						width="33%" />
+					<Button id="reset" text="Reset" press="onReset" type="Reject"
+						width="33%" />
+					<Button id="cancel" text="Cancel" press="onCancel" width="33%" />
+				</content>
+			</Toolbar>
+		</footer>
+				<!-- </content> -->
+				
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

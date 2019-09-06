@@ -1,0 +1,34 @@
+<mvc:View
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:f="sap.f"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc">
+	<ObjectPageLayout
+		id="ObjectPageLayout"
+		showTitleInHeaderContent="true"
+		alwaysShowContentHeader="false"
+		preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true"
+		isChildPage="true"
+		upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<actions>
+					<m:ToggleButton
+						text="Edit"
+						type="Emphasized"/>
+					<m:Button
+						text="Delete"
+						type="Transparent"/>
+					<m:Button
+						text="Copy"
+						type="Transparent"/>
+					<m:Button
+						icon="sap-icon://action"
+						type="Transparent"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+	</ObjectPageLayout>
+</mvc:View>

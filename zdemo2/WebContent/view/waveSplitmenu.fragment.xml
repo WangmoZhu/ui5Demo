@@ -1,0 +1,16 @@
+<!-- 验货查询界面 -->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+		<OverflowToolbar>
+			<Button type="Reject" id="Msg" text="0" icon="sap-icon://message-popup" press="onload"/>
+			<Button type="Emphasized" text="仓库选择" id="lgnum" press="onSelect" icon="sap-icon://home" />
+			<Button type="Emphasized" text="查询" id="query" press="onQuery" icon="sap-icon://search" />
+			<Button type="Emphasized" text="打开波次" id="open" press="onOpen" icon="sap-icon://open-folder" />
+			<Button type="Emphasized" text="预补货" id="add" press="onAdd" icon="sap-icon://cart-4" />
+			<Button type="Emphasized" text="加急" id="urgent" press="onUrgent" icon="sap-icon://expand" />
+			<Button type="Emphasized" text="释放" id="get" press="onGet" icon="sap-icon://approvals" />
+			<Button type="Emphasized" text="拆分" id="split" press="onSplit" icon="sap-icon://screen-split-one" />
+			<ToolbarSpacer />
+			
+	</OverflowToolbar>
+</core:FragmentDefinition>	

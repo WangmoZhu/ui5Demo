@@ -1,0 +1,815 @@
+*&---------------------------------------------------------------------*
+*& Report ZPP002
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT ZPP002.
+
+TABLES: AUFK, AFKO, MSEG, MARA.
+
+TYPES: BEGIN OF TY_ALV,
+         AUFNR     TYPE AUFNR,
+         STLBEZ    TYPE MATNR,
+         ZAUFNRNUM TYPE ZEZAUFNRNUM,
+         AUART     TYPE AUFART,
+         ERDAT     TYPE ERDAT,
+         IDAT2     TYPE AUFIDAT2,
+         MOSDAT    TYPE ERDAT,
+         WERKS     TYPE WERKS_D,
+         ZKHNO     TYPE ZKHNO,
+         MAKTX1    TYPE MAKTX,
+         MATNR     TYPE MATNR,
+         MAKTX     TYPE MAKTX,
+         MATKL     TYPE MATKL,
+         ZMENGE    TYPE BASMN,
+         MEINS     TYPE MEINS,
+         ZDMBTR    TYPE DMBTR,            "原料实际单价
+*         VERPR     TYPE VERPR,
+         ISM01     TYPE RU_ISMNG,
+         ILE01     TYPE CO_ISMNGEH,
+         ISM02     TYPE RU_ISMNG,
+         ILE02     TYPE CO_ISMNGEH,
+         ISM03     TYPE RU_ISMNG,
+         ILE03     TYPE CO_ISMNGEH,
+         ISM04     TYPE RU_ISMNG,
+         ILE04     TYPE CO_ISMNGEH,
+         ZTXT      TYPE J_STEXT,
+         WEMNG     TYPE CO_WEMNG,
+         MATNR1    TYPE MATNR,            "委外物料号
+         MAKTX2    TYPE MAKTX,            "委外描述
+         ZMENGE1   TYPE BASMN,            "委外数量
+         MEINS1    TYPE MEINS,            "委外单位
+         ZWWJE     TYPE DMBTR,            "委外总金额
+         ZMENGE3   TYPE BASMN,
+
+         RSNUM     TYPE RSNUM,
+         NUM       TYPE I,
+         OBJNR     TYPE J_OBJNR,
+         AUFPL     TYPE CO_AUFPL,
+*         APLZT     TYPE CO_APLZL,
+         STAT      TYPE J_STATUS,
+       END OF TY_ALV,
+
+       BEGIN OF TY_RESB,
+         RSNUM TYPE RSNUM,
+         AUFNR TYPE AUFNR,
+         MATNR TYPE MATNR,
+         WERKS TYPE WERKS_D,
+         MEINS TYPE MEINS,
+         NUM   TYPE I,
+       END OF TY_RESB,
+
+       BEGIN OF TY_MAKT,
+         MATNR TYPE MATNR,
+         MAKTX TYPE MAKTX,
+       END OF TY_MAKT,
+
+       BEGIN OF TY_MSEG,
+         AUFNR   TYPE AUFNR,
+         MATNR   TYPE MATNR,
+         MBLNR   TYPE MBLNR,
+         MJAHR   TYPE MJAHR,
+         ZEILE   TYPE MBLPO,
+         LINE_ID TYPE MB_LINE_ID,
+         MENGE   TYPE MENGE_D,
+         MEINS   TYPE MEINS,
+         BWART   TYPE BWART,
+         ZMENGE  TYPE MENGE_D,
+         DMBTR   TYPE DMBTR,
+
+         SUM     TYPE C,
+         NUM     TYPE I,
+       END OF TY_MSEG,
+
+       BEGIN OF TY_MARA,
+         MATNR TYPE MATNR,
+         MATKL TYPE MATKL,
+         MEINS TYPE MEINS,
+       END OF TY_MARA,
+
+       BEGIN OF TY_MBEW,
+         MATNR TYPE MATNR,
+         BWKEY TYPE BWKEY,
+         VERPR TYPE VERPR,
+       END OF TY_MBEW,
+
+       BEGIN OF TY_AFRU,
+         AUFNR  TYPE AUFNR,
+         RUECK  TYPE CO_RUECK,
+         RMZHL  TYPE CO_RMZHL,
+         STOKZ  TYPE CO_STOKZ,
+         STZHL  TYPE CO_STZHL,
+         ISM01  TYPE RU_ISMNG,
+         ILE01  TYPE CO_ISMNGEH,
+         ISM02  TYPE RU_ISMNG,
+         ILE02  TYPE CO_ISMNGEH,
+         ISM03  TYPE RU_ISMNG,
+         ILE03  TYPE CO_ISMNGEH,
+         ISM04  TYPE RU_ISMNG,
+         ILE04  TYPE CO_ISMNGEH,
+         ZISM01 TYPE RU_ISMNG,
+         ZISM02 TYPE RU_ISMNG,
+         ZISM03 TYPE RU_ISMNG,
+         ZISM04 TYPE RU_ISMNG,
+         SUM    TYPE C,
+       END OF TY_AFRU,
+
+       BEGIN OF TY_AFVC,
+         AUFPL TYPE CO_AUFPL,
+         APLZL TYPE CO_APLZL,
+         RUECK TYPE CO_RUECK,
+       END OF TY_AFVC,
+
+       BEGIN OF TY_AFPO,
+         AUFNR TYPE AUFNR,
+         POSNR TYPE CO_POSNR,
+         WEMNG TYPE CO_WEMNG,
+       END OF TY_AFPO,
+
+       BEGIN OF TY_JCDS,
+         OBJNR TYPE J_OBJNR,
+         UDATE TYPE CDDATUM,
+       END OF TY_JCDS.
+
+DATA: GT_FIELDCAT TYPE    LVC_T_FCAT,
+      GS_FIELDCAT TYPE    LVC_S_FCAT,
+      GS_LAYOUT   TYPE    LVC_S_LAYO,
+      G_REPID     LIKE    SY-REPID VALUE SY-REPID.
+
+DATA: LS_ALV   TYPE TY_ALV,
+      LT_ALV   TYPE TABLE OF TY_ALV,
+      LS_ALV1  TYPE TY_ALV,
+      LT_ALV1  TYPE TABLE OF TY_ALV,
+      LS_RESB  TYPE TY_RESB,
+      LT_RESB  TYPE TABLE OF TY_RESB,
+      LS_MAKT  TYPE TY_MAKT,
+      LT_MAKT  TYPE TABLE OF TY_MAKT,
+      LS_MAKT1 TYPE TY_MAKT,
+      LT_MAKT1 TYPE TABLE OF TY_MAKT,
+      LS_MAKT2 TYPE TY_MAKT,
+      LT_MAKT2 TYPE TABLE OF TY_MAKT,
+      LS_MSEG  TYPE TY_MSEG,
+      LT_MSEG  TYPE TABLE OF TY_MSEG,
+      LS_MSEG1 TYPE TY_MSEG,
+      LT_MSEG1 TYPE TABLE OF TY_MSEG,
+      LS_MSEG2 TYPE TY_MSEG,
+      LT_MSEG2 TYPE TABLE OF TY_MSEG,
+      LS_MBEW  TYPE TY_MBEW,
+      LT_MBEW  TYPE TABLE OF TY_MBEW,
+      LS_MARA  TYPE TY_MARA,
+      LT_MARA  TYPE TABLE OF TY_MARA,
+      LS_AFRU  TYPE TY_AFRU,
+      LT_AFRU  TYPE TABLE OF TY_AFRU,
+      LS_AFVC  TYPE TY_AFVC,
+      LT_AFVC  TYPE TABLE OF TY_AFVC,
+      LS_AFPO  TYPE TY_AFPO,
+      LT_AFPO  TYPE TABLE OF TY_AFPO,
+      LS_JCDS  TYPE TY_JCDS,
+      LT_JCDS  TYPE TABLE OF TY_JCDS.
+
+DATA: FLAG   TYPE C,
+      NUM    TYPE I,
+      MENGE  TYPE MENGE_D,
+      MENGE1 TYPE MENGE_D,
+      DMBTR  TYPE DMBTR,
+      ISM01  TYPE RU_ISMNG,
+      ISM02  TYPE RU_ISMNG,
+      ISM03  TYPE RU_ISMNG,
+      ISM04  TYPE RU_ISMNG.
+
+
+SELECTION-SCREEN BEGIN OF BLOCK CARR WITH FRAME TITLE TEXT-001.
+
+SELECT-OPTIONS : S_WERKS  FOR AUFK-WERKS OBLIGATORY,
+                 S_AUFNR  FOR AUFK-AUFNR,
+                 S_AUART  FOR AUFK-AUART,
+                 S_ALINUM FOR AUFK-ZAUFNRNUM,
+                 S_ZKHNO  FOR AUFK-ZKHNO,
+                 S_STLBEZ FOR AFKO-STLBEZ,
+                 S_ERDAT  FOR AUFK-ERDAT,
+                 S_BUDAT  FOR MSEG-BUDAT_MKPF,
+                 S_MATKL  FOR MARA-MATKL.
+
+SELECTION-SCREEN END OF BLOCK CARR.
+
+
+DATA: GV_INIT   TYPE STRING,
+      GV_OUTPUT TYPE STRING,
+      GV_START  TYPE STRING,
+      GV_END    TYPE STRING.
+
+INITIALIZATION.
+*  gv_init   = '01.INITIALIZATION 事件'.
+
+
+AT SELECTION-SCREEN OUTPUT.
+*  gv_output = '02.AT SELECTION-SCREEN OUTPUT 事件'.
+
+START-OF-SELECTION.
+*  gv_start  = '03.START-OF-SELECTION 事件'.
+  PERFORM FRM_GET_DATA.
+
+
+END-OF-SELECTION.
+
+  PERFORM FRM_SET_LAYOUT.
+  PERFORM FRM_BUILD_FIELDCAT .
+  PERFORM FRM_ALV_SHOW.
+*&---------------------------------------------------------------------*
+*& Form FRM_GET_DATA
+*&---------------------------------------------------------------------*
+*& text
+*&---------------------------------------------------------------------*
+*& -->  p1        text
+*& <--  p2        text
+*&---------------------------------------------------------------------*
+FORM FRM_GET_DATA .
+
+  SELECT
+    O~AUFNR
+    O~RSNUM
+    O~STLBEZ
+    K~OBJNR
+    O~AUFPL
+    K~ZAUFNRNUM
+    K~AUART
+    K~WERKS
+    K~ERDAT
+    K~ZKHNO
+    K~IDAT2
+    INTO CORRESPONDING FIELDS OF TABLE LT_ALV
+    FROM AFKO AS O
+    INNER JOIN AUFK AS K ON O~AUFNR = K~AUFNR
+    WHERE K~WERKS IN S_WERKS
+    AND   K~AUFNR IN S_AUFNR
+    AND   K~AUART IN S_AUART
+    AND   K~ZAUFNRNUM IN S_ALINUM.
+
+  CHECK LT_ALV IS NOT INITIAL.
+
+  "取MOS关单时间
+  SELECT
+    OBJNR
+    UDATE
+    INTO TABLE LT_JCDS
+    FROM JCDS
+    FOR ALL ENTRIES IN LT_ALV
+    WHERE OBJNR = LT_ALV-OBJNR
+    AND   STAT  = 'I0045'
+    AND   USNAM = 'RFCUSR'.
+
+  SORT LT_JCDS BY UDATE.
+  DELETE ADJACENT DUPLICATES FROM LT_JCDS COMPARING OBJNR.
+
+  "取成衣物料描述
+  SELECT
+    MATNR
+    MAKTX
+    INTO CORRESPONDING FIELDS OF TABLE LT_MAKT1
+    FROM MAKT
+    FOR ALL ENTRIES IN LT_ALV
+    WHERE MATNR = LT_ALV-STLBEZ
+    AND   SPRAS = 1.
+
+  "由AUFK-AUFNR=MSEG-AUFNR，RESB-MATNR=MSEG-MATNR
+  SELECT
+    MATNR
+    AUFNR
+    MBLNR
+    MJAHR
+    ZEILE
+    LINE_ID
+    MENGE
+    MEINS
+    BWART
+    DMBTR
+    INTO CORRESPONDING FIELDS OF TABLE LT_MSEG
+    FROM MSEG
+    FOR ALL ENTRIES IN LT_ALV
+    WHERE AUFNR = LT_ALV-AUFNR
+    AND   ( BWART = '261' OR BWART = '262' )
+    AND   BUDAT_MKPF IN S_BUDAT.
+
+  IF LT_MSEG IS NOT INITIAL.
+
+    "取物料描述
+    SELECT
+      MATNR
+      MAKTX
+      INTO CORRESPONDING FIELDS OF TABLE LT_MAKT
+      FROM MAKT
+      FOR ALL ENTRIES IN LT_MSEG
+      WHERE MATNR = LT_MSEG-MATNR
+      AND   SPRAS = 1.
+    "取物料组
+    SELECT
+      MATNR
+      MATKL
+      MEINS
+      INTO TABLE LT_MARA
+      FROM MARA
+      FOR ALL ENTRIES IN LT_MSEG
+      WHERE MATNR = LT_MSEG-MATNR.
+  ENDIF.
+
+  "委外
+  SELECT
+    MATNR
+    AUFNR
+    MBLNR
+    MJAHR
+    ZEILE
+    LINE_ID
+    MENGE
+    MEINS
+    BWART
+    DMBTR
+    INTO CORRESPONDING FIELDS OF TABLE LT_MSEG1
+    FROM MSEG
+    FOR ALL ENTRIES IN LT_ALV
+    WHERE AUFNR = LT_ALV-AUFNR
+    AND   ( BWART = '101' OR BWART = '102' )
+    AND   MATNR = 'Z006'
+    AND   BUDAT_MKPF IN S_BUDAT.
+
+  "取成品物料
+  SELECT
+   MATNR
+   AUFNR
+   MBLNR
+   MJAHR
+   ZEILE
+   LINE_ID
+   MENGE
+   MEINS
+   BWART
+   DMBTR
+   INTO CORRESPONDING FIELDS OF TABLE LT_MSEG2
+   FROM MSEG
+   FOR ALL ENTRIES IN LT_ALV
+   WHERE AUFNR = LT_ALV-AUFNR
+   AND   ( BWART = '101' OR BWART = '102' )
+   AND   MATNR = LT_ALV-STLBEZ
+   AND   BUDAT_MKPF IN S_BUDAT.
+
+  LOOP AT LT_MSEG2 INTO LS_MSEG2.
+
+    IF LS_MSEG2-BWART = '102'.
+      LS_MSEG2-MENGE = - LS_MSEG2-MENGE.
+      MODIFY LT_MSEG2 FROM LS_MSEG2.
+    ENDIF.
+    CLEAR: LS_MSEG2.
+
+  ENDLOOP.
+
+  "委外物料描述
+  SELECT
+    MATNR
+    MAKTX
+    INTO CORRESPONDING FIELDS OF TABLE LT_MAKT2
+    FROM MAKT
+    WHERE MATNR = 'Z006'
+    AND   SPRAS = 1.
+
+
+  SORT LT_MSEG1 BY AUFNR MATNR.
+
+  SORT LT_MSEG BY AUFNR.
+
+  LOOP AT LT_MSEG INTO LS_MSEG.
+
+    CLEAR: FLAG.
+    IF LS_MSEG-BWART = '262'.
+      LS_MSEG-MENGE = - LS_MSEG-MENGE.
+      MODIFY LT_MSEG FROM LS_MSEG.
+    ENDIF.
+    NUM = NUM + 1.
+    READ TABLE LT_ALV INTO LS_ALV WITH KEY AUFNR = LS_MSEG-AUFNR.
+    IF SY-SUBRC = 0.
+      LS_ALV1 = LS_ALV.
+      LS_ALV1-NUM = NUM.
+      LS_MSEG-NUM = NUM.
+      MODIFY LT_MSEG FROM LS_MSEG.
+      APPEND LS_ALV1 TO LT_ALV.
+      CLEAR: LS_ALV1, LS_ALV.
+    ENDIF.
+    AT END OF AUFNR.
+      FLAG = 'X'.
+    ENDAT.
+    IF FLAG = 'X'.
+      READ TABLE LT_ALV INTO LS_ALV WITH KEY AUFNR = LS_MSEG-AUFNR.
+      IF SY-SUBRC = 0.
+        DELETE TABLE LT_ALV FROM LS_ALV.
+      ENDIF.
+      CLEAR: NUM.
+    ENDIF.
+    CLEAR: LS_MSEG.
+
+  ENDLOOP.
+
+  SORT LT_MSEG BY AUFNR MATNR.
+
+  LOOP AT LT_MSEG1 INTO LS_MSEG1.
+
+    IF LS_MSEG1-BWART = '102'.
+      LS_MSEG1-MENGE = - LS_MSEG1-MENGE.
+      LS_MSEG1-DMBTR = - LS_MSEG1-DMBTR.
+      MODIFY LT_MSEG1 FROM LS_MSEG1.
+    ENDIF.
+    CLEAR: LS_MSEG1.
+
+  ENDLOOP.
+
+
+  "取AFVC-RUECK
+  SELECT
+    AUFPL
+    APLZL
+    RUECK
+    INTO CORRESPONDING FIELDS OF TABLE LT_AFVC
+    FROM AFVC
+    FOR ALL ENTRIES IN LT_ALV
+    WHERE AUFPL = LT_ALV-AUFPL.
+
+  "取AFRU表工序时间
+  IF LT_AFVC IS NOT INITIAL.
+
+    SELECT
+      RUECK
+      RMZHL
+      STOKZ
+      STZHL
+      ISM01
+      ILE01
+      ISM02
+      ILE02
+      ISM03
+      ILE03
+      ISM04
+      ILE04
+      AUFNR
+      INTO CORRESPONDING FIELDS OF TABLE LT_AFRU
+      FROM AFRU
+      FOR ALL ENTRIES IN LT_AFVC
+      WHERE RUECK = LT_AFVC-RUECK
+      AND   STOKZ NE 'X'
+      AND   STZHL = ''
+      AND   BUDAT IN S_BUDAT.
+
+    SORT LT_AFRU BY AUFNR.
+
+  ENDIF.
+
+  "取WEMNG
+  SELECT
+    AUFNR
+    POSNR
+    WEMNG
+    INTO CORRESPONDING FIELDS OF TABLE LT_AFPO
+    FROM AFPO
+    FOR ALL ENTRIES IN LT_ALV
+    WHERE AUFNR = LT_ALV-AUFNR.
+
+
+  LOOP AT LT_ALV INTO LS_ALV.
+
+    READ TABLE LT_JCDS INTO LS_JCDS WITH KEY OBJNR = LS_ALV-OBJNR.
+    IF SY-SUBRC = 0.
+      LS_ALV-MOSDAT = LS_JCDS-UDATE.
+    ENDIF.
+
+    READ TABLE LT_MSEG INTO LS_MSEG WITH KEY AUFNR = LS_ALV-AUFNR NUM = LS_ALV-NUM.
+    IF SY-SUBRC = 0.
+      LS_ALV-MATNR  = LS_MSEG-MATNR.
+      LS_ALV-MEINS = LS_MSEG-MEINS.
+      READ TABLE LT_MAKT INTO LS_MAKT WITH KEY MATNR = LS_MSEG-MATNR.
+      IF SY-SUBRC = 0.
+        LS_ALV-MAKTX = LS_MAKT-MAKTX.
+      ENDIF.
+      READ TABLE LT_MARA INTO LS_MARA WITH KEY MATNR = LS_MSEG-MATNR.
+      IF SY-SUBRC = 0.
+        LS_ALV-MATKL = LS_MARA-MATKL.
+        LS_ALV-MEINS = LS_MARA-MEINS.
+      ENDIF.
+    ENDIF.
+    CLEAR: LS_MSEG, LS_MAKT, LS_MARA, LS_JCDS.
+
+    "成衣物料描述
+    READ TABLE LT_MAKT1 INTO LS_MAKT1 WITH KEY MATNR = LS_ALV-STLBEZ.
+    IF SY-SUBRC = 0.
+      LS_ALV-MAKTX1 = LS_MAKT1-MAKTX.
+    ENDIF.
+    CLEAR: LS_MAKT1.
+
+    "赋值订单状态
+    CALL FUNCTION 'STATUS_TEXT_EDIT'
+      EXPORTING
+        OBJNR            = LS_ALV-OBJNR
+        SPRAS            = '1'
+      IMPORTING
+        LINE             = LS_ALV-ZTXT
+      EXCEPTIONS
+        OBJECT_NOT_FOUND = 1
+        OTHERS           = 2.
+    IF SY-SUBRC <> 0.
+* Implement suitable error handling here
+    ENDIF.
+
+
+    "赋值成衣入库数量
+    READ TABLE LT_AFPO INTO LS_AFPO WITH KEY AUFNR = LS_ALV-AUFNR.
+    IF SY-SUBRC = 0.
+      LS_ALV-WEMNG = LS_AFPO-WEMNG.
+    ENDIF.
+
+
+    MODIFY LT_ALV FROM LS_ALV.
+    CLEAR: LS_ALV.
+  ENDLOOP.
+
+  SORT LT_ALV BY AUFNR MATNR.
+  DELETE ADJACENT DUPLICATES FROM LT_ALV COMPARING AUFNR MATNR.
+
+  "合计工序时间
+  LOOP AT LT_AFRU INTO LS_AFRU.
+
+    CLEAR: FLAG.
+    IF LS_AFRU-ILE01 = 'S'.
+      LS_AFRU-ISM01 = LS_AFRU-ISM01 / 60.
+    ENDIF.
+    IF LS_AFRU-ILE02 = 'S'.
+      LS_AFRU-ISM02 = LS_AFRU-ISM02 / 60.
+    ENDIF.
+    IF LS_AFRU-ILE03 = 'S'.
+      LS_AFRU-ISM03 = LS_AFRU-ISM03 / 60.
+    ENDIF.
+    IF LS_AFRU-ILE04 = 'S'.
+      LS_AFRU-ISM04 = LS_AFRU-ISM04 / 60.
+    ENDIF.
+    ISM01 = LS_AFRU-ISM01 + ISM01.
+    ISM02 = LS_AFRU-ISM02 + ISM02.
+    ISM03 = LS_AFRU-ISM03 + ISM03.
+    ISM04 = LS_AFRU-ISM04 + ISM04.
+    AT END OF AUFNR.
+      FLAG = 'X'.
+    ENDAT.
+    IF FLAG = 'X'.
+      LS_AFRU-ZISM01 = ISM01.
+      LS_AFRU-ZISM02 = ISM02.
+      LS_AFRU-ZISM03 = ISM03.
+      LS_AFRU-ZISM04 = ISM04.
+      LS_AFRU-SUM    = 'X'.
+      MODIFY LT_AFRU FROM LS_AFRU.
+      CLEAR: LS_AFRU, ISM01, ISM02, ISM03,ISM04.
+    ENDIF.
+
+  ENDLOOP.
+
+  "合计面料投料数量
+  CLEAR: MENGE, DMBTR,MENGE1 .
+  LOOP AT LT_MSEG INTO LS_MSEG.
+
+    CLEAR: FLAG.
+    MENGE = MENGE + ABS( LS_MSEG-MENGE ).
+    MENGE1 = MENGE1 + LS_MSEG-MENGE.
+    DMBTR = DMBTR + ABS( LS_MSEG-DMBTR ).
+    AT END OF MATNR.
+      FLAG = 'X'.
+    ENDAT.
+    IF FLAG = 'X'.
+      LS_MSEG-ZMENGE = MENGE1.
+      LS_MSEG-DMBTR  = DMBTR / MENGE.
+      LS_MSEG-SUM    = 'X'.
+      MODIFY LT_MSEG FROM LS_MSEG.
+      CLEAR: MENGE,LS_MSEG,DMBTR, MENGE1.
+    ENDIF.
+
+  ENDLOOP.
+
+  "合计委外
+  CLEAR: MENGE, DMBTR.
+  LOOP AT LT_MSEG1 INTO LS_MSEG1.
+
+    CLEAR: FLAG.
+    MENGE = MENGE + LS_MSEG1-MENGE.
+    DMBTR = DMBTR + LS_MSEG1-DMBTR.
+    AT END OF MATNR.
+      FLAG = 'X'.
+    ENDAT.
+    IF FLAG = 'X'.
+      LS_MSEG1-ZMENGE = MENGE.
+      LS_MSEG1-DMBTR  = DMBTR.
+      LS_MSEG1-SUM    = 'X'.
+      MODIFY LT_MSEG1 FROM LS_MSEG1.
+      CLEAR: MENGE,LS_MSEG1,DMBTR.
+    ENDIF.
+
+  ENDLOOP.
+
+*     U01 begin of add by HANDLJH    20190423
+  SORT LT_MSEG2 BY AUFNR MATNR.
+*     U01 end of add by HANDLJH    20190423
+  "合计成衣数量
+  CLEAR: MENGE, DMBTR.
+  LOOP AT LT_MSEG2 INTO LS_MSEG2.
+
+    CLEAR: FLAG.
+    MENGE = MENGE + LS_MSEG2-MENGE.
+    AT END OF MATNR.
+      FLAG = 'X'.
+    ENDAT.
+    IF FLAG = 'X'.
+      LS_MSEG2-ZMENGE = MENGE.
+      LS_MSEG2-SUM    = 'X'.
+      MODIFY LT_MSEG2 FROM LS_MSEG2.
+      CLEAR: MENGE,LS_MSEG2.
+    ENDIF.
+
+  ENDLOOP.
+
+  LOOP AT LT_ALV INTO LS_ALV.
+
+    READ TABLE LT_MSEG INTO LS_MSEG WITH KEY SUM = 'X' AUFNR = LS_ALV-AUFNR MATNR = LS_ALV-MATNR.
+    IF SY-SUBRC = 0.
+      LS_ALV-ZMENGE = LS_MSEG-ZMENGE.
+      LS_ALV-ZDMBTR = LS_MSEG-DMBTR.
+      CLEAR: LS_MSEG.
+    ENDIF.
+
+    READ TABLE LT_MSEG1 INTO LS_MSEG1 WITH KEY SUM = 'X' AUFNR = LS_ALV-AUFNR .
+    IF SY-SUBRC = 0.
+      LS_ALV-MATNR1  = LS_MSEG1-MATNR.
+      LS_ALV-ZMENGE1 = LS_MSEG1-ZMENGE.
+      LS_ALV-ZWWJE   = LS_MSEG1-DMBTR.
+      LS_ALV-MEINS1   = LS_MSEG1-MEINS.
+      READ TABLE LT_MAKT2 INTO LS_MAKT2 WITH KEY MATNR = 'Z006'.
+      IF SY-SUBRC = 0.
+        LS_ALV-MAKTX2 = LS_MAKT2-MAKTX.
+        CLEAR: LS_MAKT2.
+      ENDIF.
+      CLEAR: LS_MSEG1.
+    ENDIF.
+
+    READ TABLE LT_MSEG2 INTO LS_MSEG2 WITH KEY SUM = 'X' AUFNR = LS_ALV-AUFNR MATNR = LS_ALV-STLBEZ.
+    IF SY-SUBRC = 0.
+      LS_ALV-ZMENGE3 = LS_MSEG2-ZMENGE.
+      CLEAR: LS_MSEG2.
+    ENDIF.
+
+    READ TABLE LT_AFVC INTO LS_AFVC WITH KEY AUFPL = LS_ALV-AUFPL.
+    IF SY-SUBRC = 0.
+      READ TABLE LT_AFRU INTO LS_AFRU WITH KEY  SUM = 'X' AUFNR = LS_ALV-AUFNR.
+      IF SY-SUBRC = 0.
+        LS_ALV-ISM01 = LS_AFRU-ZISM01.
+        LS_ALV-ISM02 = LS_AFRU-ZISM02.
+        LS_ALV-ISM03 = LS_AFRU-ZISM03.
+        LS_ALV-ISM04 = LS_AFRU-ZISM04.
+        LS_ALV-ILE01 = 'MIN'.
+        LS_ALV-ILE02 = 'MIN'.
+        LS_ALV-ILE03 = 'MIN'.
+        LS_ALV-ILE04 = 'MIN'.
+      ENDIF.
+    ENDIF.
+
+    CALL FUNCTION 'CONVERSION_EXIT_ALPHA_OUTPUT'
+      EXPORTING
+        INPUT  = LS_ALV-AUFNR
+      IMPORTING
+        OUTPUT = LS_ALV-AUFNR.
+
+    CALL FUNCTION 'CONVERSION_EXIT_CUNIT_OUTPUT'
+      EXPORTING
+        INPUT          = LS_ALV-MEINS
+        LANGUAGE       = '1'
+      IMPORTING
+        OUTPUT         = LS_ALV-MEINS
+      EXCEPTIONS
+        UNIT_NOT_FOUND = 1
+        OTHERS         = 2.
+    IF SY-SUBRC <> 0.
+* Implement suitable error handling here
+    ENDIF.
+
+    CALL FUNCTION 'CONVERSION_EXIT_CUNIT_OUTPUT'
+      EXPORTING
+        INPUT          = LS_ALV-MEINS1
+        LANGUAGE       = '1'
+      IMPORTING
+        OUTPUT         = LS_ALV-MEINS1
+      EXCEPTIONS
+        UNIT_NOT_FOUND = 1
+        OTHERS         = 2.
+    IF SY-SUBRC <> 0.
+* Implement suitable error handling here
+    ENDIF.
+
+    MODIFY LT_ALV FROM LS_ALV.
+    CLEAR: LS_ALV.
+  ENDLOOP.
+
+  IF S_MATKL IS NOT INITIAL.
+    DELETE LT_ALV WHERE MATKL NOT IN S_MATKL.
+  ENDIF.
+
+ENDFORM.
+
+FORM FRM_SET_LAYOUT .
+  GS_LAYOUT-ZEBRA = 'X'.
+  GS_LAYOUT-CWIDTH_OPT = 'X'.
+  GS_LAYOUT-SEL_MODE   = 'X'.
+*  gs_layout-cwidth_opt = 'X'.
+*  gs_layout-info_fname = 'CLR'.
+ENDFORM.
+
+
+FORM FRM_BUILD_FIELDCAT .
+  PERFORM FRM_FILL_FIELDCAT USING   'AUFNR'      'SAP生产订单号'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ZAUFNRNUM'  '阿里生产订单编号'.
+  PERFORM FRM_FILL_FIELDCAT USING   'AUART'      '订单类型'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ERDAT'      '订单创建日期'.
+  PERFORM FRM_FILL_FIELDCAT USING   'IDAT2'      '订单完工时间'.
+  PERFORM FRM_FILL_FIELDCAT USING   'MOSDAT'      'MOS关单日期'.
+  PERFORM FRM_FILL_FIELDCAT USING   'WERKS'      '工厂'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ZKHNO'      '款号'.
+  PERFORM FRM_FILL_FIELDCAT USING   'STLBEZ'     '成衣物料号'.
+  PERFORM FRM_FILL_FIELDCAT USING   'MAKTX1'      '成衣物料描述'.
+  PERFORM FRM_FILL_FIELDCAT USING   'MATNR'      '原料编码'.
+  PERFORM FRM_FILL_FIELDCAT USING   'MAKTX'      '原料描述'.
+  PERFORM FRM_FILL_FIELDCAT USING   'MATKL'      '原料物料组'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ZMENGE'     '原料投料数量'.
+  PERFORM FRM_FILL_FIELDCAT USING   'MEINS'      '原料单位'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ZDMBTR'     '原料实际单价'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ISM01'      'AT1000  直接人工'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ILE01'      '单位'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ISM02'      'AT2000  直接机器'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ILE02'      '单位'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ISM03'      'AT3000  固定制造费用'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ILE03'      '单位'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ISM04'      'AT4000  变动制造费用'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ILE04'      '单位'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ZTXT'       '订单状态'.
+  PERFORM FRM_FILL_FIELDCAT USING   'WEMNG'     '成衣入库数量'.
+  PERFORM FRM_FILL_FIELDCAT USING   'MATNR1'     '委外物料号'.
+  PERFORM FRM_FILL_FIELDCAT USING   'MAKTX2'     '委外描述'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ZMENGE1'     '委外数量'.
+  PERFORM FRM_FILL_FIELDCAT USING   'MEINS1'     '委外单位'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ZWWJE'     '委外总金额'.
+  PERFORM FRM_FILL_FIELDCAT USING   'ZMENGE3'     '成衣期间入库数量'.
+
+ENDFORM.
+" frm_build_fieldcat
+*&---------------------------------------------------------------------*
+*&      Form  frm_fill_fieldcat
+*&---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+*  -->  p1        text
+*  <--  p2        text
+*----------------------------------------------------------------------*
+FORM FRM_FILL_FIELDCAT USING U_NAME U_DESC.
+  CLEAR GS_FIELDCAT.
+  IF U_NAME = 'STATUS'.
+    GS_FIELDCAT-ICON = 'X'.
+  ENDIF.
+  GS_FIELDCAT-FIELDNAME     = U_NAME."变量名
+  GS_FIELDCAT-SCRTEXT_L     = U_DESC."长描述
+  GS_FIELDCAT-SCRTEXT_M    = U_DESC."长描述
+  GS_FIELDCAT-SCRTEXT_S     = U_DESC."长描述
+
+  APPEND GS_FIELDCAT TO GT_FIELDCAT.
+ENDFORM.
+*&---------------------------------------------------------------------*
+*&      Form  frm_alv_show
+*&---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+*  -->  p1        text
+*  <--  p2        text
+*----------------------------------------------------------------------*
+
+FORM FRM_ALV_SHOW .
+
+  DATA: GS_VARIANT   TYPE DISVARIANT.
+  GS_VARIANT-REPORT = SY-REPID.
+
+  CALL FUNCTION 'REUSE_ALV_GRID_DISPLAY_LVC'
+    EXPORTING
+      I_CALLBACK_PROGRAM       = SY-REPID
+      IS_LAYOUT_LVC            = GS_LAYOUT
+      IT_FIELDCAT_LVC          = GT_FIELDCAT
+*     i_default                = 'X'
+*     i_save                   = 'A'
+*     is_variant               = gs_variant
+      I_CALLBACK_PF_STATUS_SET = 'FRM_SET_STATUS'
+*     I_CALLBACK_USER_COMMAND  = 'FRM_USER_COMMAND'
+    TABLES
+      T_OUTTAB                 = LT_ALV
+    EXCEPTIONS
+      PROGRAM_ERROR            = 1
+      OTHERS                   = 2.
+
+ENDFORM.                    " frm_alv_show
+
+FORM FRM_SET_STATUS USING PT_EXTAB TYPE SLIS_T_EXTAB .
+  SET PF-STATUS 'STATUS' EXCLUDING PT_EXTAB.
+ENDFORM. "Frm_SET_STATUS

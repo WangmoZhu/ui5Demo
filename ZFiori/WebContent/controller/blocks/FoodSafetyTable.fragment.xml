@@ -1,0 +1,68 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:t="sap.ui.table" xmlns:core="sap.ui.core">
+  <t:Table rows="{originData>/results}" title="" selectionMode="None" visibleRowCount="7" class="myUItableHdr">
+    <t:columns>
+      <t:Column width="7rem" sortProperty="STAT_DATE" filterProperty="STAT_DATE">
+        <Label text="创建日期"/>
+        <t:template >
+          <Text text="{originData>STAT_DATE}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="7rem" sortProperty="MAT_NAME" filterProperty="MAT_NAME">
+        <Label text="物料描述"/>
+        <t:template >
+          <Text text="{originData>MAT_NAME}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="5rem" sortProperty="ADJ_TYPE" filterProperty="ADJ_TYPE">
+        <Label text="状态"/>
+        <t:template >
+          <Text text="{originData>ADJ_TYPE}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="7rem" sortProperty="PG" filterProperty="PG">
+        <Label text="不合格分类"/>
+        <t:template >
+          <Text text="{originData>PG}" wrapping="false"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="7rem" sortProperty="PRUEFLOS" filterProperty="PRUEFLOS">
+        <Label text="批次"/>
+        <t:template >
+          <Text text="{originData>PRUEFLOS}" wrapping="false" tooltip="{originData>PRUEFLOS}"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="16rem" sortProperty="SUP_NAME" filterProperty="SUP_NAME" >
+        <Label text="供应商"/>
+        <t:template>
+          <Text text="{originData>SUP_NAME}" wrapping="false" tooltip="{originData>SUP_NAME}"/>
+
+        </t:template>
+      </t:Column>
+      <t:Column width="11rem" sortProperty="PA_NAME" filterProperty="PA_NAME">
+        <Label text="检测指标"/>
+        <t:template >
+          <Text text="{originData>PA_NAME}" wrapping="false" tooltip="{originData>PA_NAME}"/>
+        </t:template>
+      </t:Column>
+      <t:Column width="11rem" sortProperty="ATTR1" filterProperty="ATTR1">
+        <Label text="原因"/>
+        <t:template >
+          <Text text="{originData>ATTR1}" wrapping="false" tooltip="{originData>ATTR1}"/>
+        </t:template>
+         </t:Column>
+      <t:Column width="7rem" sortProperty="ATTR8" filterProperty="ATTR8">
+        <Label text="处理结果"/>
+        <t:template >
+          <Text text="{originData>ATTR8}" wrapping="false" tooltip="{originData>ATTR8}"/>
+        </t:template>
+      </t:Column>
+        <t:Column width="11rem" sortProperty="ATTR3" filterProperty="ATTR3">
+        <Label text="改正措施"/>
+        <t:template >
+          <Text text="{originData>ATTR3}" wrapping="false" tooltip="{originData>ATTR3}"/>
+        </t:template>
+         </t:Column>
+
+    </t:columns>
+  </t:Table>
+</core:FragmentDefinition>

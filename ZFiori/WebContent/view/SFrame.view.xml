@@ -1,0 +1,29 @@
+<mvc:View controllerName="sap.vo.mengniu.controller.SFrame" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:l="sap.ui.layout" displayBlock="true" height="100%" xmlns:v="sap.vco">
+	<App height="100%" width="100%" class="myPage">
+		<pages>
+			<Page>
+				<customHeader>
+					<Toolbar width="100%">
+						<Button type="Transparent" id="menu" icon="sap-icon://menu2" tooltip="选择模块" press="onMenuPress"/>
+						<Button type="Transparent" id="home" icon="sap-icon://home" tooltip="首页" press="onHomePress"/>
+						<Image id="logo" src="./image/logo.png" height="100%"/>
+						<Title id="title" text="{app>/title}" level="H2" titleStyle="H2" class="myBoldText"/>
+						<!--<ToolbarSpacer/>-->
+						<Title id="singleTitle" text="{app>/title}" level="H2" titleStyle="H2" class="MyMarginBegin myBoldText"/>
+						<ToolbarSpacer/>
+						<Label text="集团用户"/>
+						<Button type="Transparent" id="notice" icon="sap-icon://log" tooltip="退出"/>
+					</Toolbar>
+				</customHeader>
+				<content>
+					<SplitApp id="App" mode="HideMode" class="SplitApp">
+						<masterPages>
+							<mvc:XMLView id="Selection" viewName="sap.vo.mengniu.view.Selection" class="master"/>
+						</masterPages>
+					</SplitApp>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,127 @@
+<mvc:View
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:uxap="sap.uxap"
+  xmlns="sap.m"
+  xmlns:m="sap.m" controllerName="sap.vo.mengniu.controller.blocks.TraceFull"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:l="sap.ui.layout"
+  xmlns:viz="sap.viz.ui5.controls"
+  xmlns:data="sap.viz.ui5.data"
+  xmlns:feeds="sap.viz.ui5.controls.common.feeds">
+  <!-- <Toolbar><SearchField id="sf" placeholder="请输入批次号" class="sapUiSmallMargin" /><ToolbarSpacer/><Input id="input" type="Text" placeholder="请输入批次号" /><Button text="搜索" press="onSearch"/></Toolbar> -->
+  <!-- <l:VerticalLayout><l:HorizontalLayout ><ToolbarSpacer/><Input id="input" type="Text" placeholder="请输入批次号" class="sapUiSmallMarginTop sapUiMediumMarginBegin"/><Button text="搜索" press="onSearch" class="sapUiSmallMarginTop"/><Button
+icon="sap-icon://collapse-group" press="onCollapse" class="sapUiSmallMarginTop"/><Button icon="sap-icon://expand-group" press="onExpand" class="sapUiSmallMarginTop"/></l:HorizontalLayout><l:HorizontalLayout><l:VerticalLayout><ProcessFlow
+  xmlns="sap.suite.ui.commons" id="processflow1" scrollable="false" foldedCorners="true" nodePress="onNodePress" nodeTitlePress="onNodeTitlePress" nodes="{/nodes}" lanes="{/lanes}" class="Trace"><nodes><ProcessFlowNode laneId="{lane}" nodeId="{id}"
+title="{title}" titleAbbreviation="{title}" isTitleClickable="{isTitleClickable}" type="{type}" children="{children}" state="{state}" stateText="{stateText}" texts="{texts}" highlighted="{highlighted}"
+focused="{focused}"/></nodes><lanes><ProcessFlowLaneHeader laneId="{id}" iconSrc="{icon}" text="{label}" position="{position}"/></lanes></ProcessFlow></l:VerticalLayout><l:VerticalLayout><Panel id="panel" headerText="蒙牛纯牛奶利乐包100ML-AB17H30E04"
+width="100%" class="sapUiNoContentPadding" visible="true"><viz:Popover id="PopOverPie"/><viz:VizFrame id="pie" uiConfig="{applicationSet:'fiori'}" vizType="pie"><viz:dataset><data:FlattenedDataset
+data="{/results}"><data:dimensions><data:DimensionDefinition name="工厂" value="{plantName}"/></data:dimensions><data:measures><data:MeasureDefinition name="库存"
+value="{inventory}"/></data:measures></data:FlattenedDataset></viz:dataset><viz:feeds><feeds:FeedItem uid="size" type="Measure" values="库存"/><feeds:FeedItem uid="color" type="Dimension"
+values="工厂"/></viz:feeds></viz:VizFrame></Panel></l:VerticalLayout></l:HorizontalLayout></l:VerticalLayout> -->
+  <!--<l:Splitter id="Splitter1" width="100%" height="10%" orientation="Horizontal" class="Trace sapUiSmallMarginTop">-->
+  <!--<Input id="input" type="Text" width="100%" placeholder="请输入批次号"><layoutData><l:SplitterLayoutData size="20%" resizable="false"/></layoutData></Input>-->
+  <l:HorizontalLayout class="Trace sapUiSmallMarginTop">
+    <Button text="开始新的追溯" press="onSearch" class="Trace Button sapUiLargeMarginBegin"/>
+    <Button icon="sap-icon://collapse-group" press="onCollapse" class="Trace Button sapUiSmallMarginBegin" type="Transparent"/>
+    <Button icon="sap-icon://expand-group" press="onExpand" class="Trace Button" type="Transparent"/>
+    <Button icon="sap-icon://zoom-in" press="onZoomIn" class="Trace Button" type="Transparent"/>
+    <Button icon="sap-icon://zoom-out" press="onZoomOut" class="Trace Button" type="Transparent"/>
+    <Button icon="sap-icon://download" press="onDownload" class="Trace Button" type="Transparent"/>
+    <!-- <Button icon="sap-icon://activate" press="onOptimize" class="Trace Button" type="Transparent"/> -->
+    <Button id="FullScreen" icon="sap-icon://exit-full-screen" press="onFullScreen" class="Trace Button" type="Transparent"/>
+    <CheckBox id="Hide" text="隐藏原辅料信息" selected="true" select="onHideAccessory" class="sapUiSmallMarginBegin"/>
+  </l:HorizontalLayout>
+  <!--</l:Splitter>-->
+  <l:Splitter id="Splitter2" width="100%" height="90%" orientation="Horizontal">
+    <l:VerticalLayout width="100%">
+      <l:layoutData>
+        <l:SplitterLayoutData id="SplitterLayoutDataProcessFlow" size="100%" resizable="false"/>
+      </l:layoutData>
+      <ProcessFlow
+        xmlns="sap.suite.ui.commons" id="processflow1" scrollable="true" nodePress="onNodePress" nodes="{/nodes}" lanes="{/lanes}" class="processFlow1 Trace" wheelZoomable="false">
+        <nodes>
+          <ProcessFlowNode laneId="{lane}" nodeId="{id}" title="{title}" titleAbbreviation="{title}" isTitleClickable="{isTitleClickable}" type="{type}" children="{children}" state="{state}" stateText="{stateText}" texts="{texts}"
+highlighted="{highlighted}" focused="{focused}">
+            <zoomLevelTwoContent>
+            <l:Splitter orientation="Vertical">
+            <l:VerticalLayout width="100%">
+              <m:Text text="{title}" maxLines="3" class="myTitle"/>
+              <m:Text text="{stateText}" maxLines="1" class="myContent"/>
+              <m:Text text="{texts/0}" maxLines="1" class="myContent" />
+              <m:Text text="{texts/1}" maxLines="1" class="myContent" visible="{= Boolean(${texts/1}) }"/>
+              <m:Text text="{texts/2}" maxLines="1" class="myContent" visible="{= Boolean(${texts/2}) }"/>
+            </l:VerticalLayout>
+              <m:Text width="100%" class="myContent" textAlign="End" text="{= ${type} === 'Single' ? '点击查看详情' : '点击展开节点'}">
+              <m:layoutData>
+              <l:SplitterLayoutData resizable="false" size="21px" />
+              </m:layoutData>
+              </m:Text>
+            </l:Splitter>
+            </zoomLevelTwoContent>
+            <zoomLevelThreeContent>
+            <l:VerticalLayout width="100%">
+              <m:Text text="{title}" maxLines="2" class="myTitle" />
+              <m:Text text="{stateText}" maxLines="1" class="myContent" />
+              <m:Text text="{texts/1}" maxLines="1" class="myContent" />
+              <m:Text text="{texts/2}" maxLines="1" class="myContent" />
+            </l:VerticalLayout>
+            </zoomLevelThreeContent>
+          </ProcessFlowNode>
+        </nodes>
+        <lanes>
+          <ProcessFlowLaneHeader laneId="{id}" iconSrc="{icon}" text="{label}" position="{position}"/>
+        </lanes>
+      </ProcessFlow>
+    </l:VerticalLayout>
+    <l:VerticalLayout width="100%" visible="true">
+      <VBox >
+        <f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="{Introduction>/Product}" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
+emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" class="Trace" singleContainerFullSize="false">
+          <f:content>
+            <Label text="物料编码" />
+            <Text text="{Introduction>/Matnr}" />
+            <Label text="工厂" />
+            <Text text="{Introduction>/PlantTxt}" />
+            <Label text="工厂编码" />
+            <Text text="{Introduction>/WERKS}" />
+            <Label text="批次" />
+            <Text text="{Introduction>/Batch}" />
+            <Label text="总量" />
+            <Text text="{Introduction>/Amount} {Introduction>/Unit}" />
+            <Label text="当前库存余量" />
+            <Text text="{Introduction>/Stock} {Introduction>/Unit}" />
+            <Label text="检验批" visible="{= ${Introduction>/ZZPRUEFLOS} !== '000000000000'}" />
+            <Text text="{Introduction>/ZZPRUEFLOS}" visible="{= ${Introduction>/ZZPRUEFLOS} !== '000000000000'}" />
+            <Label text="工厂简介" visible="false" />
+            <Text text="{Introduction>/PlantIntro}" visible="false" />
+            <!-- 和林常温一厂位于内蒙古呼和浩特市和林格尔县盛乐工业园区，生产环境干净整洁，主要承担了生产常温奶的主要业务。 -->
+          </f:content>
+        </f:SimpleForm>
+      </VBox>
+      <viz:Popover id="PopOverPie"/>
+      <viz:VizFrame id="pie" uiConfig="{applicationSet:'fiori'}" width="100%" heigth="60%" vizType="pie" visible="{= ${Introduction>/Stock} > 0}">
+        <viz:dataset>
+          <data:FlattenedDataset data="{Introduction>/results}">
+            <data:dimensions>
+              <data:DimensionDefinition name="库存类型" value="{type}"/>
+            </data:dimensions>
+            <data:measures>
+              <data:MeasureDefinition name="库存" value="{inventory}"/>
+            </data:measures>
+          </data:FlattenedDataset>
+        </viz:dataset>
+        <viz:feeds>
+          <feeds:FeedItem uid="size" type="Measure" values="库存"/>
+          <feeds:FeedItem uid="color" type="Dimension" values="库存类型"/>
+        </viz:feeds>
+      </viz:VizFrame>
+      <!--<uxap:ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true" showHeaderContent="true"><uxap:headerTitle><uxap:ObjectPageHeader objectImageURI="" objectImageShape="Circle" objectTitle="Denise Smith"
+objectImageAlt="Senior UI Developer" id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false"
+showPlaceholder="true"><uxap:actions></uxap:actions></uxap:ObjectPageHeader></uxap:headerTitle><uxap:headerContent><l:VerticalLayout><ObjectStatus title=" 产品描述" text="蒙牛纯牛奶利乐包1000ML*6盒"/><ObjectStatus title="批次" text="AB17H30E04"/><ObjectStatus
+title="工厂" text="和林常温一厂"/><ObjectStatus title="工厂简介" text="和林常温一厂位于内蒙古呼和浩特市和林格尔县盛乐工业园区，生产环境干净整洁，主要承担了生产常温奶的主要业务。"/></l:VerticalLayout></uxap:headerContent><uxap:sections><uxap:ObjectPageSection title="库存"><uxap:subSections><uxap:ObjectPageSubSection
+title="库存信息"><uxap:blocks></uxap:blocks></uxap:ObjectPageSubSection></uxap:subSections></uxap:ObjectPageSection></uxap:sections></uxap:ObjectPageLayout>-->
+    </l:VerticalLayout>
+  </l:Splitter>
+</mvc:View>

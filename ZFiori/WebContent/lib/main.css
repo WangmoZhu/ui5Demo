@@ -1,0 +1,30 @@
+.text-info {
+    fill: rgba(105, 100, 100, 0.85);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.circle {
+    stroke: rgb(51, 148, 51);
+    fill: white;
+}
+.red{
+    stroke:  #F44336;
+}
+.normal{
+    stroke: green;
+}
+.text-name {
+  font-size: 1rem;
+    fill: rgba(105, 100, 100, 0.85);
+    font-weight: 500;
+}
+
+.line {
+    stroke: rgba(0, 164, 235, 0.7);
+}
+
+/*@font-face {
+    font-family: "SAP-icons";
+    src: url('https://sapui5.hana.ondemand.com/resources/sap/ui/core/themes/base/fonts/SAP-icons.woff2');
+}*/

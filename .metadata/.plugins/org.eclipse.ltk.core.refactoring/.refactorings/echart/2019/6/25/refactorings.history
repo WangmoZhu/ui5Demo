@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 8 elements to &apos;WebContent&apos;&#x0A;- Original project: &apos;echart&apos;&#x0A;- Destination element: &apos;WebContent&apos;&#x0A;- Original elements:&#x0A;     index.html&#x0A;     manifest.json&#x0A;     Component.js&#x0A;     controller&#x0A;     css&#x0A;     model&#x0A;     i18n&#x0A;     view" description="Copy elements" element1="webapp/index.html" element2="webapp/manifest.json" element3="webapp/Component.js" element4="webapp/controller" element5="webapp/css" element6="webapp/model" element7="webapp/i18n" element8="webapp/view" files="3" flags="589830" folders="5" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1560756322912" target="/zechart/WebContent" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,9 @@
+<!-- App视图：
+     1.xmlns 声明 xml 命名空间，sap.ui.layout、sap.ui.cor.mvc、sap.ui.core、sap.m,
+            说明xmlns:mvc 其中 mvc 为别名，后续使用中会使用前缀(别名)加标签方式指定标签来源；
+     2.controllerName 指定控制器文件，ZAPI_VIEW.controller.App;
+     3.App 标签使用;
+-->
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="ZAPI_VIEW.controller.App"  busy="{/busy}">
+	<App id="appNavContainer" backgroundImage="" backgroundOpacity="0.3"/>
+</mvc:View>

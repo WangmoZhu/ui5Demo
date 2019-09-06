@@ -1,0 +1,481 @@
+{
+	"vizFrame": {
+		{
+				categoryAxis: {
+					axisLine: {
+						size: 1, //分类轴线的粗细
+						visible: true
+					},
+					axisTick: {
+						shortTickVisible: null, //分类轴线上的刻度是否显示:null和true表示显示，false表示不显示
+						visible: true
+					},
+					color: "#6c6c6c", //分类轴线及轴线的刻度颜色，还可用颜色的英文单词 
+					hoverShadow: {
+						color: "#cccccc" //鼠标悬停在分类标签上的颜色，还可用颜色的英文单词
+					},
+					label: {
+						angle: 90, //分类标签的旋转角度,可选值：0, 30, 45, 60, 90(默认值);
+						hideSubLevels: false,
+						linesOfWrap: 1, //分类标签的换行数,可选值：1(不换行),2,3
+						parentStyle: { //父标签样式
+							color: null,
+							fontFamily: null,
+							fontSize: null,
+							fontStyle: null,
+							fontWeight: null
+						},
+						rotation: "auto", //可选值：auto, fixed
+						style: { //分类标签字体的样式
+							color: "#333333",
+							fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",
+							fontSize: "12px",
+							fontStyle: "normal",
+							fontWeight: "normal"
+						},
+						truncatedLabelRatio: 0.2,
+						visible: true //分类标签是否可见 
+					},
+					labelRenderer: null,
+					layout: {
+						autoHeight: null,
+						autoWidth: null,
+						categoryWidth: null,
+						height: null, //分类标签占整个图(vizFrame)高的比例；height设定值后，maxHeight值不起作用 
+						maxHeight: 0.3,
+						maxWidth: 0.3,
+						offsetToChart: null,
+						width: null
+					},
+					mouseDownShadow: {
+						color: "#808080" //鼠标点击分类标签时，分类标签的颜色 
+					},
+					title: { //分类标签的标题，如果visible=true, text=null,则分类标签的标题是 XML中DimensionDefinitionde的name 
+						applyAxislineColor: false,
+						style: {
+							color: "#000000",
+							fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",
+							fontSize: "14px",
+							fontStyle: "normal",
+							fontWeight: "bold"
+						},
+						text: null,
+						visible: false
+					},
+					visible: true
+				},
+				feedingZone: [{
+					"bindDef": [{
+						"id": null
+					}],
+					"bound": [
+						[
+							[0, 0],
+							[0, 0],
+							[0, 0],
+							[0, 0]
+						]
+					],
+					"name": null
+				}],
+				general: { //整个vizFrame区域 
+					background: {
+						border: { //图形（整个vizFrame）的边框，默认边框不可见   
+							bottom: {
+								visible: false
+							},
+							left: {
+								visible: false
+							},
+							right: {
+								visible: false
+							},
+							stroke: "#d8d8d8", //图形（整个vizFrame）边框线的颜色   
+							strokeWidth: 1, //图形（整个vizFrame）边框线的宽度 
+							top: {
+								visible: false
+							}
+						},
+						color: "transparent", //图（整个vizFrame）的背景色，可以是任意颜色 
+						drawingEffect: "normal", //可选值:normal, glossy;设置背景色后,当drawingEffect为glossy时，图形有渐变效果；drawingEffect=normal时无渐变 
+						gradientDirection: "vertical", //图形（整个vizFrame）颜色的渐变方向;可选值:horizontal,vertical 
+						visible: true
+					},
+					groupData: false,
+					layout: { //图形离边框线的距离，上下左右统一设定时用padding;也可单独设定某一边的距离
+						padding: 24,
+						paddingBottom: null,
+						paddingLeft: null,
+						paddingRight: null,
+						paddingTop: null
+					},
+					tabIndex: 0
+				},
+				interaction: {
+					/*behaviorType: null,
+					decorations: null,*/
+					deselected: { //当选中某些bar时，未被选中的bar的样式
+						color: null, //未被选中的bar的颜色
+						opacity: 0.4, //未被选中的bar的透明度 
+						stroke: { //未被选中的bar的边框样式
+							color: "darken(20%)", //可选值除了darken/lighten/desaturate/greyscale，还可以是任意其他颜色
+							visible: false,
+							width: "1px" //边框线最大值为4px
+						}
+					},
+					enableDeselectAll: true, //是否可以一次性取消所有选择 
+					enableKeyboard: false,
+					hover: { //鼠标悬停在bar上的样式 
+						color: null, //bar颜色 
+						opacity: 1, //bar透明度 
+						stroke: { //bar边框样式 
+							color: "darken(20%)", //可选值除了darken/lighten/desaturate/greyscale，还可以是任意其他颜色
+							visible: true,
+							width: "2px" //bar边框线最大值为4px
+						}
+					},
+					noninteractiveMode: false, //渲染方式，为true时，图表无法交互 
+					selectability: {
+						axisLabelSelection: true, //通过点击分类标签是否可以选择 
+						legendSelection: true, //通过点击图例是否可以选择
+						mode: "SINGLE", //可选值:INCLUSIVE, EXCLUSIVE(单一的选中值方式，点击分类标签/点击图例/点击bar), SINGLE(只能选中一个值通过，通过点击分类标签和点击图例选中功能不可用), MULTIPLE, NONE(不能选中值)
+						plotLassoSelection: true,
+						plotStdSelection: true
+					},
+					selected: {
+						color: null, //选中bar时，bar的填充颜色  
+						stroke: { //选中bar时，bar的边框样式
+							color: "darken(20%)", //可选值除了darken/lighten/desaturate/greyscale，还可以是任意其他颜色 
+							visible: true,
+							width: "1px" //边框线最大值为4px
+						}
+					},
+					zoom: { //图形缩放 
+						direction: "all", //可选值:categoryAxis(沿着分类轴方向放大缩小), all；
+						enablement: "auto" //可选值:enabled(可缩放), disabled(不可缩放), auto(在移动设备上可缩放，在电脑上不可缩放)；
+					}
+				},
+				legend: {
+					drawingEffect: "normal", //图例标签左侧小图标的颜色样式，可选值:normal, glossy
+					groupByShape: false, //是否将形状相同的图例放在一起
+					hoverShadow: {
+						color: "#cccccc" //鼠标悬停在图例标签上，图例标签的颜色 
+					},
+					isScrollable: false, //图例是否可以滚动，设成false当空间不够时，图例标签不能显示的字会用"..."代替 
+					itemMargin: 0.5, //图例项之间的间距，是个比例 
+					label: { //图例标签字体样式 
+						style: {
+							color: "#000000",
+							fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",
+							fontSize: "12px",
+							fontStyle: "normal",
+							fontWeight: "normal"
+						}
+					},
+					marker: { //图例标签左侧小图标的样式 
+						shape: "squareWithRadius", //可选择值:squareWithRadius, square, rectangle
+						showLine: false,
+						size: null //值类型:number
+					},
+					maxNumOfItems: null, //可见图例项的最大数量，最小值是1
+					mouseDownShadow: { //鼠标点击图例项时，图例标签的颜色
+						color: "#808080"
+					},
+					order: null,
+					postRenderer: null,
+					scrollbar: { //图例滚动轴，前提条件：isScrollable=true；该属性只在电脑上起作用 
+						border: { //滚动轴边框 
+							color: "white",
+							width: 0
+						},
+						spacing: 0, // 滚动轴距左右边框线的宽度，最小值0，最大值4
+						thumb: {
+							fill: "#e5e5e5", //滚动轴填充色
+							hoverFill: "#dedede" //鼠标悬浮在滚动轴上时，滚动轴的填充颜色
+						},
+						track: {
+							fill: "#f7f7f7" //滚动轴轨道的填充颜色
+						}
+					},
+					showFullLabel: true, //图例标签是否显示完全 
+					title: { //图例标题
+						style: { //标题的字体样式 
+							color: "#000000",
+							fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",
+							fontSize: "14px",
+							fontStyle: "normal",
+							fontWeight: "bold"
+						},
+						text: null, //text=null时，图例标题为All Measures(所有度量)
+						visible: false
+					},
+					visible: true
+				},
+				legendGroup: {
+					computedVisibility: true,
+					forceToShow: false, //设置成true时，即使图形很小也会显示图例
+					layout: {
+						alignment: "topLeft", //可选值:topLeft, center,在position基础上的位置，例如position=right，alignment=center指图例组在图形右侧中间
+						height: null, //图例组占图形(整个vizFrame)的高度,当position=top/bottom时，该属性有效
+						maxHeight: 0.25,
+						maxWidth: 0.25,
+						position: "right", //图例组在图形边上的位置，可选值:top, bottom, right, left, auto(根据图形的大小，会在right或者bottom)
+						respectPlotPosition: true,
+						width: null //图例组占图形(整个vizFrame)的宽度,当position=right/left时，该属性有效
+					},
+					linesOfWrap: 1, //图例标题和图例标签的换行数,可选值：1(不换行),2,3
+					renderTo: null
+				},
+				plotArea: { //bar所在区域，即categoryAxis轴线和valueAxis轴线围成的矩形区域
+					background: {
+						border: { //矩形区域边框是否可见
+							bottom: {
+								visible: true
+							},
+							left: {
+								visible: true
+							},
+							right: {
+								visible: true
+							},
+							stroke: "#d8d8d8", //矩形区域边框颜色
+							strokeWidth: 1, //矩形区域边框线宽度
+							top: {
+								visible: true
+							}
+						},
+						color: "transparent", //矩形区域的背景色
+						drawingEffect: "normal", //可选值:normal, glossy,当背景色不是transparent，选择glossy时会有渐变效果
+						gradientDirection: "horizontal", //可选值:horizontal, vertical,有渐变色(glossy)效果时，渐变色的方向
+						visible: true //矩形区域背景是否可见
+					},
+					//colorPalette 调色板，矩形区域内bar颜色的可选项，可自己设置调色板
+					colorPalette: ["#748CB2", "#9CC677", "#EACF5E", "#F9AD79", "#D16A7C", "#8873A2", "#3A95B3", "#B6D949", "#FDD36C", "#F47958",
+						"#A65084", "#0063B1", "#0DA841", "#FCB71D", "#F05620", "#B22D6E", "#3C368E", "#8FB2CF", "#95D4AB", "#EAE98F", "#F9BE92",
+						"#EC9A99", "#BC98BD", "#1EB7B2", "#73C03C", "#F48323", "#EB271B", "#D9B5CA", "#AED1DA", "#DFECB2", "#FCDAB0", "#F5BCB4"
+					],
+					dataLabel: { //bar上是否显示数值
+						formatString: CustomerFormat.FIORI_PERCENTAGE_FORMAT_2,
+						hideWhenOverlap: false, //当数值标签的高度大于bar高度时，数值是否隐藏
+						position: "outside", //数值在bar上的位置，可选值:inside(在bar上，数值有可能显示不全),outside(在bar旁边),outsideFirst(在bar旁边，如果宽度不够，数值会在bar上)
+						renderer: null,
+						style: { //数值的字体样式
+							color: "#333333",
+							fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",
+							fontSize: "12px",
+							fontStyle: "normal",
+							fontWeight: "normal"
+						},
+						type: "value", //可选值:value(只显示数值), valueAndColor(显示度量名称和具体数值), color(只显示度量名称)
+						unitFormatType: "FinancialUnits", //可选值:FinancialUnits,MetricUnits
+						visible: false
+					},
+					dataPoint: {
+						savingMode: true,
+						stroke: { //bar边框颜色/是否可见
+							color: "#000000",
+							visible: false
+						}
+					},
+					dataPointSize: { //只有当isFixedDataPointSize=true时，可调整bar的宽度;当isFixedDataPointSize=false时该属性不起作用
+						max: 96,
+						min: 24
+					},
+					dataPointStyle: null,
+					dataPointStyleMode: "update", //可选值:update, override;该属性与dataPointStyle属性相关           
+					dataShape: {
+						primaryAxis: ["bar", "bar", "line"] //数据显示形状
+					},
+					defaultOthersStyle: {
+						color: "#000000"
+					},
+					drawingEffect: "normal", //可选值:normal, glossy;bar的样式,normal是长方形，glossy是圆柱体
+					gap: { //当primaryAxis:["line", "line", "bar"]时,groupSpacing/innerGroupSpacing不起作用
+						barSpacing: 1, //同一个Category中只有一个bar时起作用，值是Bar宽的倍数；
+						groupSpacing: 1, //不同Category中，相邻两个bar的间距，值是Bar宽的倍数；当同一个Category中只有一个bar时，该属性不起作用
+						innerGroupSpacing: 0.125 //同一个Categry里，bar之间的间距，值是Bar宽的倍数
+					},
+					gridline: { //矩形区域中的网格线
+						color: "#d8d8d8", //网格线的颜色
+						size: 1, // 网格线的宽度
+						type: "line",
+						visible: true,
+						zeroLine: {
+							color: null,
+							highlight: true,
+							unhighlightAxis: true
+						}
+					},
+					isFixedDataPointSize: false, //设置成true，会有滚动轴
+					line: {
+						isSmoothed: false, //设置成true时，line是曲线
+						lineRenderer: null,
+						marker: {
+							shape: "circle", //可选值:circle, diamond, triangleUp, triangleDown, triangleLeft, triangleRight, cross, intersection, square, rectangle
+							size: 6, //值范围：4~32
+							visible: true
+						},
+						style: null,
+						visible: true,
+						width: 2 //line的宽度,可选值范围:1-7
+					},
+					primaryScale: {
+						autoMaxValue: null,
+						autoMinValue: null,
+						fixedRange: true, //当fixedRange=false时，设置maxValue和minValue的值无效
+						maxValue: 1, //数值轴刻度的最大值
+						minValue: 0.9 //数值轴刻度的最小值
+					},
+					referenceLine: {
+						defaultStyle: {
+							color: "#666666",
+							label: {
+								background: "#ffffff",
+								color: "#333333",
+								fontFamily: "\"Open Sans\", Arial, Helvetica, sans-serif",
+								fontSize: "12px",
+								fontStyle: "normal",
+								fontWeight: "normal"
+							},
+							size: 1,
+							type: "dotted" //可选值:line, dotted
+						},
+						line: null
+							/*line:{//可以给Chart图设置基准线，例如目标值等
+			                                valueAxis: [{
+			                                    value: 2026251,
+			                                    visible: true,
+			                                    color:"#666666",
+			                                    size: 1,
+			                                    type: "dash",//"solid", "dash"
+			                                    label: {
+			                                        text: "Target",
+			                                        visible: true,
+			                                        style:{ 
+							                			color:"#333333",
+							                			fontFamily:"'Open Sans', Arial, Helvetica, sans-serif",
+							                			fontSize:"12px",
+							                			fontStyle:"bold",
+							                			fontWeight:"normal"
+							                		}
+			                                    }
+			                                }]
+			                            } */
+					},
+					scrollbar: { //当isFixedDataPointSize=true时会有滚动轴
+						border: { //滚动轴边框线的颜色及宽度
+							color: "white",
+							width: 0
+						},
+						spacing: 0, //滚动轴距左右边框线的宽度，最小值0，最大值4
+						thumb: {
+							fill: "#e5e5e5", //滚动轴填充色
+							hoverFill: "#dedede" //鼠标悬浮在滚动轴上时，滚动轴的填充颜色
+						},
+						track: {
+							fill: "#f7f7f7" //滚动轴轨道的填充颜色
+						}
+					},
+					seriesStyle: null,
+					window: {
+						end: null,
+						start: null
+					}
+				},
+				propertyZone: null,
+				title: { // vizFrame的标题
+					alignment: "center", //标题的位置，可选值:left, center, right
+					layout: { //标题占用的高度，值是相对于chartContainer的比例;设置height时，maxHeight属性不起作用
+						height: null,
+						maxHeight: 0.2
+					},
+					style: { //标题的字体样式
+						color: "#333333",
+						fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",
+						fontSize: "16px",
+						fontStyle: "normal",
+						fontWeight: "bold"
+					},
+					text: ' 市场质量投诉率', //当visible=true，Text=null时，标题默认为Title of Chart,
+					visible: true
+				},
+				tooltip: { //当鼠标悬浮在bar上时的弹窗
+					background: {
+						borderColor: "#cccccc", //tooltip的边框线颜色
+						color: "#ffffff" //tooltip的填充色
+					},
+					bodyDimensionLabel: {
+						color: "#666666" //tooltip上维度标签的颜色
+					},
+					bodyDimensionValue: {
+						color: "#666666" //tooltip上维度值的颜色
+					},
+					bodyMeasureLabel: {
+						color: "#666666" //tooltip上度量标签的颜色
+					},
+					bodyMeasureValue: {
+						color: "#000000" //tooltip上度量值的颜色
+					},
+					closeButton: {
+						backgroundColor: "#ffffff",
+						borderColor: "#cccccc"
+					},
+					footerLabel: {
+						color: "#000000" //当选中多个bar时，tooltip底端标签的颜色
+					},
+					formatString: null,
+					layinChart: true,
+					postRender: null,
+					preRender: null,
+					separationLine: {
+						color: "#a7a9ac" //当选中多个bar时，tooltip分割线的颜色
+					},
+					unitFormatType: "FinancialUnits", //可选值:FinancialUnits,MetricUnits
+					visible: true
+				},
+				valueAxis: {
+					axisLine: {
+						size: 1, //数值轴线的宽度
+						visible: true
+					},
+					axisTick: {
+						visible: true //数值轴线上的刻度是否显示
+					},
+					color: "#6c6c6c", //数值轴线及刻度的颜色
+					label: {
+						formatString: CustomerFormat.FIORI_PERCENTAGE_FORMAT_2,
+						style: { //数值标签的字体样式
+							color: "#333333",
+							fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",
+							fontSize: "12px",
+							fontStyle: "normal",
+							fontWeight: "normal"
+						},
+						unitFormatType: "FinancialUnits", //可选值:FinancialUnits,MetricUnits
+						visible: true
+					},
+					layout: {
+						autoHeight: null,
+						autoWidth: null,
+						height: null, //数值标签占整个图(vizFrame)高的比例；height设定值后，maxheight值不起作用
+						maxHeight: 0.25,
+						maxWidth: 0.25,
+						width: null
+					},
+					title: { //数值标签的标题，如果visible=true, text=null,则分类标签的标题是 XML中MeasureDefinition的name 
+						applyAxislineColor: false,
+						style: { //标题的字体样式
+							color: "#000000",
+							fontFamily: "'Open Sans', Arial, Helvetica, sans-serif",
+							fontSize: "14px",
+							fontStyle: "normal",
+							fontWeight: "bold"
+						},
+						text: null,
+						visible: false
+					},
+					visible: true
+				}
+			}
+	}
+}

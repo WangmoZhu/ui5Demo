@@ -1,0 +1,19 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" height="100%">
+        <!--<html:iframe src="https://www.baidu.com/" class="myIframe" height="100%" style="height:100%;width:100%">-->
+        <html:iframe src="https://login.salesforce.com/" class="myIframe" height="100%" style="height:100%;width:100%">
+        <!--https://login.salesforce.com/
+        http://g7s.ucenter.huoyunren.com/login.html?referer=http%3A//g7s.huoyunren.com/
+        http://192.168.117.171-->
+        </html:iframe>
+        <html:iframe src="http://192.168.117.171" class="myIframe" height="100%" style="height:100%;width:100%">
+        <!--https://login.salesforce.com/
+        http://g7s.ucenter.huoyunren.com/login.html?referer=http%3A//g7s.huoyunren.com/
+        http://192.168.117.171-->
+        </html:iframe>
+        <html:iframe src="http://g7s.ucenter.huoyunren.com/login.html?referer=http%3A//g7s.huoyunren.com/" class="myIframe" height="100%" style="height:100%;width:100%">
+        <!--https://login.salesforce.com/
+        http://g7s.ucenter.huoyunren.com/login.html?referer=http%3A//g7s.huoyunren.com/
+        http://192.168.117.171-->
+        </html:iframe>
+</mvc:View>

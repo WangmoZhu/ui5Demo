@@ -1,0 +1,100 @@
+<mvc:View controllerName="echart.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Button text="开始" press="onStart"></Button>
+					<Button text="停止" press="onStop"></Button>
+					<VBox id="box">
+						<HBox>
+							<VBox>
+								<Text text="实时预警"/>
+							</VBox>
+						</HBox>
+						<HBox>
+							<VBox class="vbox">
+								<Text text="7/25"/>
+								<Text text="周四"/>
+							</VBox>
+							<VBox class="vbox">
+								<Text text="8/2"/>
+								<Text text="周三"/>
+							</VBox>
+						</HBox>
+						<HBox>
+							<VBox class="vbox">
+								<Text text="7/26"/>
+								<Text text="周五"/>
+							</VBox>
+							<VBox class="vbox">
+								<Text text="8/3"/>
+								<Text text="周六"/>
+							</VBox>
+						</HBox>
+						<HBox>
+							<VBox class="vbox">
+								<Text text="7/27"/>
+								<Text text="周六"/>
+							</VBox>
+							<VBox class="vbox">
+								<Text text="8/4"/>
+								<Text text="周日"/>
+							</VBox>
+						</HBox>
+						<HBox>
+							<VBox class="vbox">
+								<Text text="7/28"/>
+								<Text text="周日"/>
+							</VBox>
+							<VBox class="vbox">
+								<Text text="8/5"/>
+								<Text text="周一"/>
+							</VBox>
+						</HBox>
+						<HBox>
+							<VBox class="vbox">
+								<Text text="7/29"/>
+								<Text text="周一"/>
+							</VBox>
+							<VBox class="vbox">
+								<Text text="8/6"/>
+								<Text text="周二"/>
+							</VBox>
+						</HBox>
+						<HBox>
+							<VBox class="vbox">
+								<Text text="7/30"/>
+								<Text text="周二"/>
+							</VBox>
+							<VBox class="vbox">
+								<Text text="8/7"/>
+								<Text text="周三"/>
+							</VBox>
+						</HBox>
+						<HBox>
+							<VBox class="vbox">
+								<Text text="7/31"/>
+								<Text text="周三"/>
+							</VBox>
+							<VBox class="vbox">
+								<Text text="8/8"/>
+								<Text text="周四"/>
+							</VBox>
+						</HBox>
+						<HBox>
+							<VBox class="vbox">
+								<Text text="8/1"/>
+								<Text text="周四"/>
+							</VBox>
+							<VBox class="vbox">
+								<Text text="8/9"/>
+								<Text text="周五"/>
+							</VBox>
+						</HBox>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+  <ViewSettingsDialog
+    confirm="handleConfirm"
+    filterDetailPageOpened="onFilterDetailPageOpened"
+    title="数据筛选"
+    filterItems= "{KPIFilter>/list}">
+    <filterItems>
+      <ViewSettingsFilterItem text="{KPIFilter>name}" key="{KPIFilter>id}"
+        items= "{KPIFilter>data}"
+        selected='onFilterItemSelected'>
+        <items>
+          <ViewSettingsItem text="{KPIFilter>name}" key="{KPIFilter>id}" selected="{KPIFilter>selected}" />
+        </items>
+      </ViewSettingsFilterItem>
+    </filterItems>
+  </ViewSettingsDialog>
+</core:FragmentDefinition>

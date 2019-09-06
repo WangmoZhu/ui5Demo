@@ -1,0 +1,10 @@
+<mvc:View 
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	controllerName="sap.vo.mengniu.controller.MHome"
+	xmlns:l="sap.ui.layout" displayBlock="true" height="100%" 
+	xmlns:v="sap.vco">
+	<Page id="tileContainer" showHeader="false">
+	</Page>
+</mvc:View>

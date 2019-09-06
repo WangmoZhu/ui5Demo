@@ -1,0 +1,241 @@
+{
+	"ProductCollection": [
+		{
+			"ProductId": "批号:HT-1000",
+			"Category": "Laptops",
+			"MainCategory": "Computer Systems",
+			"TaxTarifCode": "1",
+			"SupplierName": "Very Best Screens",
+			"WeightMeasure": 4.2,
+			"WeightUnit": "KG",
+			"Description": "环评问题",
+			"Name": "Milk 1",
+			"ProductPicUrl": "https://openui5.hana.ondemand.com/test-resources/sap/ui/demokit/explored/img/HT-1000.jpg",
+			"Status": "Available",
+			"StatusInfo": "Success",
+			"Quantity": 10,
+			"UoM": "PC",
+			"CurrencyCode": "EUR",
+			"Price": 956,
+			"Width": 30,
+			"Depth": 18,
+			"Height": 3,
+			"DimUnit": "cm",
+			"Rate": "严重"
+		},
+		{
+			"ProductId": "批号:HT-1001",
+			"Category": "Laptops",
+			"MainCategory": "Computer Systems",
+			"TaxTarifCode": "1",
+			"SupplierName": "Very Best Screens",
+			"WeightMeasure": 4.5,
+			"WeightUnit": "KG",
+			"Description": "供应商投诉",
+			"Name": "Milk 2",
+			"ProductPicUrl": "https://openui5.hana.ondemand.com/test-resources/sap/ui/demokit/explored/img/HT-1001.jpg",
+			"Status": "Warning",
+			"StatusInfo": "Warning",
+			"Quantity": 20,
+			"UoM": "PC",
+			"CurrencyCode": "EUR",
+			"Price": 1249,
+			"Width": 29,
+			"Depth": 17,
+			"Height": 3.1,
+			"DimUnit": "cm",
+			"Rate": "非常严重"
+		},
+		{
+			"ProductId": "批号:HT-1002",
+			"Category": "Laptops",
+			"MainCategory": "Computer Systems",
+			"TaxTarifCode": "1",
+			"SupplierName": "Very Best Screens",
+			"WeightMeasure": 4.2,
+			"WeightUnit": "KG",
+			"Description": "客户投诉",
+			"Name": "Milk 3",
+			"ProductPicUrl": "https://openui5.hana.ondemand.com/test-resources/sap/ui/demokit/explored/img/HT-1002.jpg",
+			"Status": "Error",
+			"StatusInfo": "Error",
+			"Quantity": 10,
+			"UoM": "PC",
+			"CurrencyCode": "EUR",
+			"Price": 1570,
+			"Width": 28,
+			"Depth": 19,
+			"Height": 2.5,
+			"DimUnit": "cm",
+			"Rate": "一般"
+		}
+	],
+	"ProductCollectionStats": {
+		"Counts": {
+			"Total": 123,
+			"WeightMeasure": {
+				"Ok": 53,
+				"Heavy": 51,
+				"Overweight": 19
+			}
+		},
+		"Groups": {
+			"Category": {
+				"Accessories" : 34,
+				"Desktop Computers" : 7,
+				"Flat Screens" : 2,
+				"Keyboards" : 4,
+				"Laptops" : 11,
+				"Printers" : 9,
+				"Smartphones and Tablets" : 9,
+				"Mice" : 7,
+				"Computer System Accessories" : 8,
+				"Graphics Card" : 4,
+				"Scanners" : 4,
+				"Speakers" : 3,
+				"Software" : 8,
+				"Telekommunikation" : 3,
+				"Servers" : 3,
+				"Flat Screen TVs" : 3
+			},
+			"SupplierName": {
+				"Titanium": 21,
+				"Technocom": 22,
+				"Red Point Stores": 7,
+				"Very Best Screens": 14,
+				"Smartcards": 2,
+				"Alpha Printers": 5,
+				"Printer for All": 8,
+				"Oxynum": 8,
+				"Fasttech": 15,
+				"Ultrasonic United": 15,
+				"Speaker Experts": 3,
+				"Brainsoft": 3
+			}
+		},
+		"Filters": [
+			{
+				"type": "Category",
+				"values": [
+					{
+						"text": "Accessories",
+						"data": 34
+					},
+					{
+						"text": "Desktop Computers",
+						"data": 7
+					},
+					{
+						"text": "Flat Screens",
+						"data": 2
+					},
+					{
+						"text": "Keyboards",
+						"data": 4
+					},
+					{
+						"text": "Laptops",
+						"data": 11
+					},
+					{
+						"text": "Printers",
+						"data": 9
+					},
+					{
+						"text": "Smartphones and Tablets",
+						"data": 9
+					},
+					{
+						"text": "Mice",
+						"data": 7
+					},
+					{
+						"text": "Computer System Accessories",
+						"data": 8
+					},
+					{
+						"text": "Graphics Card",
+						"data": 4
+					},
+					{
+						"text": "Scanners",
+						"data": 4
+					},
+					{
+						"text": "Speakers",
+						"data": 3
+					},
+					{
+						"text": "Software",
+						"data": 8
+					},
+					{
+						"text": "Telekommunikation",
+						"data": 3
+					},
+					{
+						"text": "Servers",
+						"data": 3
+					},
+					{
+					  "text": "Flat Screen TVs",
+					  "data": 3
+					}
+				]
+			},
+			{
+				"type": "SupplierName",
+				"values": [
+					{
+					"text": "Titanium",
+					"data": 21
+				  },
+				  {
+					"text": "Technocom",
+					"data": 22
+				  },
+				  {
+					"text": "Red Point Stores",
+					"data": 7
+				  },
+				  {
+					"text": "Very Best Screens",
+					"data": 14
+				  },
+				  {
+					"text": "Smartcards",
+					"data": 2
+				  },
+				  {
+					"text": "Alpha Printers",
+					"data": 5
+				  },
+				  {
+					"text": "Printer for All",
+					"data": 8
+				  },
+				  {
+					"text": "Oxynum",
+					"data": 8
+				  },
+				  {
+					"text": "Fasttech",
+					"data": 15
+				  },
+				  {
+					"text": "Ultrasonic United",
+					"data": 15
+				  },
+				  {
+					"text": "Speaker Experts",
+					"data": 3
+				  },
+				  {
+					"text": "Brainsoft",
+					"data": 3
+				  }
+				]
+			}
+		]
+	}
+}

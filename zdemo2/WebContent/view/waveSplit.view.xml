@@ -1,0 +1,252 @@
+<mvc:View xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:sl="sap.ui.comp.navpopover"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:t="sap.ui.table"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns="sap.m" 
+	controllerName="ZTM.controller.waveSplit">
+	<Page showHeader="false">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Title />
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+<!-- 			filter="filterClearSelect" sort="sortClearSelect"  -->
+<!-- 			查询结果界面 -->
+			<Panel expandable="false" expanded="true" headerText="" width="auto" visible="true" >
+				<l:Grid defaultSpan="L12 M12 S12" width="auto">
+					<l:content>
+						<t:Table rows="{path:'/WaveHeadSet'}" id="tbItem" title="仓库： {/LgnumSet/Lgnum}/{/LgnumSet/Lnumt} ~ 条目数：{/appProperties/maxNumber}"
+							fixedColumnCount="3" visibleRowCount="9" selectionBehavior = "Row" alternateRowColors = "true"
+							enableBusyIndicator="true" enableCellFilter ="true" selectionMode="MultiToggle" rowHeight="26"  >
+<!-- 							<t:toolbar> -->
+<!-- 								<Toolbar> -->
+<!-- 									<Button type = "Unstyled" text="" /> -->
+<!-- 									<ToolbarSpacer /> -->
+<!-- 								</Toolbar> -->
+<!-- 							</t:toolbar> -->
+							<t:Column hAlign="Center" width="5em" grouped ="false">
+								<Label text="加急订单" />
+								<t:template>
+									<core:Icon src="sap-icon://bell" color="red" hoverBackgroundColor ="yellow" 
+										visible="{path:'Urgentlogo',formatter: '.formatter.Urgentlogo'}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="6em" grouped ="false" filterProperty ="Wave" sortProperty ="Wave">
+								<Label text="波次号" />
+								<t:template>
+									<link text="{Wave}"  press="handelOpen" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="6em" filterProperty ="StatusDesc" >
+								<Label text="状态" />
+								<t:template>
+<!-- 									<Text text="{path:'Status',formatter: '.formatter.Status'}" /> -->
+									<Text text="{StatusDesc}"  />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="6em" filterProperty ="ReplStatus" sortProperty ="ReplStatus" >
+								<Label text="补货状态" />
+								<t:template>
+									<Text text="{ReplStatus}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="8em" filterProperty ="Lbkzt" sortProperty ="Lbkzt" >
+								<Label text="类别" />
+								<t:template>
+									<Text text="{Lbkzt}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="8em" filterProperty ="RouteId" sortProperty ="RouteId" >
+								<Label text="线路ID" />
+								<t:template>
+									<Text text="{RouteId}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="18em" filterProperty ="RouteDescr"  >
+								<Label text="线路描述" />
+								<t:template>
+									<Text text="{RouteDescr}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="8em" filterProperty ="Weekday" sortProperty ="Weekday" >
+								<Label text="工作日" />
+								<t:template>
+									<Text text="{Weekday}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="6em" filterProperty ="Coldchain" sortProperty ="Coldchain" >
+								<Label text="冷链" />
+								<t:template>
+									<Text text="{Coldchain}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Left" width="18em" autoResizable ="true" filterProperty ="PartnerName" sortProperty ="PartnerName">
+								<Label text="客户" />
+								<t:template>
+									<Text text="{Partner} - {PartnerName}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="7em" >
+								<Label text="是否加急" />
+								<t:template>
+									<Text text="{path:'Urgent',
+									     formatter: '.formatter.Urgent'}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="9em" sortProperty ="CreatedDate" >
+								<Label text="创建日期" />
+								<t:template>
+									<Text text="{path:'CreatedDate',
+									     formatter: '.formatter.yyyymmdd'}" />
+								</t:template>	
+							</t:Column>
+							<t:Column hAlign="Center" width="9em"  sortProperty ="CreatedTime">
+								<Label text="创建时间" />
+								<t:template>
+									<Text text="{path:'CreatedTime',
+									     formatter: '.formatter.customTime'}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="8em" filterProperty ="CreatedBy"  >
+								<Label text="创建人" />
+								<t:template>
+									<Text text="{CreatedBy}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="8em" filterProperty ="ReleasedBy"  >
+								<Label text="释放人" />
+								<t:template>
+									<Text text="{ReleasedBy}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="13em"  sortProperty ="ReleasedAt" >
+								<Label text="释放时间" />
+								<t:template>
+									<Text text="{path:'ReleasedAt',formatter: '.formatter.dateString'} / 
+										{path:'ReleasedAt',formatter: '.formatter.datetimeString'}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="6em"  >
+								<Label text="预估整件" />
+								<t:template>
+									<Text text="{path:'ZjQty',
+									     formatter: '.formatter.deleteLeftZero'}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="6em"  >
+								<Label text="预估散件" />
+								<t:template>
+									<Text text="{path:'SjQty',
+									     formatter: '.formatter.deleteLeftZero'}"></Text>
+								</t:template>
+							</t:Column>
+							
+						</t:Table>
+						
+<!-- 						行详情 -->
+						<t:Table rows="{/WaveDeatilSet}" id="tableBc" title ="波次详情 ~ 条目数：{/appProperties/nextmaxNumber}" selectionBehavior = "Row" alternateRowColors = "true"
+							fixedColumnCount="4" visibleRowCount="7" selectionMode="MultiToggle" enableBusyIndicator="true"
+							rowHeight="26" >
+							<t:Column hAlign="Center" width="6em">
+								<Label text="波次号" />
+								<t:template>
+									<Text text="{Wave}"  />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="6em">
+								<Label text="行项目号" />
+								<t:template>
+									<Text text="{WaveItm}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="4em">
+								<Label text="加急" />
+								<t:template>
+									<core:Icon src="sap-icon://bell" color="red" hoverBackgroundColor ="yellow" 
+										visible="{path:'Urgentlogo',formatter: '.formatter.Urgentlogo'}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="10em">
+								<Label text="单据类型" />
+								<t:template>
+									<Text text="{DoctypeDesc}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="8em">
+								<Label text="物料" />
+								<t:template>
+									<Text text="{Matnr}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Left" width="30em">
+								<Label text="物料描述" />
+								<t:template>
+									<Text text="{MatnrTxt}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="7em">
+								<Label text="类别" />
+								<t:template>
+									<Text text="{Lbkzt}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="8em">
+								<Label text="批次" />
+								<t:template>
+									<Text text="{Charg}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="8em">
+								<Label text="货主" />
+								<t:template>
+									<Text text="{Owner}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="15em">
+								<Label text="货主描述" />
+								<t:template>
+									<Text text="{OwnerTxt}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="6em">
+								<Label text="数量" />
+								<t:template>
+									<Text text="{path:'Quan',
+									     formatter: '.formatter.deleteRightZero'}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="6em">
+								<Label text="单位" />
+								<t:template>
+									<Text text="{Unit}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="8em">
+								<Label text="客户" />
+								<t:template>
+									<Text text="{Shipto}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="8em">
+								<Label text="业务员" />
+								<t:template>
+									<Text text="{path:'Salerid',
+									     formatter: '.formatter.deleteLeftZero'} / {Salername}"></Text>
+								</t:template>
+							</t:Column>
+						</t:Table>
+					</l:content>
+				</l:Grid>
+			</Panel>
+			
+		</content>
+
+	</Page>
+</mvc:View>

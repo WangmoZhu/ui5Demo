@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;world.js&apos; to &apos;util&apos;&#x0A;- Original project: &apos;zechart&apos;&#x0A;- Destination element: &apos;util&apos;&#x0A;- Original element: &apos;world.js&apos;" description="Copy file" element1="WebContent/util/world.js" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1563851294957" target="/zechart/WebContent/util" units="0" version="1.0"/>
+</session>

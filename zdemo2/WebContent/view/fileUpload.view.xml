@@ -1,0 +1,121 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sl="sap.ui.comp.navpopover"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:t="sap.ui.table"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns="sap.m" controllerName="ZTM.controller.fileUpload">
+	<Page showHeader="false">
+		<Panel visible="true" expandable="true" expanded="true">
+
+			<content>
+				<Label text="单据号:  " />
+				<Input width="200px" id="pernrNo" value="my1234" />
+				<UploadCollection id="UploadCollection"  mimeType = "{appProperties/type}" 
+					maximumFilenameLength="55" maximumFileSize="10" multiple="true"
+					uploadUrl="/sap/opu/odata/SAP/ZFILE_UPDOWN_SRV/fileSet"
+					sameFilenameAllowed="true" instantUpload="false" showSeparators="All"
+					change="onChange" fileDeleted="onFileDeleted" filenameLengthExceed="onFilenameLengthExceed"
+					fileSizeExceed="onFileSizeExceed" typeMissmatch="onTypeMissmatch" 
+					uploadComplete="onUploadComplete" beforeUploadStarts="onBeforeUploadStarts" />
+				
+
+			</content>
+			<Page>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer />
+						<Button id="Button1" type="Accept" text="开始" width="4rem"
+							press="onStarpress" />
+						<Button id="Button" type="Accept" text="上传" width="4rem"
+							press="onStartUpload" />
+							
+					</OverflowToolbar>
+				</footer>
+			</Page>
+			<Page>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer />
+							<Button id="Button2" type="Accept" text="相机" width="5rem"
+							press="handlePress" />
+							<Button id="Button3" type="Accept" text="扫码" width="5rem"
+							press="handlescan" />
+					</OverflowToolbar>
+				</footer>
+			</Page>
+
+		</Panel>
+		<Panel>
+			<content>
+				<Input width="200px" id="downGuid" value="my1234" />
+				<Button text="下载" submit="downLoad" press="downLoad"></Button>
+			</content>
+		</Panel>
+		<Panel>
+			<Panel headerText="PDF 结果预览">
+				<content>
+					<Table id="idProductsPdf1" inset="false" items="{/itemsPdf}">
+						<columns>
+							<Column width="5rem">
+								<Text text="" />
+							</Column>
+							<Column hAlign="Center">
+								<Text text="课程" />
+							</Column>
+							<Column width="5rem">
+								<Text text="" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="" />
+									<PDFViewer source="{value}" height="20rem" width="auto">
+										<!-- <layoutData> -->
+										<!-- <FlexItemData growFactor="1"/> -->
+										<!-- </layoutData> -->
+									</PDFViewer>
+									<Text text="" />
+								</cells>
+
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Panel>
+		</Panel>
+		<Panel>
+			<Panel headerText="图片 结果预览">
+				<content>
+					<Table id="idProductsTable1" inset="false" items="{/itemsBase}">
+						<columns>
+							<Column width="5rem">
+								<Text text="" />
+							</Column>
+							<Column hAlign="Center">
+								<Text text="课程" />
+							</Column>
+							<Column width="5rem">
+								<Text text="" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="" />
+									<Image src="{value}" densityAware="false"
+										backgroundPosition="hello" />
+									<Text text="" />
+								</cells>
+
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Panel>
+		</Panel>
+
+
+
+	</Page>
+</mvc:View>

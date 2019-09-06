@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="IdeEditorUtilsCoCoElementInfoPopupSize">
+		<item value="149" key="size.height"/>
+		<item value="415" key="size.width"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+		<item value="200" key="size.y"/>
+		<item value="415" key="size.x"/>
+	</section>
+</section>

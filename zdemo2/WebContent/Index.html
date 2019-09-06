@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" 
+	id="sap-ui-bootstrap"
+	data-sap-ui-xx-bindingSyntax="complex" 
+	data-sap-ui-libs="sap.m"
+	data-sap-ui-preload="async"
+	data-sap-ui-resourceroots='{"ZTM": "./"}'
+	data-sap-ui-theme="sap_belize">
+</script>
+<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+<style type="text/css">
+#content {
+	padding-left: 0; /* overrides the padding of demokit */
+}
+
+</style>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="cordova_plugins.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=FIZheksVX5rdSMeMLRhie9RVMp3kRsmB"></script> -->
+<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=65CNfCFHZo2FFGpF8yLwQkSl"></script> --> 
+
+
+<script>
+	sap.ui.getCore().attachInit(function() {
+		new sap.m.Shell({
+			app : new sap.ui.core.ComponentContainer({
+				height : "100%",
+				name : "ZTM"
+			})
+		}).placeAt("content");
+	});
+</script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Cw8wG5QHSsSRe3zIBvffGkOfo5RLdnn1"></script>
+</head>
+<body class="sapUiBody" id="content">
+</body>
+</html>

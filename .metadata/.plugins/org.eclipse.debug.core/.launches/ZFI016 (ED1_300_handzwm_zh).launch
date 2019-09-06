@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.sap.adt.sapgui.ui.launchConfigurationType">
+<stringAttribute key="OBJECT_NAME" value="ZFI016"/>
+<stringAttribute key="OBJECT_TYPE" value="PROG/P"/>
+<stringAttribute key="OBJECT_URI" value="/sap/bc/adt/programs/programs/zfi016/source/main"/>
+<stringAttribute key="PROJECT_NAME" value="ED1_300_handzwm_zh"/>
+<stringAttribute key="WB_ACTION" value="EXECUTE"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/ED1_300_handzwm_zh"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+</launchConfiguration>

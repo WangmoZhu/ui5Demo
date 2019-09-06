@@ -1,0 +1,23 @@
+/* Enter your custom styles here */
+ .tile {
+	/* padding-top: 3rem; */
+    padding-left: 3rem;
+    position: fixed;
+} 
+.sapMGTHdrContent{
+	height: fit-content;
+}
+.sapMNCIndScale{
+	max-width:3rem
+}
+.sapMNCScale{
+	margin-top:0.8rem;
+}
+.sapMTextLineClamp{
+	font-size:1.4rem;
+}
+div.TwoByOne.sapMGTHdrContent{
+	background-color:red;
+	margin:0;
+	height:40%;
+}

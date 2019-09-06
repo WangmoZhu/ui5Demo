@@ -1,0 +1,85 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.vo.mengniu.controller.blocks.Surveillance"
+  xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:l="sap.ui.layout" height="100%">
+  <!--<l:Splitter id="mainSplitter" width="100%" height="100%" orientation="Vertical">-->
+  <!--  <Toolbar width="100%" class="myToolbar">-->
+  <!--    <layoutData><l:SplitterLayoutData size="5%" resizable="false"/></layoutData>-->
+  <!--    <ToolbarSpacer width="75%"></ToolbarSpacer>-->
+  <!--    <core:Icon src="sap-icon://add-filter" press="openFilter"></core:Icon>-->
+  <!--    <Link text="设置筛选条件" width="100%" press="openFilter"/>-->
+  <!--  </Toolbar>-->
+  <!--  <Image id="img1" src="./image/hot.png" width="90%">-->
+  <!--    <layoutData><l:SplitterLayoutData size="95%" resizable="false"/></layoutData>-->
+  <!--  </Image>-->
+  <!--</l:Splitter>-->
+  <!-- <l:VerticalLayout width="98%" class="center myToolbar">
+    <Toolbar width="100%">
+      <ToolbarSpacer width="75%"></ToolbarSpacer>
+      <core:Icon src="sap-icon://add-filter" press="openFilter"></core:Icon>
+      <Link text="设置筛选条件" width="100%" press="openFilter"/>
+    </Toolbar>
+    <Image id="img1" src="./image/hot.png" width="80%"></Image>
+  </l:VerticalLayout> -->
+  <NavContainer id="navCon" width="100%" height="100%">
+  <Page id="index" enableScrolling="false" showHeader='false' showSubHeader='true' showFooter='false' class="Surveillance" height="100%">
+    <!--<subHeader>
+      <Toolbar>
+        <ToolbarSpacer/>
+        <SegmentedButton selectedKey="video" select="onSelect">
+          <items>
+            <SegmentedButtonItem text="工厂视频" key="video" />
+            <SegmentedButtonItem text="车辆GPS" key="gps" />
+          </items>
+        </SegmentedButton>
+      </Toolbar>
+    </subHeader>-->
+    <l:Splitter height="100%" width="100%" orientation="Horizontal" class='MySplitter'>
+      <VBox width="100%" height="100%" justifyContent="Center" alignItems="Center">
+        <layoutData><l:SplitterLayoutData size="50%" resizable="false"/></layoutData>
+        <!--<html:div class="MyPicture">
+          <html:h1>工厂视频</html:h1>   
+            <html:img src="./image/Surveillance3.png"/>
+            <html:br />
+            <html:br />
+        </html:div>-->
+        <!--<l:VerticalLayout>-->
+          <Image src="./image/Surveillance3.png" press="onPressPlants" class="MyPicture" densityAware="false" width="70%" height="70%"/>
+          <Text text="工厂视频"  class="myLink sapUiTinyMargin"/>
+        <!--</l:VerticalLayout>-->
+      </VBox>
+      <VBox width="100%" height="100%" justifyContent="Center" alignItems="Center">
+        <!--<html:div class="MyPicture">
+          <html:h1>车辆GPS</html:h1> 
+            <html:img src="./image/Surveillance4.png"/>
+            <html:br />
+            <html:br />
+        </html:div>-->
+        <!--<l:VerticalLayout>-->
+          <Image src="./image/Surveillance4.png" press="onPressGPS" class="MyPicture" densityAware="false" width="70%" height="70%"/>
+          <Text text="车辆GPS"  class="myLink sapUiTinyMargin"/>
+        <!--</l:VerticalLayout>-->
+      </VBox>
+      <!--
+        <html:div style="height:100%;width:100%; background: url(./image/video.jpg) center center no-repeat;background-size: contain;">
+            <html layoutData><l:SplitterLayoutData size="65%" resizable="false"/></layoutData>
+
+        </html:div>
+        <html:div style="height:100%;width:100%; background: url(./image/Surveillance.png) center center no-repeat;background-size: contain;">
+
+        </html:div>-->
+    </l:Splitter>
+    <!-- <NavContainer id="nav" width="100%" height="100%">
+      <Page id="video" showHeader='false' showSubHeader='false' showFooter='false'>
+        <html:div style="height:100%;width:100%; background: url(./image/video.jpg) center center no-repeat;background-size: contain;"></html:div>
+      </Page>
+      <Page id="gps" showHeader='false' showSubHeader='false' showFooter='false'>
+        <html:div style="height:100%;width:100%; background: url(./image/Surveillance.png) center center no-repeat;background-size: contain;"></html:div>
+      </Page>
+    </NavContainer> -->
+  </Page>
+  <Page id="iframe" showHeader='false' showSubHeader='false' showFooter='false' class="gps">
+    <Button icon="sap-icon://nav-back" press="onNavBack" class="backButton"/>
+    <html:iframe src="http://g7s.ucenter.huoyunren.com/login.html?referer=http%3A//g7s.huoyunren.com/" class="myIframe" height="100%" style="height:100%;width:100%">
+    </html:iframe>
+  </Page>
+  </NavContainer>
+</mvc:View>

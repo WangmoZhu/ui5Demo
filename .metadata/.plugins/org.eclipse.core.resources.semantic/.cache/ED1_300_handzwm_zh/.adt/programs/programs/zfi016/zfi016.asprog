@@ -1,0 +1,25 @@
+*&---------------------------------------------------------------------*
+*& Report zfi016
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT ZFI016.
+
+TABLES: BSEG,BKPF.
+
+TYPES: BEGIN OF TY_ALV,
+       BLART TYPE BKPF-BLART,
+       BUKRS TYPE BKPF-BUKRS,
+       VBELN TYPE BSEG-VBEL2,
+       POSN2 TYPE BSEG-POSN2,
+       KTGRM TYPE VBAP-KTGRM,
+       BELNR TYPE BSEG-BELNR,
+       HKONT TYPE BSEG-HKONT,
+       DMBTR TYPE BSEG-DMBTR,
+       BUDAT TYPE BSEG-H_BUDAT.
+TYPES: END OF TY_ALV.
+
+
+PARAMETERS: P_BUKRS TYPE BKPF-BUKRS OBLIGATORY,
+            P_GJAHR TYPE BKPF-GJAHR OBLIGATORY,
+            P_MONAT TYPE BKPF-MONAT OBLIGATORY.

@@ -1,0 +1,5 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+        xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
+        <html:iframe src="h5/dashboard/main.html" class="dashboardContainer" height="100%" scrolling="no" style="height:100%;width:100%">
+        </html:iframe>
+</mvc:View>

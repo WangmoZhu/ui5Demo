@@ -1,0 +1,2691 @@
+{
+  "ComplainConfig": {
+    "LeadTime": 30,
+    "AlertTime": 10,
+    "RedNo": 6,
+    "Field": {
+      "ZPLANT": true,
+      "A4ZQM_CP01TS020": true,
+      "A4ZQM_CP01TS029": true,
+      "A4ZQM_CP01TS018": true
+    }
+  },
+  "FoodSafetyConfig": {
+    "LeadTime": 90,
+    "RedNo": 3,
+    "YellowNo": 2,
+    "Field": {
+      "SUP_NO": true,
+      "PG": true
+    }
+  },
+  "Role": {
+    "GROUP": {
+      "L1": ["MN_QM_001", "MN_QM_003", "MN_QM_004"],
+      "L2": ["MN_QM_005", "MN_QM_006", "MN_QM_007", "MN_QM_014"],
+      "L3": ["MN_QM_015", "MN_QM_010"],
+      "Other": [
+        "MN_QM_002",
+        "MN_QM_008",
+        "MN_QM_009",
+        "MN_QM_011",
+        "MN_QM_012",
+        "MN_QM_013",
+        "MN_QM_020"
+      ]
+    },
+    "CHANG": {
+      "L1": ["MN_QM_001", "MN_QM_003", "MN_QM_004"],
+      "L2": ["MN_QM_005", "MN_QM_006", "MN_QM_007", "MN_QM_011"],
+      "L3": ["MN_QM_015", "MN_QM_010"],
+      "Other": ["MN_QM_002", "MN_QM_008", "MN_QM_020"]
+    },
+    "DI": {
+      "L1": ["MN_QM_001", "MN_QM_003", "MN_QM_004"],
+      "L2": ["MN_QM_005", "MN_QM_006", "MN_QM_007", "MN_QM_012"],
+      "L3": ["MN_QM_015", "MN_QM_010"],
+      "Other": ["MN_QM_002", "MN_QM_008", "MN_QM_020"]
+    },
+    "BING": {
+      "L1": ["MN_QM_001", "MN_QM_003", "MN_QM_004"],
+      "L2": ["MN_QM_005", "MN_QM_006", "MN_QM_007", "MN_QM_013"],
+      "L3": ["MN_QM_015", "MN_QM_010"],
+      "Other": ["MN_QM_002", "MN_QM_008", "MN_QM_020"]
+    },
+    "NAI": {
+      "L1": ["MN_QM_001", "MN_QM_003", "MN_QM_004"],
+      "L2": ["MN_QM_006", "MN_QM_007", "MN_QM_009"],
+      "L3": [],
+      "Other": []
+    }
+  },
+  "Threshold": {
+    "G2Y": 0,
+    "Y2R": 0,
+    "R2Y": 80,
+    "Y2G": 90
+  },
+  "KPI": [
+    {
+      "name": "市场质量投诉率",
+      "text": ["市场质量投诉率(ppm)"],
+      "id": "MN_QM_001",
+      "OfflineValue": 0,
+      "PlantSelector": "ZPLANT",
+      "Threshold": {
+        "G2Y": 1,
+        "Y2R": 1.5
+      },
+      "AlwaysOffline": false,
+      "AfterRendering": true,
+      "DefaultDashboard": [
+        {
+          "category": "A0CALMONTH",
+          "value": "A00O2TGSVB59CBMKI7DMPA0V7I_F",
+          "type": "line",
+          "name": "市场质量投诉率 本年各月变化趋势 (ppm)"
+        },
+        {
+          "category": "ZPLANT_T",
+          "value": "A00O2TGSVB59CBMKI7DMPA0V7I_F",
+          "type": "column",
+          "top": 30,
+          "orderby": "desc",
+          "name": "市场质量投诉率 本年累计各工厂 前30位情况 (ppm)"
+        },
+        {
+          "category": "A4ZQM_CP01TS029",
+          "value": "A00O2TGSVB59E1S8IV0SSUUYUZ_F",
+          "top": 20,
+          "orderby": "desc",
+          "type": "pie",
+          "name": "本年累计各投诉原因二级分类 投诉包数占比 (%)"
+        }
+      ],
+      "query": ["ZQM_CP01_Q001"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年/月",
+          "categorySmal": "X",
+          "categoryBig": "X"
+        },
+        {
+          "id": "A4ZQM_CP01TS039",
+          "name": "销售大区"
+        },
+        {
+          "id": "A4ZQM_CP01TS006",
+          "name": "省"
+        },
+        {
+          "id": "A4ZQM_CP01TS007",
+          "name": "市"
+        },
+        {
+          "id": "ZPLANT_T",
+          "name": "工厂"
+        },
+        {
+          "id": "ZMATERIAL_T",
+          "name": "产品",
+          "filterOnly": true,
+          "plantRelated": true
+        },
+        {
+          "id": "A4ZQM_CP01TS018",
+          "name": "产品分类"
+        },
+        {
+          "id": "A4ZQM_CP01TS028",
+          "name": "投诉原因一级分类"
+        },
+        {
+          "id": "A4ZQM_CP01TS029",
+          "name": "投诉原因二级分类"
+        },
+        {
+          "id": "A4ZQM_CP01TS030",
+          "name": "投诉原因三级分类"
+        },
+        {
+          "id": "A4ZQM_CP01TS033",
+          "name": "投诉级别"
+        },
+        {
+          "id": "A4ZQM_CP01TS034",
+          "name": "紧急事件详情"
+        },
+        {
+          "id": "A4ZQM_CP01TS041",
+          "name": "责任划分"
+        },
+        {
+          "id": "A4ZQM_CP01TS043",
+          "name": "处理方式"
+        },
+        {
+          "id": "A4ZQM_CP01TS045",
+          "name": "反馈方式"
+        },
+        {
+          "id": "A4ZQM_CP01TS046",
+          "name": "销售渠道"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59CBMKI7DMPA0V7I_F",
+          "name": "产品投诉率（产量） (ppm)",
+          "valueSmal": "X",
+          "valueBig": "X"
+        },
+        {
+          "id": "A00O2TGSVB59E1YRSPV0CBI7P3_F",
+          "name": "产品投诉率（销量） (ppm)"
+        },
+        {
+          "id": "A00O2TGSVB59E1S8IV0SSUUSJF_F",
+          "name": "投诉次数"
+        },
+        {
+          "id": "A00O2TGSVB59E1S8IV0SSUUYUZ_F",
+          "name": "投诉包数"
+        }
+      ],
+      "excludeDetail": [
+        "A00O2TGSVB59CBOEK1T2YBR5ZA",
+        "A00O2TGSVB59E1YRSPV0CBI7P3",
+        "A00O2TGSVB59E1X0IWFANEXLG5",
+        "A00O2TGSVB59CBMKI7DMPA0V7I",
+        "A00O2TGSVB59E1S8IV0SSUUSJF",
+        "A00O2TGSVB59E1S8JL0P8SB52W",
+        "A00O2TGSVB59E1WFGCXCCZEK3A"
+      ]
+    },
+    {
+      "name": "产品质量分数",
+      "text": ["产品质量分数"],
+      "id": "MN_QM_002",
+      "OfflineValue": 100,
+      "AfterRendering": true,
+      "DefaultDashboard": [
+        {
+          "category": "A0CALMONTH",
+          "value": "A00O2TGSVB59CBKCRKVYOMSSB6_F",
+          "type": "line",
+          "name": "质量分数 本年各月变化趋势"
+        },
+        {
+          "category": "ZQM_Q005",
+          "value": "A00O2TGSVB59CBKCRKVYOMSSB6_F",
+          "type": "column",
+          "top": 30,
+          "orderby": "desc",
+          "name": "质量分数 本年累计各生产单位 前30位情况"
+        }
+      ],
+      "query": ["ZEQMOA99_Q001"],
+      "key": [
+        {
+          "name": "ZVAR_CLMOTH_SRQJFBS",
+          "value": "$3",
+          "type": "StartMonth"
+        },
+        {
+          "name": "ZVAR_CLMOTH_SRQJFBSTo",
+          "value": "$4",
+          "type": "EndMonth"
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年/月",
+          "categorySmal": "X",
+          "value": "06.2017",
+          "categoryBig": "X"
+        },
+        {
+          "id": "ZQM_Q006",
+          "name": "所属大区"
+        },
+        {
+          "id": "ZQM_Q004",
+          "name": "销售区域"
+        },
+        {
+          "id": "ZQM_Q005",
+          "name": "生产单位"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59CBKCRKVYOMSSB6_F",
+          "valueSmal": "X",
+          "valueBig": "X",
+          "name": "平均得分"
+        }
+      ]
+    },
+    {
+      "name": "国家抽检合格率",
+      "text": ["国家抽检合格率"],
+      "id": "MN_QM_003",
+      "OfflineValue": 100,
+      "AlwaysOffline": true,
+      "PlantSelector": "ZPLANT",
+      "query": ["ZQM_MA06_Q005"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        }
+      ],
+      "time": [],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年/月",
+          "categorySmal": "X",
+          "value": "06.2017",
+          "categoryBig": "X"
+        },
+        {
+          "id": "ZPLANT",
+          "name": "工厂"
+        },
+        {
+          "id": "A0CALYEAR",
+          "name": "日历年"
+        },
+        {
+          "id": "ZMATERIAL",
+          "name": "样品名称"
+        },
+        {
+          "id": "ZQM_JYBM",
+          "name": "检验项目"
+        },
+        {
+          "id": "ZQM_PLANT",
+          "name": "质量工厂"
+        },
+        {
+          "id": "ZSC1__ZQMBWTJG",
+          "name": "被委托抽样机构"
+        },
+        {
+          "id": "ZSC1__ZQMCJGC",
+          "name": "抽检工厂（事业部）"
+        },
+        {
+          "id": "ZSC1__ZQMCJJG",
+          "name": "抽检机构"
+        },
+        {
+          "id": "ZSC1__ZQMCLJG",
+          "name": "处理结果"
+        },
+        {
+          "id": "ZSC1__ZQMDJR",
+          "name": "对接人"
+        },
+        {
+          "id": "ZSC1__ZQMWCJYY",
+          "name": "未出具原因"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59E1T812VKUUKW18_F",
+          "name": "国家抽检合格率 (%)",
+          "maxValue": "100.5",
+          "minValue": "99",
+          "valueSmal": "X",
+          "valueBig": "X",
+          "reference": {
+            "referenceText1": "目标线",
+            "referenceValue1": "100"
+          }
+        },
+        {
+          "id": "A00O2TGSVB59E1T80Y30BWWPHF_F",
+          "name": "国家质监机构检测结果-合格"
+        },
+        {
+          "id": "A00O2TGSVB59E1T80Y30BWWVSZ_F",
+          "name": "国家质监机构检测结果-不合格"
+        }
+      ]
+    },
+    {
+      "name": "食品安全事件",
+      "text": ["食品安全事件"],
+      "id": "MN_QM_004",
+      "OfflineValue": 0,
+      "OfflinePercentage": 0,
+      "AfterRendering": true,
+      "AlwaysOffline": true
+    },
+    {
+      "name": "采购物资合格率",
+      "text": ["采购物资", "合格率"],
+      "id": "MN_QM_005",
+      "OfflineValue": 100,
+      "PlantSelector": "ZPLANT",
+      "Threshold": {
+        "G2Y": 0,
+        "Y2R": 0,
+        "R2Y": 80,
+        "Y2G": 90
+      },
+      "DefaultDashboardAll": {
+        "name1": "年累采购物资",
+        "name2": "合格率",
+        "unit": "批",
+        "不合格": "A00O2TGSVB59CBMQ0FB3K8UE7H_F",
+        "value": "A00O2TGSVB59CBMQ0FB3K8UKJ1_F",
+        "category1": "合格数量",
+        "category2": "不合格数量"
+      },
+      "DefaultDashboard": [
+        {
+          "category": "A0CALMONTH",
+          "value": "A00O2TGSVB59CBJFDKNL0YY2KY_F",
+          "type": "line",
+          "name": "采购物资合格率 本年各月变化趋势(%)"
+        },
+        {
+          "category": "ZQMSCZX_T",
+          "value": "A00O2TGSVB59CBJFDKNL0YY2KY_F",
+          "orderby": "desc",
+          "type": "column",
+          "name": "采购物资合格率 本年累计各事业部情况(%)"
+        },
+        {
+          "category": "ZQM_WLLX_T",
+          "value": "A00O2TGSVB59CBMQ0FB3K8UE7H_F",
+          "top": 20,
+          "orderby": "desc",
+          "type": "pie",
+          "name": "本年累计不合格物料类型占比"
+        }
+      ],
+      "query": ["ZQM_MA02_Q002"],
+      "key": [
+        {
+          "name": "ZVUCADAY",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUCADAYTo",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        }
+      ],
+      "time": [],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年月",
+          "categorySmal": "X",
+          "categoryBig": "X"
+        },
+        {
+          "id": "ZQM_XT_T",
+          "name": "系统"
+        },
+        {
+          "id": "ZQMSCZX_T",
+          "name": "事业部"
+        },
+        {
+          "id": "ZQMDQ_T",
+          "name": "生产大区"
+        },
+        {
+          "id": "ZPLANT_T",
+          "name": "工厂"
+        },
+        {
+          "id": "ZQM_WLLX_T",
+          "name": "物料类型"
+        },
+        {
+          "id": "ZQM_WLZFL_T",
+          "name": "物料组分类"
+        },
+        {
+          "id": "ZMATERIAL__ZMATL_GRP_T",
+          "name": "物料组"
+        },
+        {
+          "id": "ZQM_DBGF_T",
+          "name": "原始供应商"
+        },
+        {
+          "id": "ZQMYFLGYS_T",
+          "name": "直接供应商"
+        },
+        {
+          "id": "ZMATERIAL_T",
+          "name": "产品",
+          "filterOnly": true,
+          "plantRelated": true
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59CBJFDKNL0YY2KY_F",
+          "name": "营运采购物资合格率",
+          "maxValue": "100.5",
+          "minValue": "99",
+          "valueSmal": "X",
+          "valueBig": "X",
+          "reference": {
+            "referenceText1": "目标线",
+            "referenceValue1": "100"
+          }
+        },
+        {
+          "id": "",
+          "name": "原料",
+          "items": [
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YV9G2_F",
+              "name": "原料到货合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YYY6Q_F",
+              "name": "原料领用合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YUQHE_F",
+              "name": "原料到货批数"
+            },
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YV34I_F",
+              "name": "原料到货不合格批数"
+            },
+            {
+              "id": "A00O2TGSVB59CBN81COS5H5392_F",
+              "name": "原料领用数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBN81COS5H59KM_F",
+              "name": "原料领用不合格数量"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "辅料",
+          "items": [
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YW51U_F",
+              "name": "辅料到货合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YZTSI_F",
+              "name": "辅料领用合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YVM36_F",
+              "name": "辅料到货批数"
+            },
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YVYQA_F",
+              "name": "辅料到货不合格批数"
+            },
+            {
+              "id": "A00O2TGSVB59CBN81COS5H5FW6_F",
+              "name": "辅料领用数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBN81COS5H5M7Q_F",
+              "name": "辅料领用不合格数量"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "包材",
+          "items": [
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YX0NM_F",
+              "name": "包材到货合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0Z0PEA_F",
+              "name": "包材领用合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YWHOY_F",
+              "name": "包材到货批数"
+            },
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YWUC2_F",
+              "name": "包材到货不合格批数"
+            },
+            {
+              "id": "A00O2TGSVB59CBN81COS5H5SJA_F",
+              "name": "包材领用数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBN81COS5H5YUU_F",
+              "name": "包材领用不合格数量"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "药品",
+          "items": [
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YXW9E_F",
+              "name": "药品到货合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YXDAQ_F",
+              "name": "药品到货批数"
+            },
+            {
+              "id": "A00O2TGSVB59CBJFDKNL0YXPXU_F",
+              "name": "药品到货不合格批数"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "原奶综合合格率",
+      "text": ["原奶综合", "合格率"],
+      "id": "MN_QM_006",
+      "OfflineValue": 100,
+      "PlantSelector": "ZPLANT",
+      "DefaultDashboardAll": {
+        "name1": "原奶综合",
+        "name2": "合格率",
+        "unit": "公斤",
+        "不合格": "A00O2TGSVB59CBMKGZBS9J3SQ1_F",
+        "value": "A00O2TGSVB59CBMKGZBS9J3Z1L_F",
+        "category1": "合格量",
+        "category2": "超标量"
+      },
+      "DefaultDashboard": [
+        {
+          "category": "A0CALMONTH",
+          "value": "A00O2TGSVB59CBMKGZBS9J3MEH_F",
+          "type": "line",
+          "name": "原奶综合合格率 本年各月变化趋势 (%)"
+        },
+        {
+          "category": "ZNY_BU__ZNYDQ_T",
+          "value": "A00O2TGSVB59CBMKGZBS9J3MEH_F",
+          "orderby": "desc",
+          "type": "column",
+          "name": "原奶综合合格率 本年各奶源大区累计情况 (%)"
+        },
+        {
+          "category": "ZQM_JYBM_T",
+          "value": "A00O2TGSVB59CBO8S67EOHP0VK_F",
+          "top": 20,
+          "orderby": "desc",
+          "type": "pie",
+          "name": "本年各检验项目累计不合格奶量占比 (%)"
+        }
+      ],
+      "query": ["ZQM_MA03_Q007_TEMP"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        },
+        {
+          "name": "ZVAR_NYSYB_AUTHDZ",
+          "value": ""
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年/月",
+          "categorySmal": "X",
+          "categoryBig": "X"
+        },
+        {
+          "id": "ZNY_BU__ZNYDQ_T",
+          "name": "奶源大区"
+        },
+        {
+          "id": "ZNY_BU_T",
+          "name": "奶源部"
+        },
+        {
+          "id": "ZFVENCLA__ZGFLXHB_T",
+          "name": "供方类型合并"
+        },
+        {
+          "id": "ZFVENCLA_T",
+          "name": "供方类型"
+        },
+        {
+          "id": "ZVENDOR_T",
+          "name": "供应商"
+        },
+        {
+          "id": "ZQM_JYBM_T",
+          "name": "检验项目",
+          "related": {
+            "id": "A00O2TGSVB59CBO8S67EOHP0VK_F",
+            "name": "单项检测不合格奶量"
+          }
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59CBMKGZBS9J3MEH_F",
+          "name": "到厂合格率(%)",
+          "valueSmal": "X",
+          "valueBig": "X",
+          "reference": {
+            "referenceText1": "目标线",
+            "referenceValue1": "100"
+          }
+        },
+        {
+          "id": "A00O2TGSVB59CBMKGZBS9J3Z1L_F",
+          "name": "到厂总量"
+        },
+        {
+          "id": "A00O2TGSVB59CBMKGZBS9J3SQ1_F",
+          "name": "拒收总量"
+        },
+        {
+          "id": "A00O2TGSVB59CBO8S67EOHP0VK_F",
+          "name": "单项检测不合格奶量"
+        }
+      ]
+    },
+    {
+      "name": "原奶微生物合格率",
+      "text": ["原奶微生物", "合格率"],
+      "id": "MN_QM_007",
+      "OfflineValue": 100,
+      "PlantSelector": "ZPLANT",
+      "DefaultDashboardAll": {
+        "name1": "原奶微生物",
+        "name2": "合格率",
+        "unit": "公斤",
+        "不合格": "A00O2TGSVB59CBMKGZBS9J5DM1_F",
+        "value": "A00O2TGSVB59CBMKGZBS9J3Z1L_F",
+        "category1": "合格量",
+        "category2": "超标量"
+      },
+      "DefaultDashboard": [
+        {
+          "category": "A0CALMONTH",
+          "value": "A00O2TGSVB59CBMKGZBS9J57AH_F",
+          "type": "line",
+          "name": "原奶微生物合格率 本年各月变化趋势(%)"
+        },
+        {
+          "category": "ZNY_BU__ZNYDQ_T",
+          "value": "A00O2TGSVB59CBMKGZBS9J57AH_F",
+          "orderby": "desc",
+          "type": "column",
+          "name": "原奶微生物合格率 本年各奶源大区累计情况(%)"
+        }
+      ],
+      "query": ["ZQM_MA03_Q007_TEMP"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        },
+        {
+          "name": "ZVAR_NYSYB_AUTHDZ",
+          "value": ""
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年/月",
+          "categorySmal": "X",
+          "categoryBig": "X"
+        },
+        {
+          "id": "ZNY_BU__ZNYDQ_T",
+          "name": "奶源大区"
+        },
+        {
+          "id": "ZNY_BU_T",
+          "name": "奶源部"
+        },
+        {
+          "id": "ZFVENCLA__ZGFLXHB_T",
+          "name": "供方类型合并"
+        },
+        {
+          "id": "ZFVENCLA_T",
+          "name": "供方类型"
+        },
+        {
+          "id": "ZVENDOR_T",
+          "name": "供应商"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59CBMKGZBS9J57AH_F",
+          "name": "微生物≤200万合格率（%）",
+          "valueSmal": "X",
+          "valueBig": "X",
+          "reference": {
+            "referenceText1": "目标线",
+            "referenceValue1": "100"
+          }
+        },
+        {
+          "id": "",
+          "name": "微生物",
+          "items": [
+            {
+              "id": "A00O2TGSVB59CBMKGZBS9J4BOP_F",
+              "name": "微生物≤10万合格率（%）"
+            },
+            {
+              "id": "A00O2TGSVB59CBMKGZBS9J33FT_F",
+              "name": "体细胞≤60万合格率（%）"
+            },
+            {
+              "id": "A00O2TGSVB59CBMKGZBS9J2KH5_F",
+              "name": "嗜冷菌≤1000合格率（%）"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "合规设计通过率",
+      "text": ["合规设计", "通过率"],
+      "id": "MN_QM_008",
+      "OfflineValue": 100,
+      "DefaultDashboardAll": {
+        "name1": "合规设计",
+        "name2": "通过率",
+        "unit": "项",
+        "合格": "A00O2TGSVB59CBHMUNW7CWHMLO_F",
+        "value": "A00O2TGSVB59CBHMUNW7CWHGA4_F",
+        "category1": "通过数量",
+        "category2": "未通过数量"
+      },
+      "DefaultDashboard": [
+        {
+          "category": "A0CALMONTH",
+          "value": "A00O2TGSVB59CBHMUNW7CWHSX8_F",
+          "type": "line",
+          "name": "总体通过率 本年各月变化趋势(%)"
+        },
+        {
+          "category": "A4Z1QMAA01ZQMYT1",
+          "value": "A00O2TGSVB59CBHMUNW7CWHSX8_F",
+          "orderby": "desc",
+          "type": "column",
+          "name": "通过率 本年各事业部情况(%)"
+        }
+      ],
+      "query": ["Z1QMAA01_Q001"],
+      "key": [
+        {
+          "name": "ZVAR_CLMOTH_SRQJFBS",
+          "value": "$3",
+          "type": "StartMonth"
+        },
+        {
+          "name": "ZVAR_CLMOTH_SRQJFBSTo",
+          "value": "$4",
+          "type": "EndMonth"
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年月",
+          "categorySmal": "X",
+          "categoryBig": "X"
+        },
+        {
+          "id": "A4Z1QMAA01ZQMYT1",
+          "name": "事业部"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59CBHMUNW7CWHSX8_F",
+          "name": "总体通过率(%)",
+          "valueSmal": "X",
+          "valueBig": "X",
+          "reference": {
+            "referenceText1": "目标线",
+            "referenceValue1": "100"
+          }
+        },
+        {
+          "id": "A00O2TGSVB59CBHMUNW7CWHGA4_F",
+          "name": "总体审核数量"
+        },
+        {
+          "id": "A00O2TGSVB59CBHMUNW7CWHMLO_F",
+          "name": "总体通过数量"
+        },
+        {
+          "id": "",
+          "name": "包装标签",
+          "items": [
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWG1PO_F",
+              "name": "包装标签_审核数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWG818_F",
+              "name": "包装标签_通过数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWHZ8S_F",
+              "name": "包装标签_强制性标示内容的全面性_未通过"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWI5KC_F",
+              "name": "包装标签_食品名称_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWIBVW_F",
+              "name": "包装标签_配料表_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWII7G_F",
+              "name": "包装标签_定量标示_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWIOJ0_F",
+              "name": "包装标签_净含量和规格_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWIUUK_F",
+              "name": "包装标签_生产者信息_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWJ164_F",
+              "name": "包装标签_日期标示_未通过数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWJ7HO_F",
+              "name": "包装标签_贮存条件_未通过数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWJDT8_F",
+              "name": "包装标签_标志_未通过数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWJK4S_F",
+              "name": "包装标签_产品类型_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWJQGC_F",
+              "name": "包装标签_执行标准_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWJWRW_F",
+              "name": "包装标签_字体字号外文_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWK33G_F",
+              "name": "包装标签_营养成分表_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWK9F0_F",
+              "name": "包装标签_技术宣称_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWKFQK_F",
+              "name": "包装标签_营养声称_未通过数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWKM24_F",
+              "name": "包装标签_致敏原_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWKSDO_F",
+              "name": "包装标签_适宜人群_未通过数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWKYP8_F",
+              "name": "包装标签_内外包装标示的一致性_未通过数"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWL50S_F",
+              "name": "包装标签_条码授权信息_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWLBCC_F",
+              "name": "包装标签_其它_未通过数量"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "质量标准",
+          "items": [
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWGECS_F",
+              "name": "质量标准_审核数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWGKOC_F",
+              "name": "质量标准_通过数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWLHNW_F",
+              "name": "质量标准_指标缺项_未通过数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWLNZG_F",
+              "name": "质量标准_指标值不符合标准_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWLUB0_F",
+              "name": "质量标准_指标值与包装标示值不匹配_未通"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWM0MK_F",
+              "name": "质量标准_标准制定依据有误_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWMD9O_F",
+              "name": "质量标准_其它_未通过数量"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "配方",
+          "items": [
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWGQZW_F",
+              "name": "配方_审核数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWGXBG_F",
+              "name": "配方_通过数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWM6Y4_F",
+              "name": "配方_添加物质超范围使用_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWMJL8_F",
+              "name": "配方_添加物质超限量使用_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWMPWS_F",
+              "name": "配方_生乳/奶粉使用量低于标准_未通过数 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWMW8C_F",
+              "name": "配方_执行标准错误_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWN2JW_F",
+              "name": "配方_执行标准错误_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWN8VG_F",
+              "name": "配方_其它_未通过数量"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "检验计划",
+          "items": [
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWH3N0_F",
+              "name": "检验计划_审核数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWH9YK_F",
+              "name": "检验计划_通过数量"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWNF70_F",
+              "name": "检验计划_检验批次不符合标准_未通过数"
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWNLIK_F",
+              "name": "检验计划_检验频次不符合_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWNRU4_F",
+              "name": "验计划_检验项目缺项_未通过数量 "
+            },
+            {
+              "id": "A00O2TGSVB59CBHMUNW7CWNY5O_F",
+              "name": "检验计划_其它_未通过数量"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "审核问题整改率",
+      "text": ["审核问题", "整改率"],
+      "id": "MN_QM_009",
+      "OfflineValue": 100,
+      "AlwaysOffline": false,
+      "AfterRendering": true,
+      "DefaultDashboardAll": {
+        "name1": "年累审核问题明细",
+        "name2": "整改率",
+        "unit": "项",
+        "合格": "A00O2TGSVB59E1TA4KJFMXL2FI_F",
+        "value": "A00O2TGSVB59E1TA4KJFMXL8R2_F",
+        "category1": "已整改数量",
+        "category2": "未整改数量"
+      },
+      "DefaultDashboard": [
+        {
+          "category": "A0CALMONTH",
+          "value": "A00O2TGSVB59E1TA4KJFMXKW3Y_F",
+          "type": "line",
+          "name": "审核问题整改率 本年各月变化趋势(%)"
+        },
+        {
+          "category": "A4ZQM_CP02MILK_DEPARTM",
+          "value": "A00O2TGSVB59E1TA4KJFMXKW3Y_F",
+          "orderby": "desc",
+          "type": "column",
+          "name": "审核问题整改率 本年累计各奶源事业部情况(%)"
+        },
+        {
+          "category": "A4ZQM_CP02TASK_TYPE",
+          "value": "A00O2TGSVB59E1TA4KJFMXL8R2_F",
+          "top": 20,
+          "orderby": "desc",
+          "type": "pie",
+          "name": "本年累计审核问题类型占比"
+        }
+      ],
+      "query": ["ZQM_CP02_Q001"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年月",
+          "categorySmal": "X",
+          "categoryBig": "X"
+        },
+        {
+          "id": "A4ZQM_CP02AREA",
+          "name": "奶源大区"
+        },
+        {
+          "id": "A4ZQM_CP02MILK_DEPARTM",
+          "name": "奶源部"
+        },
+        {
+          "id": "A4ZQM_CP02ACCOUNT_TYPE",
+          "name": "供方类型"
+        },
+        {
+          "id": "A4ZQM_CP02LOW_NAME",
+          "name": "供方"
+        },
+        {
+          "id": "A4ZQM_CP02TASK_TYPE",
+          "name": "审核类型"
+        },
+        {
+          "id": "A4ZQM_CP02CHECK_CATALO",
+          "name": "验证方式"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59E1TA4KJFMXKW3Y_F",
+          "name": "整改率(%)",
+          "maxValue": "100.5",
+          "minValue": "99",
+          "valueSmal": "X",
+          "valueBig": "X",
+          "reference": {
+            "referenceText1": "目标线",
+            "referenceValue1": "100"
+          }
+        },
+        {
+          "id": "A00O2TGSVB59E1TA4KJFMXL2FI_F",
+          "name": "已整改数量"
+        },
+        {
+          "id": "A00O2TGSVB59E1Z9FZ61ZFMN3N_F",
+          "name": "未整改数量"
+        },
+        {
+          "id": "A00O2TGSVB59E1TA4KJFMXL8R2_F",
+          "name": "审核问题总数"
+        }
+      ]
+    },
+    {
+      "name": "投诉处理有效率",
+      "text": ["投诉处理", "有效率"],
+      "id": "MN_QM_010",
+      "OfflineValue": 100,
+      "PlantSelector": "ZPLANT",
+      "AlwaysOffline": false,
+      "AfterRendering": true,
+      "DefaultDashboard": [
+        {
+          "category": "A0CALMONTH",
+          "value": "A00O2TGSVB59E1WFGCXCCZEK3A_F",
+          "type": "line",
+          "name": "投诉处理有效率 本年各月变化趋势(%)"
+        },
+        {
+          "category": "ZPLANT_T",
+          "value": "A00O2TGSVB59E1WFGCXCCZEK3A_F",
+          "type": "column",
+          "top": 30,
+          "orderby": "desc",
+          "name": "投诉处理有效率 本年累计各工厂 前30位情况(%)"
+        },
+        {
+          "category": "A4ZQM_CP01TS029",
+          "value": "A00O2TGSVB59E1S8JL0P8SB52W_F",
+          "top": 20,
+          "orderby": "desc",
+          "type": "pie",
+          "name": "市场质量投诉 本年累计各投诉原因二级分类 二次投诉数量占比"
+        }
+      ],
+      "query": ["ZQM_CP01_Q001"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年/月",
+          "categorySmal": "X",
+          "categoryBig": "X"
+        },
+        {
+          "id": "A4ZQM_CP01TS039",
+          "name": "销售大区"
+        },
+        {
+          "id": "A4ZQM_CP01TS006",
+          "name": "省"
+        },
+        {
+          "id": "A4ZQM_CP01TS007",
+          "name": "市"
+        },
+        {
+          "id": "ZPLANT_T",
+          "name": "工厂"
+        },
+        {
+          "id": "ZMATERIAL_T",
+          "name": "产品"
+        },
+        {
+          "id": "A4ZQM_CP01TS018",
+          "name": "产品分类"
+        },
+        {
+          "id": "A4ZQM_CP01TS028",
+          "name": "投诉原因一级分类"
+        },
+        {
+          "id": "A4ZQM_CP01TS029",
+          "name": "投诉原因二级分类"
+        },
+        {
+          "id": "A4ZQM_CP01TS030",
+          "name": "投诉原因三级分类"
+        },
+        {
+          "id": "A4ZQM_CP01TS033",
+          "name": "投诉级别"
+        },
+        {
+          "id": "A4ZQM_CP01TS034",
+          "name": "紧急事件详情"
+        },
+        {
+          "id": "A4ZQM_CP01TS041",
+          "name": "责任划分"
+        },
+        {
+          "id": "A4ZQM_CP01TS043",
+          "name": "处理方式"
+        },
+        {
+          "id": "A4ZQM_CP01TS045",
+          "name": "反馈方式"
+        },
+        {
+          "id": "A4ZQM_CP01TS046",
+          "name": "销售渠道"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59E1WFGCXCCZEK3A_F",
+          "name": "投诉处理有效率(%)",
+          "valueSmal": "X",
+          "valueBig": "X"
+        },
+        {
+          "id": "A00O2TGSVB59E1S8IV0SSUUSJF_F",
+          "name": "投诉次数"
+        },
+        {
+          "id": "A00O2TGSVB59E1S8JL0P8SB52W_F",
+          "name": "二次投诉次数"
+        }
+      ],
+      "excludeDetail": [
+        "A00O2TGSVB59CBOEK1T2YBR5ZA",
+        "A00O2TGSVB59E1YRSPV0CBI7P3",
+        "A00O2TGSVB59E1X0IWFANEXLG5",
+        "A00O2TGSVB59CBMKI7DMPA0V7I",
+        "A00O2TGSVB59E1S8IV0SSUUSJF",
+        "A00O2TGSVB59E1S8JL0P8SB52W",
+        "A00O2TGSVB59E1WFGCXCCZEK3A"
+      ]
+    },
+    {
+      "name": "产品指标合格率（常温）",
+      "text": ["产品指标", "合格率"],
+      "id": "MN_QM_011",
+      "OfflineValue": 100,
+      "AfterRendering": true,
+      "PlantSelector": "ZQM_PLANT",
+      "query": ["ZQM_MA01_Q005"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年/月",
+          "categorySmal": "X",
+          "value": "06.2017",
+          "categoryBig": "X"
+        },
+        {
+          "id": "ZQM_PLANT__ZQMDQ_T",
+          "name": "大区"
+        },
+        {
+          "id": "ZQM_PLANT_T",
+          "name": "工厂"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59E1TV5GHTH9SRUR_F",
+          "name": "产品指标合格率(%)",
+          "maxValue": "100.5",
+          "minValue": "99",
+          "valueSmal": "X",
+          "valueBig": "X",
+          "reference": {
+            "referenceText1": "目标线",
+            "referenceValue1": "100"
+          }
+        },
+        {
+          "id": "",
+          "name": "奶类成品",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9QO03_F",
+              "name": "白奶类成品总检测次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9QUBN_F",
+              "name": "白奶检测达标次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9R6YR_F",
+              "name": "花色奶类成品总检测次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9RDAB_F",
+              "name": "花色奶检测达标次数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "乳饮料类成品",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9RPXF_F",
+              "name": "乳饮料类成品总检测次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9RW8Z_F",
+              "name": "乳饮料检测达标次数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "长效酸奶",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9PFR7_F",
+              "name": "长效酸奶成品总检测次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9QBCZ_F",
+              "name": "长效酸奶检测达标次数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "利乐枕",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9ZG1V_F",
+              "name": "利乐枕总出库包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9ZSOZ_F",
+              "name": "利乐枕漏奶包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA05C3_F",
+              "name": "利乐枕漏奶率（‰）"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA0BNN_F",
+              "name": "利乐枕污染包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA0OAR_F",
+              "name": "利乐枕污染率（‰）"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "利乐包",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA0UMB_F",
+              "name": "利乐包总出库包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA179F_F",
+              "name": "利乐包漏奶包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA1JWJ_F",
+              "name": "利乐包漏奶率（‰）"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA1Q83_F",
+              "name": "利乐包污染包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA22V7_F",
+              "name": "利乐包污染率（‰）"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "百利包",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA296R_F",
+              "name": "百利包总出库包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA2LTV_F",
+              "name": "百利包漏奶包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA2YGZ_F",
+              "name": "百利包漏奶率（‰）"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA34SJ_F",
+              "name": "百利包污染包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTHA3HFN_F",
+              "name": "百利包污染率（‰）"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "成品合格率 其他单项",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9WMWZ_F",
+              "name": "成品微生物合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9U6F7_F",
+              "name": "成品感观合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9UJ2B_F",
+              "name": "成品口感合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9UVPF_F",
+              "name": "成品容量合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9V8CJ_F",
+              "name": "成品理化合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9VKZN_F",
+              "name": "成品卫生指标合格率(%)"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "成品不合格数",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9U03N_F",
+              "name": "成品感观不合格 包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9UCQR_F",
+              "name": "成品口感不合格 包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9UPDV_F",
+              "name": "成品容量不合格包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9V20Z_F",
+              "name": "成品理化不合格 包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9VEO3_F",
+              "name": "成品卫生指标不合格 包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9W3YB_F",
+              "name": "成品微生物检测不合格 次（罐）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9WGLF_F",
+              "name": "成品微生物检测不合格 包（支）数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "其他",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9XIIR_F",
+              "name": "保温样合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9WT8J_F",
+              "name": "保温样总体取样量"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9X5VN_F",
+              "name": "保温样总体不合格包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9YE4J_F",
+              "name": "快速验证样合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9XOUB_F",
+              "name": "快速验证样取样数量"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9Y1HF_F",
+              "name": "快速验证样不合格包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9Z9QB_F",
+              "name": "半年样合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9YKG3_F",
+              "name": "半年样取样量"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9YX37_F",
+              "name": "半年样不合格包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9SF7N_F",
+              "name": "入库包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9OQGZ_F",
+              "name": "产品指标总检测罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9PM2R_F",
+              "name": "产品指标检测达标值罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5GHTH9VRB7_F",
+              "name": "成品微生物检测 次（罐）数"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "产品指标合格率（低温）",
+      "text": ["产品指标", "合格率"],
+      "id": "MN_QM_012",
+      "OfflineValue": 100,
+      "AfterRendering": true,
+      "PlantSelector": "ZQM_PLANT",
+      "query": ["ZQM_MA01_Q006"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年/月",
+          "categorySmal": "X",
+          "value": "06.2017",
+          "categoryBig": "X",
+          "categoryDefault2": "X"
+        },
+        {
+          "id": "ZQM_PLANT__ZQMDQ_T",
+          "name": "大区"
+        },
+        {
+          "id": "ZQM_PLANT_T",
+          "name": "工厂"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59E1TV5I4AYQQGP1_F",
+          "name": "产品指标合格率(%)",
+          "valuedefault1": "X",
+          "valuedefault2": "X",
+          "valueSmal": "X",
+          "valueBig": "X",
+          "reference": {
+            "referenceText1": "目标线线99.7",
+            "referenceValue1": "99.7",
+            "referenceText2": "目标线线99.2",
+            "referenceValue2": "99.2"
+          }
+        },
+        {
+          "id": "",
+          "name": "酸奶类产品",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQLQ11_F",
+              "name": "酸奶类产品总检测罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQM2O5_F",
+              "name": "酸奶类产品检测值趋于 达标值罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQMFB9_F",
+              "name": "酸奶类产品检测趋于A 区达标值罐数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "鲜奶类产品",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6EEX5_F",
+              "name": "鲜奶类产品总检测罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQNH8L_F",
+              "name": "鲜奶类产品检测趋于 达标值罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQNTVP_F",
+              "name": "鲜奶类产品检测值趋于A 区达标值罐数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "饮料类产品",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQOJ5X_F",
+              "name": "饮料类产品检测值趋于A 区达标值罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQOVT1_F",
+              "name": "饮料类产品检测趋于达 标值罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQP8G5_F",
+              "name": "饮料类产品检测趋于 A区达标值罐数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "成品合格率 其他单项",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQWLXH_F",
+              "name": "成品微生物合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQZ8QT_F",
+              "name": "成品卫生指标合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQV11H_F",
+              "name": "空气净度合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQX4W5_F",
+              "name": "成品感观合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQXNUT_F",
+              "name": "成品容量合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQY6TH_F",
+              "name": "成品理化合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQYPS5_F",
+              "name": "成品口感合格率(%)"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "成品不合格数",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQVWN9_F",
+              "name": "成品微生物检测不合格 次（罐）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQW9AD_F",
+              "name": "成品微生物检测不合格 包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQVK05_F",
+              "name": "成品微生物检测 次（罐）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQWS91_F",
+              "name": "成品感观不合格包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQXB7P_F",
+              "name": "成品容量不合格包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQXU6D_F",
+              "name": "成品理化不合格包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQYD51_F",
+              "name": "成品口感不合格包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQYW3P_F",
+              "name": "成品卫生指标不合格包（支）数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "半成品",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQQTC5_F",
+              "name": "半成品存储时间 检测次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQR5Z9_F",
+              "name": "半成品存储时间 不合格次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQRIMD_F",
+              "name": "半成品存储时间达标率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQSE85_F",
+              "name": "半成品微生物合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQROXX_F",
+              "name": "半成品微生物检测 次（罐）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQS1L1_F",
+              "name": "半成品微生物检测 不合格次（罐）数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "其他",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQPXQD_F",
+              "name": "产品总检测罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQQ41X_F",
+              "name": "产品指标趋于达标值罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQQADH_F",
+              "name": "产品指标趋于A区达标值罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQT9TX_F",
+              "name": "加强实验合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQSKJP_F",
+              "name": "加强实验总体取样量"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQSX6T_F",
+              "name": "加强实验总体不合格包数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQU5FP_F",
+              "name": "涂抹合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQTG5H_F",
+              "name": "涂抹总检测次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQTSSL_F",
+              "name": "涂抹不合格次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQUBR9_F",
+              "name": "空气净度总检测次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQUOED_F",
+              "name": "空气净度不合格次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5I4AYQV7D1_F",
+              "name": "入库包（支）数"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "产品指标合格率（冰品）",
+      "text": ["产品指标", "合格率"],
+      "id": "MN_QM_013",
+      "OfflineValue": 100,
+      "AfterRendering": true,
+      "PlantSelector": "ZQM_PLANT",
+      "query": ["ZQM_MA01_Q007"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年/月",
+          "categorySmal": "X",
+          "value": "06.2017",
+          "categoryBig": "X"
+        },
+        {
+          "id": "ZQM_PLANT__ZQMDQ_T",
+          "name": "大区"
+        },
+        {
+          "id": "ZQM_PLANT_T",
+          "name": "工厂"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59E1TV5JJ4S6JI89_F",
+          "name": "产品指标合格率(%)（冰品）",
+          "maxValue": "100.5",
+          "minValue": "99",
+          "valueSmal": "X",
+          "valueBig": "X",
+          "reference": {
+            "referenceText1": "目标线",
+            "referenceValue1": "100"
+          }
+        },
+        {
+          "id": "",
+          "name": "冰淇淋产品",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6D0CP_F",
+              "name": "冰淇淋产品总固形物 总检测罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6DCZT_F",
+              "name": "冰淇淋产品总固形物 检测值趋于达标值罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6DPMX_F",
+              "name": "冰淇淋产品总固形物检测值 趋于A区达标值罐数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "雪糕产品",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6EEX5_F",
+              "name": "雪糕产品总固形物 总检测罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6ERK9_F",
+              "name": "雪糕产品总固形物检测值 趋于达标值的罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6F47D_F",
+              "name": "雪糕产品总固形物检测值 趋于A区达标值的罐数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "雪泥产品",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6FTHL_F",
+              "name": "雪泥产品总固形物检测罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6G64P_F",
+              "name": "雪泥产品总固形物检测值 趋于达标值的罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6GIRT_F",
+              "name": "雪泥产品总固形物检测值 趋于A区达标值的罐数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "棒冰产品",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6H821_F",
+              "name": "棒冰产品总固形物检测罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6HKP5_F",
+              "name": "棒冰产品总固形物检测值 趋于达标值的罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6HXC9_F",
+              "name": "棒冰产品总固形物检测值 趋于A区达标值的罐数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "产品总固形物",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6IMMH_F",
+              "name": "产品总固形物总检测罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6ISY1_F",
+              "name": "产品总固形物检测值 趋于A区达标值罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6J5L5_F",
+              "name": "产品总固形物检测值 趋于达标值罐数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "成品合格率 其他单项",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6NJM1_F",
+              "name": "成品微生物合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6L349_F",
+              "name": "成品感观合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6LFRD_F",
+              "name": "成品口感合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6LSEH_F",
+              "name": "成品理化合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6MHOP_F",
+              "name": "成品卫生指标合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6M51L_F",
+              "name": "成品重量合格率(%)"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "成品不合格 包（支）数",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6KWSP_F",
+              "name": "成品感观不合格 包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6L9FT_F",
+              "name": "成品口感不合格 包（支）数 "
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6LM2X_F",
+              "name": "成品理化不合格 包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6LYQ1_F",
+              "name": "成品重量不合格 包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6MBD5_F",
+              "name": "成品卫生指标不合格 包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6MO09_F",
+              "name": "成品微生物检测次（罐）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6N0ND_F",
+              "name": "成品微生物检测不合格罐数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6NDAH_F",
+              "name": "成品微生物检测不合格 包（支）数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "半成品存储",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6PNGP_F",
+              "name": "半成品存储温度检测次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6Q03T_F",
+              "name": "半成品存储温度不合格次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6QCQX_F",
+              "name": "半成品储存温度达标率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6QJ2H_F",
+              "name": "半成品存储时间检测次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6QVPL_F",
+              "name": "半成品存储时间不合格次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6R8CP_F",
+              "name": "半成品储存时间达标率(%)"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "其他",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6NPXL_F",
+              "name": "入库包（支）数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6P4I1_F",
+              "name": "空气净度总检测次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6PH55_F",
+              "name": "空气净度合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6NW95_F",
+              "name": "涂抹总检测次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6O8W9_F",
+              "name": "涂抹不合格次数"
+            },
+            {
+              "id": "A00O2TGSVB59E1TV5JJ4S6ORUX_F",
+              "name": "涂抹合格率(%)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "产品指标合格率",
+      "text": ["产品指标", "合格率"],
+      "id": "MN_QM_014",
+      "OfflineValue": 100,
+      "PlantSelector": "ZQM_PLANT",
+      "DefaultDashboardAll": {
+        "name1": "年累产品入库",
+        "name2": "合格率",
+        "unit": "包(支)",
+        "不合格": "A00O2TGSVB59E1WL2U2DGD1P53_F",
+        "value": "A00O2TGSVB59E1WKV6CNVX5YZU_F",
+        "category1": "合格数量",
+        "category2": "不合格数量",
+        "t1": 90,
+        "t2": 80
+      },
+      "DefaultDashboard": [
+        {
+          "category": "A0CALMONTH",
+          "value": "A00O2TGSVB59E1WL2U2DGD1VGN_F",
+          "type": "line",
+          "name": "产品指标合格率 本年各月变化趋势(%)"
+        },
+        {
+          "category": "ZQM_PLANT__ZQMYWFL_T",
+          "value": "A00O2TGSVB59E1WL2U2DGD1VGN_F",
+          "top": 30,
+          "orderby": "desc",
+          "type": "column",
+          "name": "产品指标合格率 本年各事业部累计情况 前30位情况(%)"
+        },
+        {
+          "category": "ZQM_SCZBX_T",
+          "value": "A00O2TGSVB59E1WL2U2DGD1P53_F",
+          "orderby": "desc",
+          "type": "pie",
+          "name": "本年指标不合格 各类原因占比情况(%)"
+        }
+      ],
+      "query": ["ZQM_MA01_Q008"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年/月",
+          "categorySmal": "X",
+          "categoryBig": "X"
+        },
+        {
+          "id": "ZQM_PLANT__ZQMYWFL_T",
+          "name": "事业部"
+        },
+        {
+          "id": "ZQM_PLANT__ZQMDQ_T",
+          "name": "大区"
+        },
+        {
+          "id": "ZQM_PLANT_T",
+          "name": "工厂"
+        },
+        {
+          "id": "ZQM_SCZBX_T",
+          "name": "检测项目"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59E1WL2U2DGD1VGN_F",
+          "name": "产品指标合格率(%)",
+          "valueSmal": "X",
+          "valueBig": "X",
+          "reference": {
+            "referenceText1": "目标线",
+            "referenceValue1": "100"
+          }
+        },
+        {
+          "id": "A00O2TGSVB59E1WKV6CNVX5YZU_F",
+          "name": "入库包（支）数"
+        },
+        {
+          "id": "A00O2TGSVB59E1WL2U2DGD1P53_F",
+          "name": "产品不合格总数"
+        },
+        {
+          "id": "",
+          "name": "感观",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX7JVU_F",
+              "name": "成品感观合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX6HYI_F",
+              "name": "成品感观不合格 包(支)数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "口感",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX7WIY_F",
+              "name": "成品口感合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX6OA2_F",
+              "name": "成品口感不合格 包(支)数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "容量",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX8962_F",
+              "name": "成品容量合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX6ULM_F",
+              "name": "成品容量不合格 包(支)数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "理化",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX8LT6_F",
+              "name": "成品理化合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX70X6_F",
+              "name": "成品理化不合格 包(支)数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "卫生指标",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX8YGA_F",
+              "name": "成品卫生指标合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX6BMY_F",
+              "name": "成品卫生指标不合格 包(支)数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "重量",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1WL3O33F6XW54_F",
+              "name": "成品重量合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1WL3O33F6XPTK_F",
+              "name": "成品重量不合格 包(支)数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "微生物 包(支)",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1YM888NNK0YIQ_F",
+              "name": "成品微生物合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX778Q_F",
+              "name": "成品微生物不合格 包(支)数"
+            }
+          ]
+        },
+        {
+          "id": "",
+          "name": "微生物 次(罐)",
+          "items": [
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVXA0DM_F",
+              "name": "成品微生物合格率(%)"
+            },
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX9NQI_F",
+              "name": "成品微生物不合格 次(罐)数"
+            },
+            {
+              "id": "A00O2TGSVB59E1WKV6CNVX9B3E_F",
+              "name": "成品微生物检测 次(罐)总数"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "产品指标精准率",
+      "text": ["产品指标", "精准率"],
+      "id": "MN_QM_015",
+      "OfflineValue": 100,
+      "PlantSelector": "ZQM_PLANT",
+      "DefaultDashboardAll": {
+        "name1": "年累产品检测数量",
+        "name2": "精准率",
+        "unit": "批",
+        "合格": "A00O2TGSVB59E1YLZ8BOSH7XYZ_F",
+        "value": "A00O2TGSVB59E1YLZ8BOSH7RNF_F",
+        "category1": "产品指标达标（A区）数量",
+        "category2": "产品指标未达标（A区）数量",
+        "t1": 90,
+        "t2": 80
+      },
+      "DefaultDashboard": [
+        {
+          "category": "A0CALMONTH",
+          "value": "A00O2TGSVB59E1YLZ8BOSH8GXN_F",
+          "type": "line",
+          "name": "产品指标精准率 本年各月变化趋势 (%)"
+        },
+        {
+          "category": "ZQM_PLANT__ZQMSCZX_T",
+          "value": "A00O2TGSVB59E1YLZ8BOSH8GXN_F",
+          "top": 30,
+          "orderby": "desc",
+          "type": "column",
+          "name": "产品指标精准率 本年各事业部累计情况 前30位情况 (%)"
+        }
+      ],
+      "query": ["ZQM_MA04_Q002"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年/月",
+          "categorySmal": "X",
+          "categoryBig": "X"
+        },
+        {
+          "id": "ZQM_PLANT__ZQMSCZX_T",
+          "name": "事业部"
+        },
+        {
+          "id": "ZQM_PLANT__ZQMDQ_T",
+          "name": "生产大区"
+        },
+        {
+          "id": "ZQM_PLANT_T",
+          "name": "工厂"
+        },
+        {
+          "id": "ZLIM_WLFL_T",
+          "name": "物料分类"
+        },
+        {
+          "id": "ZLIM_WLPX_T",
+          "name": "物料品项"
+        },
+        {
+          "id": "ZMATERIAL_T",
+          "name": "产品",
+          "filterOnly": true,
+          "plantRelated": true
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59E1YLZ8BOSH8GXN_F",
+          "name": "产品指标(A区)精准率(%)",
+          "valueSmal": "X",
+          "valueBig": "X"
+        },
+        {
+          "id": "A00O2TGSVB59E1YLZ8BOSH84AJ_F",
+          "name": "产品指标检测(A区)达标次数"
+        },
+        {
+          "id": "A00O2TGSVB59E1YLZ8BOSH7RNF_F",
+          "name": "产品指标总检测次数"
+        }
+      ]
+    },
+    {
+      "name": "过程质量监督",
+      "text": ["过程质量", "监督"],
+      "id": "MN_QM_020",
+      "OfflineValue": 100,
+      "ValueType": "X",
+      "PlantSelector": "ZPLANT",
+      "DefaultDashboard": [
+        {
+          "category": "A0CALMONTH",
+          "value": "A00O2TGSVB59CBKIHRR3MHDPLL_F",
+          "type": "line",
+          "name": "过程质量问题数量 本年各月变化趋势"
+        },
+        {
+          "category": "ZPLANT_T",
+          "value": "A00O2TGSVB59CBKIHRR3MHDPLL_F",
+          "type": "column",
+          "name": "过程质量问题数量 本年累计前30名工厂情况",
+          "top": 30,
+          "orderby": "A00O2TGSVB59CBKIHRR3MHDPLL desc"
+        },
+        {
+          "category": "ZQM_Q009_T",
+          "value": "A00O2TGSVB59CBKIHRR3MHDPLL_F",
+          "top": 20,
+          "orderby": "desc",
+          "type": "pie",
+          "name": "过程质量问题数量 本年累计各类原因 占比"
+        }
+      ],
+      "query": ["ZQM_CA01_Q002"],
+      "key": [
+        {
+          "name": "ZVUDAY01",
+          "value": "$1",
+          "type": "StartDate"
+        },
+        {
+          "name": "ZVUDAY01To",
+          "value": "$2",
+          "type": "EndDate"
+        },
+        {
+          "name": "ZVAPLANT",
+          "value": ""
+        }
+      ],
+      "category": [
+        {
+          "id": "A0CALMONTH",
+          "name": "日历年月",
+          "categoryBig": "X",
+          "noFilter": true
+        },
+        {
+          "id": "ZPLANT_T",
+          "name": "工厂",
+          "noFilter": true
+        },
+        {
+          "id": "ZVENDOR_T",
+          "name": "供应商"
+        },
+        {
+          "id": "ZMATERIAL_T",
+          "name": "物料"
+        },
+        {
+          "id": "ZQM_Q008_T",
+          "name": "主题问题分类"
+        },
+        {
+          "id": "ZQM_Q009_T",
+          "name": "原因代码"
+        },
+        {
+          "id": "ZQM_Q014_T",
+          "name": "作业代码"
+        },
+        {
+          "id": "A0CAT_TYPE_T",
+          "name": "质量问题类型"
+        },
+        {
+          "id": "ZCRMSTAT_T",
+          "name": "质量问题状态"
+        }
+      ],
+      "value": [
+        {
+          "id": "A00O2TGSVB59CBKIHRR3MHDPLL_F",
+          "name": "质量问题数量",
+          "valueSmal": "X",
+          "valueBig": "X"
+        }
+      ],
+      "excludeDetail": [
+        "A0CALMONTH2",
+        "A0CALYEAR",
+        "A0STORNO",
+        "ZBP_CL",
+        "ZBP_CL_T",
+        "ZCO_DC01",
+        "ZCO_DC01_T",
+        "ZMCCELEV",
+        "ZMCCELEV_T",
+        "ZQM_Q001",
+        "ZQM_Q001_T",
+        "ZQM_Q002",
+        "ZQM_Q002_T",
+        "ZQM_Q003",
+        "ZQM_Q003_T",
+        "ZQM_Q004",
+        "ZQM_Q004_T",
+        "ZQM_Q019",
+        "ZQM_Q019_T",
+        "ZQM_Q025",
+        "ZQM_Q025_T",
+        "ZQM_QT11",
+        "ZQM_QT11_T",
+        "ZQM_QT12",
+        "ZQM_QT12_T",
+        "ZQM_QT13",
+        "ZQM_QT13_T",
+        "ZQM_QT14",
+        "ZQM_QT14_T",
+        "ZQM_QT15",
+        "ZQM_QT15_T",
+        "ZQM_QT16",
+        "ZQM_QT16_T",
+        "ZQM_QT17",
+        "ZQM_QT17_T"
+      ]
+    }
+  ]
+}

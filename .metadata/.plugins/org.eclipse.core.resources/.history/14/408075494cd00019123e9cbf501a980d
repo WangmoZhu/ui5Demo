@@ -1,0 +1,30 @@
+<mvc:View controllerName="echart.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:c="echart.custom">
+	<html:style>
+		.mySquare {                  
+        display: inline-block;   
+        border: 1px solid red;   
+        background-color: #ddd;
+        padding: 8px;
+        text-align: center;
+        -moz-box-sizing: border-box; 
+        box-sizing: border-box;
+    }
+	</html:style>
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+				   <!-- <c:simple boxColor="#ff7700">
+				   		<c:content>
+				   			<Button text="Hello World"></Button>
+				   			<Input placeholder="edit text here"></Input>
+				   		</c:content>
+				   </c:simple> -->
+				   <c:simple text="Highlighted editing"></c:simple>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

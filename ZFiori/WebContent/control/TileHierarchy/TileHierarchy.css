@@ -1,0 +1,37 @@
+.tile-hierarchy .node {
+    cursor: pointer;
+}
+.tile-hierarchy .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+.tile-hierarchy .node text {
+    font: 10px sans-serif;
+}
+.tile-hierarchy .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+    cursor: pointer;
+}
+.tile-hierarchy {
+    overflow: hidden;
+}
+.tile-hierarchy g.bar .axis path,
+.tile-hierarchy g.bar .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+.tile-hierarchy g.bar .axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+.tile-hierarchy g.bar .MyText {
+    fill: white;
+    text-anchor: middle;
+}
+.tile-hierarchy marker#arrowend {
+    fill: #ccc;
+}

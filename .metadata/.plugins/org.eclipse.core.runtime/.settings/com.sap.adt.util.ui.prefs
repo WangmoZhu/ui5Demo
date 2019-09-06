@@ -1,0 +1,5 @@
+com.sap.adt.util.ui.contentassist.FieldHistoryProposalProvider.AbapProgram=ZFI016\r
+com.sap.adt.util.ui.contentassist.FieldHistoryProposalProvider.AbapProgramDescription=\u5206\u54C1\u7C7B\u62C6\u5206\u8D38\u6613\u53D1\u8D27\u51ED\u8BC1\r
+com.sap.adt.util.ui.contentassist.FieldHistoryProposalProvider.com.sap.adt.package.context=Z001\r
+com.sap.adt.util.ui.contentassist.FieldHistoryProposalProvider.com.sap.adt.tools.core.project.IAbapProject=ED1_300_handzwm_zh\r
+eclipse.preferences.version=1
